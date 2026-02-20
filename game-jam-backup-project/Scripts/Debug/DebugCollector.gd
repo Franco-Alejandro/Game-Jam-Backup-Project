@@ -10,8 +10,7 @@ var timer: Timer
 var resource_manager: ResourceManager
 
 func _ready():
-	# TODO probably there is a better way
-	resource_manager = get_node("/root/ColonyBaseNode/Player/Systems/ResourceManager")
+	resource_manager = get_tree().get_first_node_in_group("resource_manager")
 	
 	if type:
 		label.text = type.id + " collector"

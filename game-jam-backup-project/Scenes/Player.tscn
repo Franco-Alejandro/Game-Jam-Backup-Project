@@ -100,6 +100,6 @@ texture = SubResource("CanvasTexture_vtd33")
 
 [node name="Systems" type="Node" parent="." unique_id=2012006880]
 
-[node name="ResourceManager" type="Node" parent="Systems" unique_id=1561729377]
+[node name="ResourceManager" type="Node" parent="Systems" unique_id=1561729377 groups=["resource_manager"]]
 script = ExtResource("2_kyqiw")
 metadata/_custom_type_script = "uid://c034cqnt7nvve"

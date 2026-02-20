@@ -6,8 +6,7 @@ extends Button
 var resource_manager
 
 func _ready():
-	# TODO probably there is a better way
-	resource_manager = get_node("/root/ColonyBaseNode/Player/Systems/ResourceManager")
+	resource_manager = get_tree().get_first_node_in_group("resource_manager")
 	pressed.connect(_on_pressed)
 
 func _on_pressed():
