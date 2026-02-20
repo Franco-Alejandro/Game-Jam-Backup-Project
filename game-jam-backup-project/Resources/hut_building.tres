@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="BuildingResource" format=3 uid="uid://s4e8bd3ongyg"]
+
+[ext_resource type="Script" uid="uid://h2ufpeq4u36f" path="res://Scripts/Data/Building_Resource.gd" id="1_26rsr"]
+[ext_resource type="Script" uid="uid://dwevpm6iumg5j" path="res://Scripts/Data/Job_Resource.gd" id="2_xy0uw"]
+
+[resource]
+script = ExtResource("1_26rsr")
+building_name = "Hut building"
+description = "It provides space for penguins to live in"
+required_resources = {
+"fish": 1,
+"ice_cream": 10,
+"pebbles": 10
+}
+cozyness_generation_per_second = 10
+metadata/_custom_type_script = "uid://h2ufpeq4u36f"
