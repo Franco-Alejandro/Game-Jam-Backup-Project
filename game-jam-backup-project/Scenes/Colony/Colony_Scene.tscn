@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://cs1kwb10pi7se"]
+
+[ext_resource type="Script" uid="uid://cp26fooektfl2" path="res://Scripts/Colony/Colony_Script.gd" id="1_vx365"]
+[ext_resource type="Script" uid="uid://cxon1h1qxnmrd" path="res://Scripts/Colony/Building_Script.gd" id="2_bqmm3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j7baj"]
+albedo_color = Color(0, 0, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vxtm5"]
+albedo_color = Color(1, 0, 0, 1)
+
+[node name="ColonyScene" type="Node3D" unique_id=423688789]
+script = ExtResource("1_vx365")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=307925445]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.015625, 0.0022773743, -0.011184692)
+size = Vector3(16.046875, 0.09650421, 16.10257)
+
+[node name="UpgradeLayer1" type="Node3D" parent="." unique_id=820765740]
+
+[node name="L1_1" type="CSGBox3D" parent="UpgradeLayer1" unique_id=759384383]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.0764365, 0, 4.630497)
+material_override = SubResource("StandardMaterial3D_j7baj")
+script = ExtResource("2_bqmm3")
+
+[node name="L1_2" type="CSGBox3D" parent="UpgradeLayer1" unique_id=1660083760]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9890685, 0, 4.630497)
+script = ExtResource("2_bqmm3")
+
+[node name="L1_3" type="CSGBox3D" parent="UpgradeLayer1" unique_id=2142388824]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.636595, 0, 6.5745296)
+script = ExtResource("2_bqmm3")
+
+[node name="UpgradeLayer2" type="Node3D" parent="." unique_id=301380892]
+
+[node name="L2_1" type="CSGBox3D" parent="UpgradeLayer2" unique_id=664395808]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.2172894, 0, -5.2586155)
+script = ExtResource("2_bqmm3")
+
+[node name="L2_2" type="CSGBox3D" parent="UpgradeLayer2" unique_id=615413750]
+transform = Transform3D(1, 0, 0, 0, 0.9996762, 0.025444154, 0, -0.025444154, 0.9996762, 4.2738767, 0, -6.305971)
+script = ExtResource("2_bqmm3")
+
+[node name="L2_3" type="CSGBox3D" parent="UpgradeLayer2" unique_id=638330777]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.2738767, 0, -3.3329043)
+material_override = SubResource("StandardMaterial3D_vxtm5")
+script = ExtResource("2_bqmm3")
