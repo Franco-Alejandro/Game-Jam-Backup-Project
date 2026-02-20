@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://c0gsy02twtl64"]
+
+[ext_resource type="Script" uid="uid://d3l1y3078yo7h" path="res://Scenes/Player.gd" id="1_rpqav"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_vtd33"]
+specular_color = Color(0.7592268, 0.04579375, 0.076941706, 1)
+
+[node name="Player" type="Node3D" unique_id=196852108]
+script = ExtResource("1_rpqav")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=160749495]
+transform = Transform3D(1, 0, 0, 0, 0.8308485, 0.55649865, 0, -0.55649865, 0.8308485, 0, 7.1686764, 0)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=543194776]
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=74526851]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TopBar" type="Panel" parent="CanvasLayer" unique_id=1101949083]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+
+[node name="TabContainer" type="TabContainer" parent="CanvasLayer/TopBar" unique_id=405479733]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 8.0
+
+[node name="SidePanel" type="Panel" parent="CanvasLayer" unique_id=865329726]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -20.0
+offset_bottom = 20.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/SidePanel" unique_id=241842663]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = SubResource("CanvasTexture_vtd33")
+
+[node name="BottomPanel" type="Panel" parent="CanvasLayer" unique_id=281911958]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(0, -100)
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/BottomPanel" unique_id=922694546]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = SubResource("CanvasTexture_vtd33")
