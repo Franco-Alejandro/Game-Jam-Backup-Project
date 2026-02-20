@@ -45,7 +45,7 @@ func _input(event):
 			target_zoom = clamp(target_zoom + zoom_speed, min_zoom, max_zoom)
 		 
 func apply_position_limits(delta):
-	var new_position = position + velocity * delta
+	var new_position : Vector3 = position + velocity * delta
 	new_position.x = clamp(new_position.x, limit_left, limit_right)
 	new_position.z = clamp(new_position.z, limit_forward, limit_back)
 	position = new_position
