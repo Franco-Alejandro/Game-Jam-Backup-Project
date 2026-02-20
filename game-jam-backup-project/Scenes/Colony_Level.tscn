@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://2pspwfknsxpp"]
 
 [ext_resource type="PackedScene" uid="uid://c0gsy02twtl64" path="res://Scenes/Player.tscn" id="1_vk84e"]
-[ext_resource type="PackedScene" uid="uid://dy7xdcdxeetx7" path="res://Scenes/Penguin.tscn" id="2_wbec4"]
+[ext_resource type="PackedScene" uid="uid://ddtugnq86umdw" path="res://character_penguin.tscn" id="2_0eyfg"]
 [ext_resource type="PackedScene" uid="uid://c0vqc10ll0fww" path="res://Scenes/Debug/DebugCollector.tscn" id="3_jroqy"]
 [ext_resource type="Resource" uid="uid://lpa7ybk24joh" path="res://Scripts/Data/Resources/Fish.tres" id="4_4283g"]
 [ext_resource type="Resource" uid="uid://dshqdkw73b6if" path="res://Scripts/Data/Resources/Pebble.tres" id="5_t7y5i"]
@@ -16,7 +16,7 @@ use_collision = true
 
 [node name="Player" parent="." unique_id=196852108 instance=ExtResource("1_vk84e")]
 
-[node name="Penguin" parent="." unique_id=562999970 instance=ExtResource("2_wbec4")]
+[node name="Character_Penguin" parent="." unique_id=611752080 instance=ExtResource("2_0eyfg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0429919, -0.40520376, -5.5744677)
 
 [node name="Debug" type="Node" parent="." unique_id=1297205294]

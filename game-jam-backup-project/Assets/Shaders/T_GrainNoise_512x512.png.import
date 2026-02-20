@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://jcxpg7huo3qm"
-path.s3tc="res://.godot/imported/T_P.png-b40de02ca7c9f76e7b3c999e11cc3028.s3tc.ctex"
+uid="uid://olh23y5c7v5e"
+path.s3tc="res://.godot/imported/T_GrainNoise_512x512.png-bfb1e77bd4af38db00b8eb3390d49e67.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/T_P.png"
-dest_files=["res://.godot/imported/T_P.png-b40de02ca7c9f76e7b3c999e11cc3028.s3tc.ctex"]
+source_file="res://Assets/Shaders/T_GrainNoise_512x512.png"
+dest_files=["res://.godot/imported/T_GrainNoise_512x512.png-bfb1e77bd4af38db00b8eb3390d49e67.s3tc.ctex"]
 
 [params]
 
