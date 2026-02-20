@@ -39,3 +39,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.4953775, -0.4847209, -8.90
 type = ExtResource("6_x5vs7")
 production_interval = 1.0
 production_amount = 2
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=775402390]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.4256124)
+omni_range = 100.0

@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://d3l1y3078yo7h" path="res://Scenes/Player.gd" id="1_rpqav"]
 [ext_resource type="PackedScene" uid="uid://b6801scexnjbw" path="res://Scenes/UI/ResourcesDisplay.tscn" id="2_gntrk"]
-[ext_resource type="Script" uid="uid://c034cqnt7nvve" path="res://Scripts/Resource_Manager.gd" id="2_kyqiw"]
 [ext_resource type="PackedScene" uid="uid://5sees20p6bj1" path="res://Scenes/UI/Debug/ResourceSpender.tscn" id="3_dewec"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_vtd33"]
@@ -97,9 +96,3 @@ offset_right = 20.0
 grow_horizontal = 2
 grow_vertical = 0
 texture = SubResource("CanvasTexture_vtd33")
-
-[node name="Systems" type="Node" parent="." unique_id=2012006880]
-
-[node name="ResourceManager" type="Node" parent="Systems" unique_id=1561729377 groups=["resource_manager"]]
-script = ExtResource("2_kyqiw")
-metadata/_custom_type_script = "uid://c034cqnt7nvve"

@@ -1,26 +1,36 @@
 extends Node3D
 
 @onready var label: Label3D = $Label3D
+@onready var bar_fill: MeshInstance3D = $ProductionBar/BarFill
 
 @export var type: ResourceType
 @export var production_interval: float = 5.0
 @export var production_amount: int = 1
 
-var timer: Timer
 var resource_manager: ResourceManager
+var progress: float = 0.0
+
 
 func _ready():
-	resource_manager = get_tree().get_first_node_in_group("resource_manager")
+	resource_manager = ResourceManagerSingleton
 	
 	if type:
-		label.text = type.id + " collector"
-	
-	timer = Timer.new()
-	timer.wait_time = production_interval
-	timer.autostart = true
-	timer.timeout.connect(_on_timer_timeout)
-	add_child(timer)
+		label.text = str(type.id).capitalize() + " Collector"
 
-func _on_timer_timeout():
-	if resource_manager:
+
+func _process(delta):
+	if not type or not resource_manager:
+		return
+	
+	# Progress növelése
+	progress += delta
+	
+	var ratio = clamp(progress / production_interval, 0.0, 1.0)
+	bar_fill.scale.x = ratio
+	
+	# Ha betelt
+	if progress >= production_interval:
+		progress = 0.0
+		bar_fill.scale.x = 0.0
+		
 		resource_manager.add_resource(type, production_amount)

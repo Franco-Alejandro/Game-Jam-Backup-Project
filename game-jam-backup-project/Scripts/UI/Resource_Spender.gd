@@ -6,7 +6,7 @@ extends Button
 var resource_manager
 
 func _ready():
-	resource_manager = get_tree().get_first_node_in_group("resource_manager")
+	resource_manager = ResourceManagerSingleton
 	pressed.connect(_on_pressed)
 
 func _on_pressed():

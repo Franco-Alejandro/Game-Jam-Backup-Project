@@ -9,7 +9,7 @@ var resource_manager
 
 
 func _ready():
-	resource_manager = get_tree().get_first_node_in_group("resource_manager")
+	resource_manager = ResourceManagerSingleton
 	
 	if resource_type:
 		icon_rect.texture = resource_type.icon

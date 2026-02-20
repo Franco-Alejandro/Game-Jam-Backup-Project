@@ -1,4 +1,5 @@
 extends Node
+
 class_name ResourceManager
 
 # in case we want other systems to react to it?

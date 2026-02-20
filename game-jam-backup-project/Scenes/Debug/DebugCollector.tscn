@@ -3,6 +3,12 @@
 [ext_resource type="Script" uid="uid://claxw4w8edxk0" path="res://Scripts/Debug/DebugCollector.gd" id="1_cuv8s"]
 [ext_resource type="PackedScene" uid="uid://ccu7xctb4aimt" path="res://Assets/SM_Tree_Pine_01.fbx" id="2_lo7eg"]
 
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_o816w"]
+albedo_color = Color(0.44705883, 0.9647059, 0, 1)
+emission_enabled = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_y2xj2"]
+
 [node name="FishCollector" type="Node3D" unique_id=1060373060]
 script = ExtResource("1_cuv8s")
 
@@ -10,7 +16,18 @@ script = ExtResource("1_cuv8s")
 transform = Transform3D(0.58784926, 0, 0, 0, 0.17042154, 0, 0, 0, 0.7034644, 0, 0, 0)
 
 [node name="Label3D" type="Label3D" parent="." unique_id=1015165490]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5026101, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8045261, 0)
 modulate = Color(0, 0.5254902, 1, 1)
 text = "Fish collector"
 font_size = 100
+
+[node name="ProductionBar" type="Node3D" parent="." unique_id=145974063]
+transform = Transform3D(3.0273387, 0, 0, 0, 0.20335639, 0, 0, 0, 1, 0, 1.3010043, 0)
+
+[node name="BarFill" type="MeshInstance3D" parent="ProductionBar" unique_id=405894150]
+material_override = SubResource("ORMMaterial3D_o816w")
+gi_mode = 0
+mesh = SubResource("QuadMesh_y2xj2")
+
+[node name="BarBg" type="MeshInstance3D" parent="ProductionBar" unique_id=630603299]
+mesh = SubResource("QuadMesh_y2xj2")
