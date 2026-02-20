@@ -1,6 +1,37 @@
 [gd_scene format=3 uid="uid://dqiutrqk4itsy"]
 
+[ext_resource type="Shader" uid="uid://dxo0niadqpfmg" path="res://Assets/Shaders/S_Snow_01.gdshader" id="1_3kqh4"]
+[ext_resource type="Texture2D" uid="uid://olh23y5c7v5e" path="res://Assets/Shaders/T_GrainNoise_512x512.png" id="2_4w0av"]
+[ext_resource type="Texture2D" uid="uid://dkfkpuhem5qlx" path="res://Assets/Shaders/T_PerlinNoise_256x256.png" id="3_oc8rl"]
+[ext_resource type="PackedScene" uid="uid://ccu7xctb4aimt" path="res://Assets/SM_Tree_Pine_01.fbx" id="4_73ul0"]
+[ext_resource type="PackedScene" uid="uid://btiyra0yr0sm4" path="res://Assets/SM_Tree_Pine_03.fbx" id="5_ffu28"]
+[ext_resource type="PackedScene" uid="uid://d1yidmfxypdln" path="res://Assets/SM_Path_Long_03.fbx" id="6_cmn64"]
+[ext_resource type="PackedScene" uid="uid://c8oxjam3gfaj5" path="res://Assets/SM_Path_Small_01.fbx" id="7_1ioel"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_o7e4v"]
+render_priority = 0
+shader = ExtResource("1_3kqh4")
+shader_parameter/noise_texture = ExtResource("3_oc8rl")
+shader_parameter/grain_texture = ExtResource("2_4w0av")
+shader_parameter/base_color = Vector3(0.246, 0.318, 1)
+shader_parameter/blend_color = Vector3(0.166, 0.243, 1)
+shader_parameter/sparkle_color = Vector3(0.21, 0.205, 50)
+shader_parameter/sparkle_emissive = 1.5
+
 [node name="Art_Gym" type="Node3D" unique_id=1874026479]
 
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1543731571]
-transform = Transform3D(97.07849, 0, 0, 0, 1, 0, 0, 0, 99.83251, 0, 0, 0)
+transform = Transform3D(575.58606, 0, 0, 0, 1, 0, 0, 0, 627.35925, -1.125782, 0.013204098, 2.800541)
+material_override = SubResource("ShaderMaterial_o7e4v")
+
+[node name="SM_Tree_Pine_01" parent="." unique_id=1257111192 instance=ExtResource("4_73ul0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3705454, 0.4008342, 12.421689)
+
+[node name="SM_Tree_Pine_03" parent="." unique_id=1673619503 instance=ExtResource("5_ffu28")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6141958, 0.41152525, 9.000254)
+
+[node name="SM_Path_Long_03" parent="." unique_id=57814381 instance=ExtResource("6_cmn64")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.149013, 0.5199919, 10.72694)
+
+[node name="SM_Path_Small_01" parent="." unique_id=116502213 instance=ExtResource("7_1ioel")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.765797, 0.5547466, 12.839894)
