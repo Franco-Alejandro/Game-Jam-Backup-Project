@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://ddtugnq86umdw"]
 
 [ext_resource type="PackedScene" uid="uid://l16uol8dvbtk" path="res://Assets/SM_P.fbx" id="1_tyi0o"]
+[ext_resource type="Script" uid="uid://2nclvtlb431i" path="res://Scripts/Entities/Penguin_Brain.gd" id="2_6ovgj"]
 [ext_resource type="Texture2D" uid="uid://jcxpg7huo3qm" path="res://Assets/T_P.png" id="2_d8x54"]
 [ext_resource type="AnimationLibrary" uid="uid://dlqjyhbbt5ius" path="res://Assets/ANM_Penguin_Idle.fbx" id="3_6ovgj"]
 [ext_resource type="AnimationLibrary" uid="uid://3ph0behuouwd" path="res://Assets/ANM_Penguin_Walk.fbx" id="3_d8x54"]
@@ -37,8 +38,9 @@ states/Walk-loop/position = Vector2(447, 182)
 transitions = ["Start", "Idle-loop", SubResource("AnimationNodeStateMachineTransition_0yxea"), "Idle-loop", "Walk-loop", SubResource("AnimationNodeStateMachineTransition_rh1j3"), "Walk-loop", "Idle-loop", SubResource("AnimationNodeStateMachineTransition_jslxa")]
 
 [node name="Character_Penguin" unique_id=611752080 instance=ExtResource("1_tyi0o")]
+script = ExtResource("2_6ovgj")
 
-[node name="Character1_Reference" parent="." index="0" unique_id=589992047]
+[node name="Character1_Reference" parent="." index="0" unique_id=1589333800]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
 
 [node name="Skeleton3D" parent="Character1_Reference" index="0" unique_id=741447230]
@@ -47,13 +49,13 @@ bones/3/position = Vector3(-1.110223e-16, -0.4070096, 0)
 bones/6/position = Vector3(-1.110223e-16, -0.4106854, 0)
 bones/7/position = Vector3(1.110223e-16, -0.4070096, 0)
 
-[node name="pSphere3" parent="Character1_Reference/Skeleton3D" index="0" unique_id=634928072]
+[node name="pSphere3" parent="Character1_Reference/Skeleton3D" index="0" unique_id=1595982215]
 material_override = SubResource("StandardMaterial3D_6ovgj")
 
-[node name="polySurface1" parent="Character1_Reference/Skeleton3D" index="1" unique_id=1801908639]
+[node name="polySurface1" parent="Character1_Reference/Skeleton3D" index="1" unique_id=603096186]
 material_override = SubResource("StandardMaterial3D_6ovgj")
 
-[node name="polySurface2" parent="Character1_Reference/Skeleton3D" index="2" unique_id=889531464]
+[node name="polySurface2" parent="Character1_Reference/Skeleton3D" index="2" unique_id=298452141]
 material_override = SubResource("StandardMaterial3D_6ovgj")
 
 [node name="AnimationPlayer" parent="." index="2" unique_id=1346008215]

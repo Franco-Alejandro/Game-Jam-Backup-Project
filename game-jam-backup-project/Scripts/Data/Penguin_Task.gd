@@ -10,5 +10,6 @@ class_name TaskResource
 	"pebbles": 0,
 	"ice_cream": 0
 }
+@export var location : Vector3 = Vector3.ZERO;
 @export var required_job: JobResource
 @export var animation_name: String
