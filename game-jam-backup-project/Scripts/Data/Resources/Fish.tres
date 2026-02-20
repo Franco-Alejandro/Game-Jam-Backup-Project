@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ResourceType" format=3 uid="uid://lpa7ybk24joh"]
+
+[ext_resource type="Script" uid="uid://b23xxifyf302n" path="res://Scripts/Data/Resources/Resource_Type.gd" id="1_0leax"]
+[ext_resource type="Texture2D" uid="uid://bqjd8fi11g3wg" path="res://Assets/Icons/fish_icon.png" id="1_4pwpo"]
+
+[resource]
+script = ExtResource("1_0leax")
+id = &"fish"
+icon = ExtResource("1_4pwpo")
+color = Color(0.45204723, 0.48090565, 0.94289964, 1)
+metadata/_custom_type_script = "uid://b23xxifyf302n"

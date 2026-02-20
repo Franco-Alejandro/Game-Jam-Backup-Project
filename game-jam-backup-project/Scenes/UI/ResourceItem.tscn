@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://8vm37vxu2386"]
+
+[ext_resource type="Texture2D" uid="uid://bqjd8fi11g3wg" path="res://Assets/Icons/fish_icon.png" id="1_63lyd"]
+
+[node name="ResourceItem" type="HBoxContainer" unique_id=1538387271]
+theme_override_constants/separation = 20
+
+[node name="Icon" type="TextureRect" parent="." unique_id=211899402]
+clip_contents = true
+custom_minimum_size = Vector2(30, 20)
+layout_mode = 2
+texture = ExtResource("1_63lyd")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="." unique_id=1534209299]
+layout_mode = 2
+text = "100"
