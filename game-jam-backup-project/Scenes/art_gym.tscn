@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dqiutrqk4itsy"]
+
+[node name="Art_Gym" type="Node3D" unique_id=1874026479]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1543731571]
+transform = Transform3D(97.07849, 0, 0, 0, 1, 0, 0, 0, 99.83251, 0, 0, 0)
