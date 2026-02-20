@@ -1,5 +1,5 @@
 extends Button
-class_name TaskButton
+class_name TaskContainerButton
 
 @export var task : TaskResource
 

@@ -13,6 +13,7 @@ var task_duration_left : float = 0
 var penguin_data : PenguinResource = PenguinResource.new() 
 
 func _ready():
+	penguin_data.penguin_name = "Juan"
 	add_to_group("penguins")
 	
 func _process(delta: float) -> void:
