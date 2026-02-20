@@ -6,6 +6,7 @@
 [ext_resource type="Resource" uid="uid://lpa7ybk24joh" path="res://Scripts/Data/Resources/Fish.tres" id="4_4283g"]
 [ext_resource type="Resource" uid="uid://dshqdkw73b6if" path="res://Scripts/Data/Resources/Pebble.tres" id="5_t7y5i"]
 [ext_resource type="Resource" uid="uid://ckuy31nx7nuf3" path="res://Scripts/Data/Resources/IceCream.tres" id="6_x5vs7"]
+[ext_resource type="PackedScene" uid="uid://cs1kwb10pi7se" path="res://Scenes/Colony/Colony_Scene.tscn" id="7_0eyfg"]
 
 [node name="ColonyBaseNode" type="Node3D" unique_id=1373715439]
 
@@ -43,3 +44,6 @@ production_amount = 2
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=775402390]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.4256124)
 omni_range = 100.0
+
+[node name="ColonyScene" parent="." unique_id=423688789 instance=ExtResource("7_0eyfg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.54994917, 0.066310704, -4.6156006)
