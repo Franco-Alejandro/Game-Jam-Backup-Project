@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="TaskResource" format=3 uid="uid://bm4sbtv416r35"]
+
+[ext_resource type="Script" uid="uid://dnmarx8f1e3ss" path="res://Scripts/Data/Penguin_Task.gd" id="1_l3ick"]
+
+[resource]
+script = ExtResource("1_l3ick")
+task_name = "Run around"
+description = "Runs around like an idiot"
+duration = 5.0
+metadata/_custom_type_script = "uid://dnmarx8f1e3ss"
