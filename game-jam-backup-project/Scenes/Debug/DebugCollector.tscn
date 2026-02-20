@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://c0vqc10ll0fww"]
+
+[ext_resource type="Script" uid="uid://claxw4w8edxk0" path="res://Scripts/Debug/DebugCollector.gd" id="1_cuv8s"]
+[ext_resource type="PackedScene" uid="uid://ccu7xctb4aimt" path="res://Assets/SM_Tree_Pine_01.fbx" id="2_lo7eg"]
+
+[node name="FishCollector" type="Node3D" unique_id=1060373060]
+script = ExtResource("1_cuv8s")
+
+[node name="SM_Tree_Pine_01" parent="." unique_id=1682188753 instance=ExtResource("2_lo7eg")]
+transform = Transform3D(0.58784926, 0, 0, 0, 0.17042154, 0, 0, 0, 0.7034644, 0, 0, 0)
+
+[node name="Label3D" type="Label3D" parent="." unique_id=1015165490]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5026101, 0)
+modulate = Color(0, 0.5254902, 1, 1)
+text = "Fish collector"
+font_size = 100

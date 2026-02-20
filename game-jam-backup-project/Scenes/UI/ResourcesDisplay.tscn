@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://b6801scexnjbw"]
+
+[ext_resource type="PackedScene" uid="uid://8vm37vxu2386" path="res://Scenes/UI/ResourcesItem.tscn" id="1_63lyd"]
+[ext_resource type="Script" uid="uid://d0rojv0gsayrh" path="res://Scripts/UI/Resources_Item.gd" id="2_nubhp"]
+[ext_resource type="Resource" uid="uid://lpa7ybk24joh" path="res://Scripts/Data/Resources/Fish.tres" id="2_s8sw1"]
+[ext_resource type="Resource" uid="uid://dshqdkw73b6if" path="res://Scripts/Data/Resources/Pebble.tres" id="4_vf1mk"]
+[ext_resource type="Resource" uid="uid://ckuy31nx7nuf3" path="res://Scripts/Data/Resources/IceCream.tres" id="5_ync5s"]
+
+[node name="ResourcesDisplay" type="HBoxContainer" unique_id=166018451]
+theme_override_constants/separation = 20
+
+[node name="FishResourceItem" parent="." unique_id=1538387271 instance=ExtResource("1_63lyd")]
+layout_mode = 2
+script = ExtResource("2_nubhp")
+resource_type = ExtResource("2_s8sw1")
+
+[node name="PebbleResourceItem" parent="." unique_id=225175962 instance=ExtResource("1_63lyd")]
+layout_mode = 2
+script = ExtResource("2_nubhp")
+resource_type = ExtResource("4_vf1mk")
+
+[node name="IceCreamResourceItem" parent="." unique_id=1588506953 instance=ExtResource("1_63lyd")]
+layout_mode = 2
+script = ExtResource("2_nubhp")
+resource_type = ExtResource("5_ync5s")

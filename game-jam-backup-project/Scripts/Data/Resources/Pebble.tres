@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ResourceType" format=3 uid="uid://dshqdkw73b6if"]
+
+[ext_resource type="Texture2D" uid="uid://tvfjhmrw8uqj" path="res://Assets/Icons/pebble_icon.png" id="1_arma8"]
+[ext_resource type="Script" uid="uid://b23xxifyf302n" path="res://Scripts/Data/Resources/Resource_Type.gd" id="1_pjitv"]
+
+[resource]
+script = ExtResource("1_pjitv")
+id = &"pebble"
+icon = ExtResource("1_arma8")
+metadata/_custom_type_script = "uid://b23xxifyf302n"

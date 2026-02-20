@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://5sees20p6bj1"]
+
+[ext_resource type="Script" uid="uid://biskq8ddrrire" path="res://Scripts/UI/Resource_Spender.gd" id="1_6t1yo"]
+[ext_resource type="Resource" uid="uid://lpa7ybk24joh" path="res://Scripts/Data/Resources/Fish.tres" id="2_lgq2h"]
+[ext_resource type="Resource" uid="uid://dshqdkw73b6if" path="res://Scripts/Data/Resources/Pebble.tres" id="3_djbfx"]
+[ext_resource type="Resource" uid="uid://ckuy31nx7nuf3" path="res://Scripts/Data/Resources/IceCream.tres" id="4_mgdxc"]
+
+[node name="ResourceSpender" type="HBoxContainer" unique_id=795086547]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1310219678]
+layout_mode = 2
+
+[node name="Fish" type="Button" parent="HBoxContainer" unique_id=1320036587]
+layout_mode = 2
+text = "Fish"
+script = ExtResource("1_6t1yo")
+resource_type = ExtResource("2_lgq2h")
+
+[node name="Pebble" type="Button" parent="HBoxContainer" unique_id=1951860440]
+layout_mode = 2
+text = "Pebble"
+script = ExtResource("1_6t1yo")
+resource_type = ExtResource("3_djbfx")
+
+[node name="Ice Cream" type="Button" parent="HBoxContainer" unique_id=1352692387]
+layout_mode = 2
+text = "Ice cream
+"
+script = ExtResource("1_6t1yo")
+resource_type = ExtResource("4_mgdxc")
