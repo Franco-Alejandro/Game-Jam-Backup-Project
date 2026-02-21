@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://5sees20p6bj1"]
+
+[ext_resource type="Script" uid="uid://biskq8ddrrire" path="res://Scripts/UI/Resource_Spender.gd" id="1_msw6h"]
+
+[node name="ResourceSpender" type="HBoxContainer" unique_id=795086547]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1310219678]
+layout_mode = 2
+
+[node name="Fish" type="Button" parent="HBoxContainer" unique_id=1320036587]
+layout_mode = 2
+text = "Fish"
+script = ExtResource("1_msw6h")
+
+[node name="Pebble" type="Button" parent="HBoxContainer" unique_id=1951860440]
+layout_mode = 2
+text = "Pebble"
+script = ExtResource("1_msw6h")
+resource_id = 2
+
+[node name="Ice Cream" type="Button" parent="HBoxContainer" unique_id=1352692387]
+layout_mode = 2
+text = "Ice cream
+"
+script = ExtResource("1_msw6h")
+resource_id = 1

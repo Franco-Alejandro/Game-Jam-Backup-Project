@@ -3,9 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://c0gsy02twtl64" path="res://Scenes/Player.tscn" id="1_vk84e"]
 [ext_resource type="PackedScene" uid="uid://ddtugnq86umdw" path="res://Scenes/character_penguin.tscn" id="2_0eyfg"]
 [ext_resource type="PackedScene" uid="uid://c0vqc10ll0fww" path="res://Scenes/Debug/DebugCollector.tscn" id="3_jroqy"]
-[ext_resource type="Resource" uid="uid://lpa7ybk24joh" path="res://Scripts/Data/Resources/Fish.tres" id="4_4283g"]
-[ext_resource type="Resource" uid="uid://dshqdkw73b6if" path="res://Scripts/Data/Resources/Pebble.tres" id="5_t7y5i"]
-[ext_resource type="Resource" uid="uid://ckuy31nx7nuf3" path="res://Scripts/Data/Resources/IceCream.tres" id="6_x5vs7"]
 [ext_resource type="PackedScene" uid="uid://cs1kwb10pi7se" path="res://Scenes/Colony/Colony_Scene.tscn" id="7_0eyfg"]
 
 [node name="ColonyBaseNode" type="Node3D" unique_id=1373715439]
@@ -23,21 +20,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0429919, -0.40520376, -5.57
 
 [node name="FishCollector" parent="Debug" unique_id=1060373060 instance=ExtResource("3_jroqy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.3066907, -0.4847204, -5.664242)
-type = ExtResource("4_4283g")
 production_interval = 3.0
 
 [node name="PebbleCollector" parent="Debug" unique_id=1598958569 instance=ExtResource("3_jroqy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2048993, -0.48472017, -9.9907)
-type = ExtResource("5_t7y5i")
+resource_id = 2
 production_interval = 3.0
 
 [node name="FishCollectorSlow" parent="Debug" unique_id=1516982473 instance=ExtResource("3_jroqy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.1760387, -0.4847204, -9.432298)
-type = ExtResource("4_4283g")
 
 [node name="IceCreamCollector" parent="Debug" unique_id=1866626030 instance=ExtResource("3_jroqy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.4953775, -0.4847209, -8.90229)
-type = ExtResource("6_x5vs7")
+resource_id = 1
 production_interval = 1.0
 production_amount = 2
 

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ResourceType" format=3 uid="uid://dshqdkw73b6if"]
+
+[ext_resource type="Texture2D" uid="uid://tvfjhmrw8uqj" path="res://Assets/Icons/pebble_icon.png" id="1_dxq58"]
+[ext_resource type="Script" uid="uid://b23xxifyf302n" path="res://Scripts/Data/Resource_Type.gd" id="2_xkbic"]
+
+[resource]
+script = ExtResource("2_xkbic")
+id = 2
+icon = ExtResource("1_dxq58")
+metadata/_custom_type_script = "uid://b23xxifyf302n"
