@@ -7,12 +7,18 @@
 [ext_resource type="PackedScene" uid="uid://cq3wb872eswxd" path="res://Scenes/UI/Penguin_Selection.tscn" id="3_bhhdu"]
 [ext_resource type="PackedScene" uid="uid://5sees20p6bj1" path="res://Scenes/UI/Debug/ResourceSpenders.tscn" id="3_dewec"]
 [ext_resource type="PackedScene" uid="uid://34tugmfrbuv7" path="res://Scenes/UI/Penguin_Manager.tscn" id="4_52ee3"]
+[ext_resource type="AudioStream" uid="uid://decc6br1fpycs" path="res://Assets/SFX/ambient_wind.wav" id="8_bhhdu"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_vtd33"]
 specular_color = Color(0.7592268, 0.04579375, 0.076941706, 1)
 
 [node name="Player" type="Node3D" unique_id=196852108]
 script = ExtResource("1_rpqav")
+
+[node name="AmbiancePlayer" type="AudioStreamPlayer" parent="." unique_id=1687180872]
+stream = ExtResource("8_bhhdu")
+volume_db = -10.0
+autoplay = true
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=160749495]
 transform = Transform3D(1, 0, 0, 0, 0.8308485, 0.55649865, 0, -0.55649865, 0.8308485, 0, 7.1686764, 0)

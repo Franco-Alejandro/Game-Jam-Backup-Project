@@ -16,9 +16,13 @@ extends Node3D
 var target_zoom: float = 10.0
 var velocity: Vector3 = Vector3.ZERO
 
+@onready var ambiance_player: AudioStreamPlayer = $AmbiancePlayer
+
 func _ready():
 	camera.position.y = target_zoom
-
+	ambiance_player.play()
+	
+	
 func _process(delta):
 	var input_dir : Vector2 = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	var target_velocity : Vector3  = Vector3(input_dir.x, 0, input_dir.y) * move_speed

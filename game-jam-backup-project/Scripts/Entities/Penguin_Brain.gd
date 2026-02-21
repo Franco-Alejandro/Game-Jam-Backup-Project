@@ -27,6 +27,11 @@ var target_building : Building;
 var cozyness_regen_timer: float = 0
 @export var cozyness_regen_interval: float = 5.0  
 @export var cozyness_regen_amount: int = 1
+# audio shit
+@export var footstep_audio_player: AudioStreamPlayer3D 
+@export var footstep_sounds: Array[AudioStream] 
+@export var footstep_interval: float = 0.5  
+var footstep_timer: float = 0
 
 # DEBUG STUFF
 @onready var nav = $NavigationAgent3D
@@ -71,6 +76,14 @@ func _physics_process(delta):
 		velocity.y -= gravity * delta
 	else:
 		velocity.y = 0
+		
+	if _current_state == PenguinState.RUNNING_TO_TASK and is_on_floor():
+		footstep_timer += delta
+		if footstep_timer >= footstep_interval:
+			play_footstep()
+			footstep_timer = 0
+	else:
+		footstep_timer = 0  # Reset when not moving
 
 	# Check if we reached the location
 	if nav.is_navigation_finished():
@@ -249,3 +262,9 @@ func print_animation_flags():
 		var path = task_type_to_anim_flag[task_type]
 		print(path, ": ", anim_tree[path])
 	print("-------------------------")
+
+func play_footstep():
+	if footstep_audio_player and footstep_sounds.size() > 0:
+		var random_index = randi() % footstep_sounds.size()
+		footstep_audio_player.stream = footstep_sounds[random_index]
+		footstep_audio_player.play()
