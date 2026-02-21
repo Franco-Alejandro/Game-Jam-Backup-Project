@@ -38,3 +38,5 @@ columns = 4
 [node name="CancelButton" type="Button" parent="MarginContainer/HBoxContainer" unique_id=416950670]
 layout_mode = 2
 text = "Cancel"
+
+[connection signal="draw" from="." to="." method="_on_draw"]

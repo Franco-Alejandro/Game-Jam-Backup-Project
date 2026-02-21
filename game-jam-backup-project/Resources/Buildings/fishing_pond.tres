@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="BuildingResource" format=3 uid="uid://1187hrgi6chu"]
 
+[ext_resource type="PackedScene" uid="uid://dgb6bl37l55cw" path="res://Scenes/Debug/Fishing_Debug.tscn" id="1_1gfpa"]
 [ext_resource type="Script" uid="uid://h2ufpeq4u36f" path="res://Scripts/Data/Building_Resource.gd" id="1_pfbsi"]
-[ext_resource type="PackedScene" uid="uid://ddtugnq86umdw" path="res://Scenes/character_penguin.tscn" id="1_ropy6"]
 [ext_resource type="Script" uid="uid://dwevpm6iumg5j" path="res://Scripts/Data/Job_Resource.gd" id="2_ropy6"]
 [ext_resource type="Script" uid="uid://dnmarx8f1e3ss" path="res://Scripts/Data/Penguin_Task.gd" id="3_1gfpa"]
 [ext_resource type="Resource" uid="uid://cukrkqdiucmr3" path="res://Resources/Tasks/gather_fish.tres" id="5_1gfpa"]
@@ -16,5 +16,5 @@ required_resources = Dictionary[int, int]({
 2: 5
 })
 unlocks_tasks = Array[ExtResource("3_1gfpa")]([ExtResource("5_1gfpa")])
-building_scene = ExtResource("1_ropy6")
+building_scene = ExtResource("1_1gfpa")
 metadata/_custom_type_script = "uid://h2ufpeq4u36f"

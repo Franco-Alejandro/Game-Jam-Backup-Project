@@ -6,7 +6,6 @@ signal penguin_selected(penguin: PenguinBrain)
 func _ready():
 	var cancelButton : Button = $MarginContainer/HBoxContainer/CancelButton;
 	cancelButton.pressed.connect(_on_cancel_pressed)
-	show_penguins()
 
 func show_penguins():
 	var penguins = get_tree().get_nodes_in_group("penguins")
@@ -26,3 +25,7 @@ func _on_penguin_button_pressed(penguin: PenguinBrain):
 	
 func _on_cancel_pressed():
 	hide()
+
+
+func _on_draw() -> void:
+	show_penguins()
