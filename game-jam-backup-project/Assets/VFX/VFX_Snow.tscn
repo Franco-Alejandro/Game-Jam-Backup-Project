@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://dhycuuijru8rr"]
+
+[sub_resource type="Curve" id="Curve_hm0pa"]
+_data = [Vector2(0, 0.48401332), 0.0, 0.0, 0, 0, Vector2(0.1235955, 0.29051828), -1.3819368, -1.3819368, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_5u5vv"]
+curve = SubResource("Curve_hm0pa")
+
+[sub_resource type="Gradient" id="Gradient_lt7we"]
+offsets = PackedFloat32Array(0.15757576, 0.3121212)
+colors = PackedColorArray(1, 1, 1, 0.5411765, 1, 1, 1, 0.93333334)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_bvk1a"]
+gradient = SubResource("Gradient_lt7we")
+
+[sub_resource type="Curve" id="Curve_gaxqv"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.13764045, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_gfort"]
+curve = SubResource("Curve_gaxqv")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_gaxqv"]
+lifetime_randomness = 0.5
+emission_shape = 3
+emission_box_extents = Vector3(10, 0.1, 10)
+direction = Vector3(0, -1, 0)
+spread = 35.238
+initial_velocity_min = 1.0
+initial_velocity_max = 5.0
+orbit_velocity_min = -2.0
+orbit_velocity_max = 2.0000002
+scale_min = 0.03
+scale_max = 0.06
+scale_curve = SubResource("CurveTexture_gfort")
+color_initial_ramp = SubResource("GradientTexture1D_bvk1a")
+alpha_curve = SubResource("CurveTexture_5u5vv")
+turbulence_enabled = true
+turbulence_noise_scale = 4.0
+turbulence_noise_speed_random = 0.0
+turbulence_influence_min = 0.020000001
+turbulence_influence_max = 0.080000006
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gaxqv"]
+transparency = 1
+shading_mode = 0
+disable_ambient_light = true
+disable_fog = true
+disable_specular_occlusion = true
+vertex_color_use_as_albedo = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_oyhyk"]
+material = SubResource("StandardMaterial3D_gaxqv")
+
+[node name="VfxSnow" type="GPUParticles3D" unique_id=1165855828]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.9360814, 17.101595, -4.7661457)
+gi_mode = 0
+amount = 800
+lifetime = 10.0
+preprocess = 30.0
+speed_scale = 0.15
+randomness = 0.1
+transform_align = 1
+process_material = SubResource("ParticleProcessMaterial_gaxqv")
+draw_pass_1 = SubResource("QuadMesh_oyhyk")
