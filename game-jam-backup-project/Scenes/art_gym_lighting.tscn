@@ -28,8 +28,8 @@ fog_sky_affect = 0.428
 environment = SubResource("Environment_w7xxq")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1603120560]
-transform = Transform3D(0.08117316, 0.99670005, -2.0470331e-08, -0.98929834, 0.08057034, 0.12164428, 0.12124284, -0.009874228, 0.9925738, 0, 0, 0)
-light_color = Color(0.65360445, 0.43793532, 0.5024847, 1)
+transform = Transform3D(0.08117317, 0.9967001, -4.488763e-09, -0.760489, 0.06193569, 0.64639056, 0.6442573, -0.052469563, 0.7630069, 0, 0, 0)
+light_color = Color(0.45012486, 0.34967548, 0.49093848, 1)
 light_energy = 1.463
 light_indirect_energy = 1.867
 light_volumetric_fog_energy = 1.667

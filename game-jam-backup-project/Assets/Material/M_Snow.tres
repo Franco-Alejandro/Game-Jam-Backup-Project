@@ -1,0 +1,15 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://cn82u0sxbmqjo"]
+
+[ext_resource type="Shader" uid="uid://dxo0niadqpfmg" path="res://Assets/Shaders/S_Snow_01.gdshader" id="1_kmumv"]
+[ext_resource type="Texture2D" uid="uid://olh23y5c7v5e" path="res://Assets/Shaders/T_GrainNoise_512x512.png" id="2_u67tq"]
+[ext_resource type="Texture2D" uid="uid://dkfkpuhem5qlx" path="res://Assets/Shaders/T_PerlinNoise_256x256.png" id="3_drwx3"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_kmumv")
+shader_parameter/noise_texture = ExtResource("3_drwx3")
+shader_parameter/grain_texture = ExtResource("2_u67tq")
+shader_parameter/base_color = Vector3(0.65, 0.75, 0.9)
+shader_parameter/blend_color = Vector3(0.35, 0.45, 0.75)
+shader_parameter/sparkle_color = Vector3(0.21, 0.2, 50)
+shader_parameter/sparkle_emissive = 1.0
