@@ -1,15 +1,15 @@
 [gd_scene format=3 uid="uid://cq3wb872eswxd"]
 
-[ext_resource type="Script" uid="uid://dnjgquo1yw8n5" path="res://Scripts/Systems/UI/Penguin_Selection_Hud.gd" id="1_ni2xp"]
+[ext_resource type="Script" uid="uid://dbb006w0akty5" path="res://Scripts/Systems/UI/Penguin_Selection_Hud.gd" id="1_dgnox"]
 
-[node name="PenguinSelectionHud" type="Control" unique_id=1307242502]
+[node name="PenguinSelection" type="Control" unique_id=1307242502]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_ni2xp")
+script = ExtResource("1_dgnox")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1817113341]
 layout_mode = 1

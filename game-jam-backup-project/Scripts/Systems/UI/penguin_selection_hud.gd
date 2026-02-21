@@ -2,10 +2,6 @@ extends Control
 class_name PenguinSelectionHUD
 
 signal penguin_selected(penguin: PenguinBrain)
-signal cancelled()
-
-@export var penguin_manager_scene: PackedScene  
-var penguin_manager : PenguinManager;
 
 func _ready():
 	var cancelButton : Button = $MarginContainer/HBoxContainer/CancelButton;
@@ -30,4 +26,4 @@ func _on_penguin_button_pressed(penguin: PenguinBrain):
 
 	
 func _on_cancel_pressed():
-	penguin_manager.hide()
+	hide()
