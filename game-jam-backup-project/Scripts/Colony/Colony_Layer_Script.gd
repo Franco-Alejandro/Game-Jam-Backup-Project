@@ -2,10 +2,13 @@ extends Node
 class_name ColonyLayer
 
 var buildings: Array[Building]
+var active: bool = false
 
 func activate_layer() -> void:
 	for building in buildings:
 		building.activate()
+		
+	active = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
