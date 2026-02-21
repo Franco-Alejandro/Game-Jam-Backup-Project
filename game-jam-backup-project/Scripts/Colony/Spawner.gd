@@ -5,7 +5,6 @@ class_name Spawner
 @export var spawn_interval: float = 5.0
 @export var spawn_radius: float = 10.0
 
-var _spawn_timer: float = 0.0
 var _spawned_penguins: Array = []
 
 func _ready():
