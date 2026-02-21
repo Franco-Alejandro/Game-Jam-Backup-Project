@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://ygs3q786cehn"]
+
+[ext_resource type="Script" uid="uid://d0ukrrq470yqx" path="res://Scripts/Colony/Building_Info_Script.gd" id="1_x3ex1"]
+
+[node name="BuildingInfoScene" type="Node3D" unique_id=1410422648]
+script = ExtResource("1_x3ex1")
+
+[node name="Label" type="Label3D" parent="." unique_id=2034913704]
+text = "Test text from editor"
