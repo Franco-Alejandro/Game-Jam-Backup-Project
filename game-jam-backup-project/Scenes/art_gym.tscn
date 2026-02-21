@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://btiyra0yr0sm4" path="res://Assets/SM_Tree_Pine_03.fbx" id="5_ffu28"]
 [ext_resource type="PackedScene" uid="uid://d1yidmfxypdln" path="res://Assets/SM_Path_Long_03.fbx" id="6_cmn64"]
 [ext_resource type="PackedScene" uid="uid://c8oxjam3gfaj5" path="res://Assets/SM_Path_Small_01.fbx" id="7_1ioel"]
+[ext_resource type="Shader" uid="uid://pu58qolotc87" path="res://Assets/Shaders/S_Emissive_Flickering.gdshader" id="8_oc8rl"]
+[ext_resource type="Shader" uid="uid://wc3virh1mgdx" path="res://Assets/Shaders/S_Emissive.gdshader" id="9_73ul0"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_o7e4v"]
 render_priority = 0
@@ -18,10 +20,24 @@ shader_parameter/blend_color = Vector3(0.181, 0.293, 0.615)
 shader_parameter/sparkle_color = Vector3(0.21, 0.205, 50)
 shader_parameter/sparkle_emissive = 1.0
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ffu28"]
+render_priority = 0
+shader = ExtResource("8_oc8rl")
+shader_parameter/base_color = Color(0.87, 0.3, 0.2, 1)
+shader_parameter/emissive_strength_max = 18.20000027120184
+shader_parameter/emissive_strength_min = 5.30000007897636
+shader_parameter/flickering_speed = 10.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cmn64"]
+render_priority = 0
+shader = ExtResource("9_73ul0")
+shader_parameter/base_color = Color(0.87, 0.3, 0.2, 1)
+shader_parameter/emissive_strength = 12.0
+
 [node name="Art_Gym" type="Node3D" unique_id=1874026479]
 
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1543731571]
-transform = Transform3D(575.58606, 0, 0, 0, 1, 0, 0, 0, 627.35925, -1.125782, 0.013204098, 2.800541)
+transform = Transform3D(575.58606, 0, 0, 0, 1, 0, 0, 0, 627.35925, -1.1507435, 0.16135478, 2.8221412)
 material_override = SubResource("ShaderMaterial_o7e4v")
 
 [node name="SM_Tree_Pine_01" parent="." unique_id=1257111192 instance=ExtResource("4_73ul0")]
@@ -31,7 +47,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3705454, 0.4008342, 12.4216
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6141958, 0.41152525, 9.000254)
 
 [node name="SM_Path_Long_03" parent="." unique_id=57814381 instance=ExtResource("6_cmn64")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.149013, 0.5199919, 10.72694)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.149013, 0.5277505, 10.72694)
 
 [node name="SM_Path_Small_01" parent="." unique_id=116502213 instance=ExtResource("7_1ioel")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.765797, 0.5547466, 12.839894)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="." unique_id=1540040857]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.286519, 1.1893119, 0.38226664)
+material = SubResource("ShaderMaterial_ffu28")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=1068474575]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.3224745, 1.1858888, 1.8785818)
+material = SubResource("ShaderMaterial_cmn64")
