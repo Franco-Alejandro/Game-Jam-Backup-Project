@@ -39,7 +39,12 @@ materials/extract_format=0
 materials/extract_path=""
 _subresources={
 "materials": {
-"Material.001": {
+"Material.002": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Assets/Material/M_GradientTextureSample.tres",
+"use_external/path": "uid://daqop5c6ntq4x"
+},
+"Material.009": {
 "use_external/enabled": true,
 "use_external/fallback_path": "res://Assets/Material/M_EmissiveFlicker.tres",
 "use_external/path": "uid://c75wqtlodpxjd"
