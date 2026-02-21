@@ -79,6 +79,22 @@ advance_condition = &"is_moving"
 advance_mode = 2
 advance_condition = &"is_moving"
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_icov4"]
+advance_mode = 2
+advance_condition = &"is_idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_7m56f"]
+advance_mode = 2
+advance_condition = &"is_idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_mvqd5"]
+advance_mode = 2
+advance_condition = &"is_idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_diart"]
+advance_mode = 2
+advance_condition = &"is_idle"
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_7ojjn"]
 states/Idle-loop/node = SubResource("AnimationNodeAnimation_wwq43")
 states/Idle-loop/position = Vector2(293, 182)
@@ -92,37 +108,37 @@ states/Task_Play-loop/node = SubResource("AnimationNodeAnimation_diart")
 states/Task_Play-loop/position = Vector2(367, 305)
 states/Walk-loop/node = SubResource("AnimationNodeAnimation_b2vlc")
 states/Walk-loop/position = Vector2(447, 182)
-transitions = ["Start", "Idle-loop", SubResource("AnimationNodeStateMachineTransition_0yxea"), "Idle-loop", "Walk-loop", SubResource("AnimationNodeStateMachineTransition_rh1j3"), "Walk-loop", "Idle-loop", SubResource("AnimationNodeStateMachineTransition_jslxa"), "Walk-loop", "Task_Pebbles-loop", SubResource("AnimationNodeStateMachineTransition_re68c"), "Task_Pebbles-loop", "Walk-loop", SubResource("AnimationNodeStateMachineTransition_kq8s7"), "Walk-loop", "Task_Fish-loop", SubResource("AnimationNodeStateMachineTransition_mw6sv"), "Walk-loop", "Task_Icecream-loop", SubResource("AnimationNodeStateMachineTransition_pnm8g"), "Walk-loop", "Task_Play-loop", SubResource("AnimationNodeStateMachineTransition_q0dne"), "Task_Play-loop", "Walk-loop", SubResource("AnimationNodeStateMachineTransition_a6hni"), "Task_Icecream-loop", "Walk-loop", SubResource("AnimationNodeStateMachineTransition_ks8eh"), "Task_Fish-loop", "Walk-loop", SubResource("AnimationNodeStateMachineTransition_st6io")]
+transitions = ["Start", "Idle-loop", SubResource("AnimationNodeStateMachineTransition_0yxea"), "Idle-loop", "Walk-loop", SubResource("AnimationNodeStateMachineTransition_rh1j3"), "Walk-loop", "Idle-loop", SubResource("AnimationNodeStateMachineTransition_jslxa"), "Walk-loop", "Task_Pebbles-loop", SubResource("AnimationNodeStateMachineTransition_re68c"), "Task_Pebbles-loop", "Walk-loop", SubResource("AnimationNodeStateMachineTransition_kq8s7"), "Walk-loop", "Task_Fish-loop", SubResource("AnimationNodeStateMachineTransition_mw6sv"), "Walk-loop", "Task_Icecream-loop", SubResource("AnimationNodeStateMachineTransition_pnm8g"), "Walk-loop", "Task_Play-loop", SubResource("AnimationNodeStateMachineTransition_q0dne"), "Task_Play-loop", "Walk-loop", SubResource("AnimationNodeStateMachineTransition_a6hni"), "Task_Icecream-loop", "Walk-loop", SubResource("AnimationNodeStateMachineTransition_ks8eh"), "Task_Fish-loop", "Walk-loop", SubResource("AnimationNodeStateMachineTransition_st6io"), "Task_Play-loop", "Idle-loop", SubResource("AnimationNodeStateMachineTransition_icov4"), "Task_Icecream-loop", "Idle-loop", SubResource("AnimationNodeStateMachineTransition_7m56f"), "Task_Fish-loop", "Idle-loop", SubResource("AnimationNodeStateMachineTransition_mvqd5"), "Task_Pebbles-loop", "Idle-loop", SubResource("AnimationNodeStateMachineTransition_diart")]
 graph_offset = Vector2(18, 64)
 
 [node name="Character_Penguin" unique_id=611752080 instance=ExtResource("1_tyi0o")]
 
-[node name="Character1_Reference" parent="." index="0" unique_id=1075773729]
+[node name="Character1_Reference" parent="." index="0" unique_id=589992047]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
 
-[node name="Skeleton3D" parent="Character1_Reference" index="0" unique_id=1961297799]
+[node name="Skeleton3D" parent="Character1_Reference" index="0" unique_id=741447230]
 bones/2/position = Vector3(1.110223e-16, -0.4106854, 0)
 bones/3/position = Vector3(-1.110223e-16, -0.4070096, 0)
 bones/6/position = Vector3(-1.110223e-16, -0.4106854, 0)
 bones/7/position = Vector3(1.110223e-16, -0.4070096, 0)
-bones/9/rotation = Quaternion(0.0045753256, -0.027159516, 0.022890313, 0.99935853)
-bones/10/rotation = Quaternion(-0.0054523423, -0.1316626, 0.04213034, 0.990384)
-bones/11/rotation = Quaternion(0, 0, -0.010414639, 0.99994576)
-bones/12/rotation = Quaternion(0, 0, -0.4961632, 0.86822927)
-bones/17/rotation = Quaternion(0, 0, 0.015874578, 0.999874)
-bones/18/rotation = Quaternion(-0.03164761, 0.2314483, 0.4497521, 0.86206335)
-bones/23/rotation = Quaternion(0.019344948, 0.11808576, 0.03914707, 0.9920429)
+bones/9/rotation = Quaternion(-0.0057116346, 0.0360992, -0.015026227, 0.99921894)
+bones/10/rotation = Quaternion(-0.00038541932, 0.087157, 0.0044052554, 0.9961848)
+bones/11/rotation = Quaternion(0, 0, -0.010677219, 0.9999431)
+bones/12/rotation = Quaternion(-0.03955538, 0.032496408, -0.49851042, 0.86537087)
+bones/17/rotation = Quaternion(0, 0, -0.0035635908, 0.9999937)
+bones/18/rotation = Quaternion(0.009296595, 2.8014558e-05, 0.4997207, 0.8661367)
+bones/23/rotation = Quaternion(0.021645933, 0.124177925, 0.03678945, 0.9913415)
 
-[node name="pSphere3" parent="Character1_Reference/Skeleton3D" index="0" unique_id=638554111]
+[node name="pSphere3" parent="Character1_Reference/Skeleton3D" index="0" unique_id=634928072]
 material_override = SubResource("StandardMaterial3D_6ovgj")
 
-[node name="polySurface1" parent="Character1_Reference/Skeleton3D" index="1" unique_id=998721882]
+[node name="polySurface1" parent="Character1_Reference/Skeleton3D" index="1" unique_id=1801908639]
 material_override = SubResource("StandardMaterial3D_6ovgj")
 
-[node name="polySurface2" parent="Character1_Reference/Skeleton3D" index="2" unique_id=1064428227]
+[node name="polySurface2" parent="Character1_Reference/Skeleton3D" index="2" unique_id=889531464]
 material_override = SubResource("StandardMaterial3D_6ovgj")
 
-[node name="AnimationPlayer" parent="." index="2" unique_id=438483991]
+[node name="AnimationPlayer" parent="." index="2" unique_id=1346008215]
 libraries/ANM_Penguin_CollectFish-loop = ExtResource("4_7m56f")
 libraries/ANM_Penguin_CollectIcecream-loop = ExtResource("5_mvqd5")
 libraries/ANM_Penguin_CollectPebbles-loop = ExtResource("4_0yxea")
