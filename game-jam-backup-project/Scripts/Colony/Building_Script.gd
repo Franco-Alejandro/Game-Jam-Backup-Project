@@ -42,8 +42,9 @@ func build() -> void:
 		if scaffolding_scene != null:
 			scaffolding_scene.queue_free()
 		
-		if building_resource.provided_living_space > 0:
-			resource_manager.add_resource(ResourceType.RESOURCE_ID.LIVING_SPACE, building_resource.provided_living_space)
+		if not Engine.is_editor_hint():
+			if building_resource.provided_living_space > 0:
+				resource_manager.add_resource(ResourceType.RESOURCE_ID.LIVING_SPACE, building_resource.provided_living_space)
 	
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
