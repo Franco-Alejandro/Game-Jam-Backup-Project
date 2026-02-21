@@ -105,9 +105,13 @@ func set_task(task: TaskResource):
 	
 	var available_buildings : Array[Building] = colony.get_built_buildings();
 	var building_index : int = available_buildings.find_custom(is_building_accesible.bind())
+	if building_index < 0:
+		set_state(PenguinState.IDLE)
+		
 	target_building = available_buildings.get(building_index);
 	if not target_building:
 		return;
+		
 	target_building.is_being_used = true;
 	set_state(PenguinState.SELECT_LOCATION)
 	task_duration_left = task.duration
@@ -141,6 +145,8 @@ func do_task(delta: float):
 	if (task_duration_left <= 0):
 		task_duration_left = 0
 		penguin_data.current_task = null
+		target_building.is_being_used = false
+		target_building = null
 		set_state(PenguinState.IDLE)
 		
 	pass
