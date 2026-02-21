@@ -4,6 +4,7 @@
 
 [resource]
 script = ExtResource("1_l3ick")
+task_type = 3
 task_name = "Run around"
 description = "Runs around like an idiot"
 duration = 5.0

@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://jjibg4tss2mf"]
+
+[ext_resource type="Shader" uid="uid://dss4381p5giln" path="res://Assets/Shaders/S_BasicTextureSample.gdshader" id="1_iwluy"]
+[ext_resource type="Texture2D" uid="uid://dd273g388w4cx" path="res://Assets/Shaders/T_GradientAtlas.png" id="2_ite2q"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_iwluy")
+shader_parameter/color_texture = ExtResource("2_ite2q")
+shader_parameter/roughness = 0.0
+shader_parameter/metalness = 0.0

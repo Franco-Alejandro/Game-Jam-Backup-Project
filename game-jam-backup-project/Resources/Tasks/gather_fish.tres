@@ -4,6 +4,7 @@
 
 [resource]
 script = ExtResource("1_qbuuq")
+task_type = 2
 task_name = "Hunt for fish"
 description = "Gets fish"
 duration = 5.0
