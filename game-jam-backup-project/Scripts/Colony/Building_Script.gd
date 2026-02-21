@@ -7,6 +7,7 @@ var built: bool = false
 var is_being_used: bool = false
 
 @export var building_resource: BuildingResource
+@export var building_base: PackedScene
 var building_scene: Node = null
 var resource_manager: ResourceManager
 
