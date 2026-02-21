@@ -57,6 +57,9 @@ func _physics_process(delta):
 	direction.y = 0
 	
 	if direction.length() > 0.1:
+		# Rotation
+		look_at(global_position - direction, Vector3.UP)
+		
 		direction = direction.normalized()
 		var horizontal_velocity = direction * speed
 		

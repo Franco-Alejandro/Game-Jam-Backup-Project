@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="BuildingResource" format=3 uid="uid://wt61dh35s5aq"]
 
-[ext_resource type="PackedScene" uid="uid://ccu7xctb4aimt" path="res://Assets/SM_Tree_Pine_01.fbx" id="1_203oj"]
+[ext_resource type="PackedScene" uid="uid://oauncgcs5uvp" path="res://Scenes/Debug/IceCream_Debug.tscn" id="1_00rbs"]
 [ext_resource type="Script" uid="uid://h2ufpeq4u36f" path="res://Scripts/Data/Building_Resource.gd" id="1_bha1u"]
 [ext_resource type="Script" uid="uid://dwevpm6iumg5j" path="res://Scripts/Data/Job_Resource.gd" id="2_203oj"]
 [ext_resource type="Script" uid="uid://dnmarx8f1e3ss" path="res://Scripts/Data/Penguin_Task.gd" id="3_00rbs"]
@@ -11,5 +11,5 @@ script = ExtResource("1_bha1u")
 building_name = "Ice Cream Factory"
 description = "A factory that penguins can produce ice cream in"
 unlocks_tasks = Array[ExtResource("3_00rbs")]([ExtResource("5_00rbs")])
-building_scene = ExtResource("1_203oj")
+building_scene = ExtResource("1_00rbs")
 metadata/_custom_type_script = "uid://h2ufpeq4u36f"

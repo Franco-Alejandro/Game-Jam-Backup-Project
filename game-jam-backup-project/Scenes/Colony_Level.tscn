@@ -15,27 +15,28 @@ polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
 navigation_mesh = SubResource("NavigationMesh_t7y5i")
 
 [node name="Floor" type="CSGBox3D" parent="NavigationRegion3D" unique_id=408071505]
-transform = Transform3D(19.5884, 0, 0, 0, 0.998194, 0, 0, 0, 36.4178, 0, -0.945347, 0)
+transform = Transform3D(19.5884, 0, 0, 0, 0.998194, 0, 0, 0, 36.4178, 10.799086, -0.945347, 7.8908205)
 use_collision = true
+size = Vector3(3.6846313, 1, 1.9050293)
 
 [node name="Player" parent="." unique_id=196852108 instance=ExtResource("1_vk84e")]
 
 [node name="Debug" type="Node" parent="." unique_id=1297205294]
 
 [node name="FishCollector" parent="Debug" unique_id=1060373060 instance=ExtResource("3_jroqy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.3066907, -0.4847204, -5.664242)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.391943, -0.4847204, -16.942978)
 production_interval = 3.0
 
 [node name="PebbleCollector" parent="Debug" unique_id=1598958569 instance=ExtResource("3_jroqy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2048993, -0.48472017, -9.9907)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.10301113, -0.48472017, -17.69474)
 resource_id = 2
 production_interval = 3.0
 
 [node name="FishCollectorSlow" parent="Debug" unique_id=1516982473 instance=ExtResource("3_jroqy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.1760387, -0.4847204, -9.432298)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.063842, -0.4847204, -17.284605)
 
 [node name="IceCreamCollector" parent="Debug" unique_id=1866626030 instance=ExtResource("3_jroqy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.4953775, -0.4847209, -8.90229)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.068824, -0.4847209, -17.2236)
 resource_id = 1
 production_interval = 1.0
 production_amount = 2
