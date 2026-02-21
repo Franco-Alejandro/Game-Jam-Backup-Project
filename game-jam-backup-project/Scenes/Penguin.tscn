@@ -2,13 +2,17 @@
 
 [ext_resource type="Script" uid="uid://2nclvtlb431i" path="res://Scripts/Entities/Penguin_Brain.gd" id="1_02pnu"]
 [ext_resource type="PackedScene" uid="uid://ddtugnq86umdw" path="res://Scenes/character_penguin.tscn" id="2_es5b8"]
+[ext_resource type="AudioStream" uid="uid://dyxdubaxa0g58" path="res://Assets/SFX/digital_footstep_snow_1.wav" id="2_ox6xk"]
+[ext_resource type="AudioStream" uid="uid://ddwst2uwb0wio" path="res://Assets/SFX/digital_footstep_snow_2.wav" id="3_r5y4i"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ox6xk"]
 radius = 0.4906006
 height = 0.9812012
 
-[node name="Penguin" type="CharacterBody3D" unique_id=1889786772]
+[node name="Penguin" type="CharacterBody3D" unique_id=1889786772 node_paths=PackedStringArray("footstep_audio_player")]
 script = ExtResource("1_02pnu")
+footstep_audio_player = NodePath("AudioStreamPlayer3D")
+footstep_sounds = Array[AudioStream]([ExtResource("2_ox6xk"), ExtResource("3_r5y4i")])
 
 [node name="Character_Penguin" parent="." unique_id=611752080 instance=ExtResource("2_es5b8")]
 
@@ -18,3 +22,7 @@ shape = SubResource("CapsuleShape3D_ox6xk")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1882180126]
 target_desired_distance = 3.0
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1825716103]
+volume_db = -2.0
+max_distance = 15.23
