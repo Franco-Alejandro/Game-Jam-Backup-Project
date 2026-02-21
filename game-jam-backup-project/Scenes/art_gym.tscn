@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://bkbruq0ncp2ke" path="res://Assets/Environment/SM_Building_Igloo.fbx" id="17_f14od"]
 [ext_resource type="PackedScene" uid="uid://dwic7vtsl6843" path="res://Assets/Environment/SM_PeddleMountain_01.fbx" id="18_l3cg1"]
 [ext_resource type="PackedScene" uid="uid://ccau0aoi2clk1" path="res://Assets/Environment/SM_Bonfire_01.fbx" id="19_8wgcd"]
+[ext_resource type="PackedScene" uid="uid://dhycuuijru8rr" path="res://Assets/VFX/VFX_Snow.tscn" id="20_50bps"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_o7e4v"]
 render_priority = 0
@@ -125,3 +126,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.096214, 0.6147971, 8.14436
 
 [node name="SM_Bonfire_01" parent="." unique_id=1344670851 instance=ExtResource("19_8wgcd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.765182, 0.54110265, -7.164237)
+
+[node name="VfxSnow" parent="." unique_id=1165855828 instance=ExtResource("20_50bps")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.1662655, 18.131289, -0.7248297)
