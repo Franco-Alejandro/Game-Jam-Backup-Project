@@ -56,25 +56,32 @@ transitions = ["Start", "Idle-loop", SubResource("AnimationNodeStateMachineTrans
 [node name="Character_Penguin" unique_id=611752080 instance=ExtResource("1_tyi0o")]
 script = ExtResource("2_6ovgj")
 
-[node name="Character1_Reference" parent="." index="0" unique_id=589992047]
+[node name="Character1_Reference" parent="." index="0" unique_id=1666729378]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
 
-[node name="Skeleton3D" parent="Character1_Reference" index="0" unique_id=741447230]
+[node name="Skeleton3D" parent="Character1_Reference" index="0" unique_id=1017156278]
 bones/2/position = Vector3(1.110223e-16, -0.4106854, 0)
 bones/3/position = Vector3(-1.110223e-16, -0.4070096, 0)
 bones/6/position = Vector3(-1.110223e-16, -0.4106854, 0)
 bones/7/position = Vector3(1.110223e-16, -0.4070096, 0)
+bones/9/rotation = Quaternion(-0.005585324, 0.038226333, -0.009296145, 0.99921036)
+bones/10/rotation = Quaternion(-0.00067607564, 0.08715524, 0.0077273916, 0.9961646)
+bones/11/rotation = Quaternion(0, 0, -0.010754629, 0.9999422)
+bones/12/rotation = Quaternion(-0.064234115, 0.05239187, -0.5377705, 0.8390066)
+bones/17/rotation = Quaternion(0, 0, -0.003551349, 0.9999937)
+bones/18/rotation = Quaternion(0.015518306, 0.0012818131, 0.49098572, 0.87102854)
+bones/23/rotation = Quaternion(0.017873645, 0.12786277, -0.016714884, 0.99149)
 
-[node name="pSphere3" parent="Character1_Reference/Skeleton3D" index="0" unique_id=634928072]
+[node name="pSphere3" parent="Character1_Reference/Skeleton3D" index="0" unique_id=928824462]
 material_override = SubResource("StandardMaterial3D_6ovgj")
 
-[node name="polySurface1" parent="Character1_Reference/Skeleton3D" index="1" unique_id=1801908639]
+[node name="polySurface1" parent="Character1_Reference/Skeleton3D" index="1" unique_id=1108278172]
 material_override = SubResource("StandardMaterial3D_6ovgj")
 
-[node name="polySurface2" parent="Character1_Reference/Skeleton3D" index="2" unique_id=889531464]
+[node name="polySurface2" parent="Character1_Reference/Skeleton3D" index="2" unique_id=237589966]
 material_override = SubResource("StandardMaterial3D_6ovgj")
 
-[node name="AnimationPlayer" parent="." index="2" unique_id=1346008215]
+[node name="AnimationPlayer" parent="." index="2" unique_id=1196865178]
 libraries/ANM_Penguin_CollectPebbles-loop = ExtResource("4_0yxea")
 libraries/ANM_Penguin_Idle = ExtResource("3_6ovgj")
 libraries/ANM_Penguin_Idle-loop = ExtResource("4_7ojjn")

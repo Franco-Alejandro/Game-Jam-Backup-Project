@@ -2,11 +2,9 @@ extends Node3D
 
 @onready var label: Label3D = $Label3D
 @onready var bar_fill: MeshInstance3D = $ProductionBar/BarFill
-
 @export var resource_id: ResourceType.RESOURCE_ID
 @export var production_interval: float = 5.0
 @export var production_amount: int = 1
-
 var resource_manager: ResourceManager
 var progress: float = 0.0
 
@@ -15,7 +13,7 @@ func _ready():
 	resource_manager = ResourceManagerSingleton
 	
 	if resource_id:
-		label.text = str(resource_id).capitalize() + " Collector"
+		label.text = ResourceType.RESOURCE_ID.keys()[resource_id].capitalize() + " Collector"
 
 func _process(delta):
 	progress += delta
