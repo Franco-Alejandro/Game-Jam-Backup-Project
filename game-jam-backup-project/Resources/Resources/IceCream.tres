@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ResourceType" format=3 uid="uid://ckuy31nx7nuf3"]
+
+[ext_resource type="Texture2D" uid="uid://dpe28m87sd6x1" path="res://Assets/Icons/ice_cream_icon.png" id="1_3cubr"]
+[ext_resource type="Script" uid="uid://b23xxifyf302n" path="res://Scripts/Data/Resource_Type.gd" id="2_t8gpd"]
+
+[resource]
+script = ExtResource("2_t8gpd")
+id = 1
+icon = ExtResource("1_3cubr")
+color = Color(1, 0.5710682, 0.50889343, 1)
+metadata/_custom_type_script = "uid://b23xxifyf302n"

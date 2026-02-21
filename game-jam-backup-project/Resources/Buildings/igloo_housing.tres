@@ -15,4 +15,5 @@ required_resources = {
 "pebbles": 5
 }
 building_scene = ExtResource("1_cip5e")
+provided_living_space = 3
 metadata/_custom_type_script = "uid://h2ufpeq4u36f"
