@@ -10,6 +10,10 @@
 [ext_resource type="Shader" uid="uid://pu58qolotc87" path="res://Assets/Shaders/S_Emissive_Flickering.gdshader" id="8_oc8rl"]
 [ext_resource type="Shader" uid="uid://wc3virh1mgdx" path="res://Assets/Shaders/S_Emissive.gdshader" id="9_73ul0"]
 [ext_resource type="PackedScene" uid="uid://dwvjglu5tb3vq" path="res://Scenes/art_gym_lighting.tscn" id="10_73ul0"]
+[ext_resource type="PackedScene" uid="uid://vkca3hjdpwls" path="res://Assets/SM_Lantern_Medium_03.fbx" id="11_ffu28"]
+[ext_resource type="PackedScene" uid="uid://rg3ye1mrs5ar" path="res://Assets/SM_Lantern_Big_02.fbx" id="12_cmn64"]
+[ext_resource type="PackedScene" uid="uid://dbdlds2jygs7k" path="res://Assets/SM_Lantern_Big_Hanging_02.fbx" id="13_o7e4v"]
+[ext_resource type="PackedScene" uid="uid://du2gy10gje6n7" path="res://Assets/SM_Lantern_Medium_Hanging_03.fbx" id="14_soyc4"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_o7e4v"]
 render_priority = 0
@@ -38,7 +42,7 @@ shader_parameter/emissive_strength = 12.0
 [node name="Art_Gym" type="Node3D" unique_id=1874026479]
 
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1543731571]
-transform = Transform3D(575.58606, 0, 0, 0, 1, 0, 0, 0, 627.35925, -1.1507435, 0.16135478, 2.8221412)
+transform = Transform3D(575.58606, 0, 0, 0, 1, 0, 0, 0, 627.35925, -1.0267982, 0.15998173, 2.953611)
 material_override = SubResource("ShaderMaterial_o7e4v")
 
 [node name="SM_Tree_Pine_01" parent="." unique_id=1257111192 instance=ExtResource("4_73ul0")]
@@ -62,3 +66,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.3224745, 1.1858888, 1.87858
 material = SubResource("ShaderMaterial_cmn64")
 
 [node name="Node3D" parent="." unique_id=1450571092 instance=ExtResource("10_73ul0")]
+
+[node name="SM_Lantern_Medium_03" parent="." unique_id=748241381 instance=ExtResource("11_ffu28")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.826695, 0.6538561, 5.640845)
+
+[node name="SM_Lantern_Big_02" parent="." unique_id=602682419 instance=ExtResource("12_cmn64")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.8786507, 0.6531433, 6.5795155)
+
+[node name="SM_Lantern_Big_Hanging_02" parent="." unique_id=1063687710 instance=ExtResource("13_o7e4v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.739442, 0.6550329, 6.609375)
+
+[node name="SM_Lantern_Medium_Hanging_03" parent="." unique_id=546539396 instance=ExtResource("14_soyc4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.0539355, 0.65472186, 5.5925374)
