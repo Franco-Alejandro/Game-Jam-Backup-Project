@@ -8,8 +8,9 @@ enum TASK_TYPE { GATHER_ICE_CREAM, GATHER_PEBBLES, GATHER_FISH, PLAY_AROUND}
 @export var description: String
 @export var duration: float
 @export var cozyness_cost: int
-@export var rewards: Dictionary = {
-	"fish": 0,
-	"pebbles": 0,
-	"ice_cream": 0
+@export var rewards: Dictionary[ResourceType.RESOURCE_ID, int] = {
+	ResourceType.RESOURCE_ID.FISH: 0,
+	ResourceType.RESOURCE_ID.ICE_CREAM: 0,
+	ResourceType.RESOURCE_ID.PEBBLE: 0,
+	ResourceType.RESOURCE_ID.LIVING_SPACE: 0,
 }

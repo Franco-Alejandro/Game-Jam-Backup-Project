@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://cp26fooektfl2" path="res://Scripts/Colony/Colony_Script.gd" id="1_t7y5i"]
 [ext_resource type="PackedScene" uid="uid://c0gsy02twtl64" path="res://Scenes/Player.tscn" id="1_vk84e"]
-[ext_resource type="PackedScene" uid="uid://c0vqc10ll0fww" path="res://Scenes/Debug/DebugCollector.tscn" id="3_jroqy"]
 [ext_resource type="PackedScene" uid="uid://dy7xdcdxeetx7" path="res://Scenes/Penguin.tscn" id="4_4283g"]
 [ext_resource type="PackedScene" uid="uid://cs1kwb10pi7se" path="res://Scenes/Colony/Colony_Scene.tscn" id="7_0eyfg"]
 
@@ -26,26 +25,6 @@ use_collision = true
 size = Vector3(3.6846313, 1, 1.9050293)
 
 [node name="Player" parent="." unique_id=196852108 instance=ExtResource("1_vk84e")]
-
-[node name="Debug" type="Node" parent="." unique_id=1297205294]
-
-[node name="FishCollector" parent="Debug" unique_id=1060373060 instance=ExtResource("3_jroqy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.391943, -0.4847204, -16.942978)
-production_interval = 3.0
-
-[node name="PebbleCollector" parent="Debug" unique_id=1598958569 instance=ExtResource("3_jroqy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.10301113, -0.48472017, -17.69474)
-resource_id = 2
-production_interval = 3.0
-
-[node name="FishCollectorSlow" parent="Debug" unique_id=1516982473 instance=ExtResource("3_jroqy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.063842, -0.4847204, -17.284605)
-
-[node name="IceCreamCollector" parent="Debug" unique_id=1866626030 instance=ExtResource("3_jroqy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.068824, -0.4847209, -17.2236)
-resource_id = 1
-production_interval = 1.0
-production_amount = 2
 
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=775402390]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.4256124)

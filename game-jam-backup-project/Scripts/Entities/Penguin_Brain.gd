@@ -171,14 +171,21 @@ func do_task(delta: float):
 		print("time left ", int(task_duration_left), " of ", penguin_data.current_task.duration)
 	
 	if (task_duration_left <= 0):
-		task_duration_left = 0
-		penguin_data.current_task = null
-		target_building.is_being_used = false
-		target_building = null
-		penguin_data.current_task = null
-		set_state(PenguinState.IDLE)
+		finish_task()
 		
-	pass
+	
+func finish_task():
+	var resource_manager := ResourceManagerSingleton
+	if resource_manager:
+		for resource_id in penguin_data.current_task.rewards:
+			var amount: int = penguin_data.current_task.rewards[resource_id]
+			resource_manager.add_resource(resource_id, amount)
+	task_duration_left = 0
+	penguin_data.current_task = null
+	target_building.is_being_used = false
+	target_building = null
+	set_state(PenguinState.IDLE)
+	
 	
 func print_animation_flags():
 	print("---- Animation Flags ----")

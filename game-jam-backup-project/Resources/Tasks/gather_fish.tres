@@ -8,4 +8,10 @@ task_type = 2
 task_name = "Hunt for fish"
 description = "Gets fish"
 duration = 5.0
+rewards = Dictionary[int, int]({
+0: 5,
+1: 0,
+2: 0,
+3: 0
+})
 metadata/_custom_type_script = "uid://dnmarx8f1e3ss"
