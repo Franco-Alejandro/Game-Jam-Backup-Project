@@ -36,7 +36,7 @@ void vertex() {
 
 void fragment() {
 	// Called for every pixel the material is visible on.
-	float worldHeight = (world_position - pivot_position).y + (mesh_height_scale * 0.5);
+	float worldHeight = ((world_position - pivot_position).y + (mesh_height_scale * 0.5) + mesh_height_offset) / mesh_height_scale; 
 	worldHeight = saturate(worldHeight);
 	ALBEDO = lerp(base_color_bottom, base_color_top, worldHeight * worldHeight);
 	//METALLIC = 1.0;
