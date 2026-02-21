@@ -14,7 +14,6 @@ void fragment() {
 	ALBEDO = vec3(0.0, 0.0, 0.0);
 	//METALLIC = 1.0;
 	ROUGHNESS = 0.9;
-	ALPHA = 1.0;
 	EMISSION = output_color;
 }
 

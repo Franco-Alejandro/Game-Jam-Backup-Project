@@ -4,9 +4,12 @@ class_name Building
 
 var active: bool = false
 var built: bool = false
+var is_being_used: bool = false
+
 @export var building_resource: BuildingResource
 @export var building_base: PackedScene
 var building_scene: Node = null
+var resource_manager: ResourceManager
 
 # Activates the building when the layer becomes active, does not build it
 func activate() -> void:
@@ -26,9 +29,13 @@ func build() -> void:
 		building_scene.show()
 		building_scene.set_process(true)
 		built = true
+		if building_resource.provided_living_space > 0:
+			resource_manager.add_resource(ResourceType.RESOURCE_ID.LIVING_SPACE, building_resource.provided_living_space)
 	
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	resource_manager = ResourceManagerSingleton
+
 	if Engine.is_editor_hint():
 		activate()
 		build()

@@ -3,6 +3,11 @@ class_name PenguinBrain
 
 enum PenguinState { IDLE, RUNNING_TO_TASK, DOING_TASK }
 var _current_state : PenguinState = PenguinState.IDLE;
+var is_idle : bool = true;
+var is_moving : bool = false;
+
+static var colony : Colony;
+static var stopping_distance: float = 0.5
 
 var behaviour : Dictionary = {
 	PenguinState.IDLE: idle,
@@ -11,9 +16,13 @@ var behaviour : Dictionary = {
 }
 var task_duration_left : float = 0
 var penguin_data : PenguinResource = PenguinResource.new() 
+var target_building : Building;
 
 func _ready():
+	penguin_data.penguin_name = "Juan"
 	add_to_group("penguins")
+	if !colony:
+		colony = get_tree().get_nodes_in_group("Colony").pick_random()
 	
 func _process(delta: float) -> void:
 	if behaviour.get(_current_state) != null:
@@ -22,30 +31,63 @@ func _process(delta: float) -> void:
 func set_state(new_state: PenguinState):
 	print("Penguin went to ", PenguinState.keys()[new_state])
 	_current_state = new_state
+	match _current_state:
+		PenguinState.IDLE:
+			is_moving = false
+			is_idle = true;
+		PenguinState.RUNNING_TO_TASK:
+			is_moving = true
+			is_idle = false;
+
+func is_building_accesible(building: Building) -> bool:
+	if !building.building_resource.unlocks_tasks.has(penguin_data.current_task):
+		return false;
+	
+	if building.is_being_used:
+		return false;
+	
+	return true
 
 func set_task(task: TaskResource):
+	if !colony:
+		return;
 	#ignore same tasks
 	if penguin_data.current_task and penguin_data.current_task == task:
 		return
-	
 	penguin_data.current_task = task
+	
+	var available_buildings : Array[Building] = colony.get_built_buildings();
+	var building_index : int = available_buildings.find_custom(is_building_accesible.bind())
+	target_building = available_buildings.get(building_index);
+	if not target_building:
+		return;
+	target_building.is_being_used = true;
 	set_state(PenguinState.RUNNING_TO_TASK)
 	task_duration_left = task.duration
 
 func idle(_delta: float):
 	pass
 	
-func running_to_task(_delta: float):
+func running_to_task(delta: float):
 	if penguin_data.current_task == null:
 		set_state(PenguinState.IDLE)
 		return;
 	
-	if penguin_data.current_task.location == Vector3.ZERO:
+	if target_building == null:
+		return;
+	
+	var target_position = target_building.global_position
+	var direction = target_position - global_position
+	var distance = direction.length()
+	
+	if distance > stopping_distance:
+		direction = direction.normalized()
+		global_position += direction * penguin_data.max_speed * delta
+		
+		look_at(target_position, Vector3.UP) # Optional: face target
+	else:
 		set_state(PenguinState.DOING_TASK)
 		
-	print("Penguin is running to ", penguin_data.current_task.task_name)
-	pass
-	
 func do_task(delta: float):
 	task_duration_left -= delta
 	

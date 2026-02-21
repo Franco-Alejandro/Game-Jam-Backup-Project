@@ -6,8 +6,11 @@
 [ext_resource type="AnimationLibrary" uid="uid://dlqjyhbbt5ius" path="res://Assets/ANM_Penguin_Idle.fbx" id="3_6ovgj"]
 [ext_resource type="AnimationLibrary" uid="uid://3ph0behuouwd" path="res://Assets/ANM_Penguin_Walk.fbx" id="3_d8x54"]
 [ext_resource type="AnimationLibrary" uid="uid://saw7axjhybe7" path="res://Assets/ANM_Penguin_CollectPebbles-loop.fbx" id="4_0yxea"]
+[ext_resource type="AnimationLibrary" uid="uid://0t84j3k8tyse" path="res://Assets/ANM_Penguin_CollectFish-loop.fbx" id="4_7m56f"]
 [ext_resource type="AnimationLibrary" uid="uid://c3cdh2fm305ht" path="res://Assets/ANM_Penguin_Idle-loop.fbx" id="4_7ojjn"]
+[ext_resource type="AnimationLibrary" uid="uid://dbx0a87a4ijkt" path="res://Assets/ANM_Penguin_CollectIcecream-loop.fbx" id="5_mvqd5"]
 [ext_resource type="AnimationLibrary" uid="uid://cflwwag37ai6x" path="res://Assets/ANM_Penguin_Walk-loop.fbx" id="6_wwq43"]
+[ext_resource type="AnimationLibrary" uid="uid://8dv6otii001v" path="res://Assets/ANM_Penguin_Play-loop.fbx" id="9_diart"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6ovgj"]
 albedo_texture = ExtResource("2_d8x54")
@@ -15,8 +18,17 @@ albedo_texture = ExtResource("2_d8x54")
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_wwq43"]
 animation = &"ANM_Penguin_Idle-loop/ANM_Penguin_Idle"
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7m56f"]
+animation = &"ANM_Penguin_CollectFish-loop/ANM_Penguin_CollectFish"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_mvqd5"]
+animation = &"ANM_Penguin_CollectIcecream-loop/ANM_Penguin_CollectIcecream"
+
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_rh1j3"]
 animation = &"ANM_Penguin_CollectPebbles-loop/ANM_Penguin_CollectPebbles"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_diart"]
+animation = &"ANM_Penguin_Play-loop/ANM_Penguin_Play"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_b2vlc"]
 animation = &"ANM_Penguin_Walk-loop/ANM_Penguin_Walk"
@@ -44,14 +56,44 @@ xfade_time = 0.2
 advance_mode = 2
 advance_condition = &"is_moving"
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_mw6sv"]
+advance_mode = 2
+advance_condition = &"is_task_fish"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_pnm8g"]
+advance_mode = 2
+advance_condition = &"is_task_icecream"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_q0dne"]
+advance_mode = 2
+advance_condition = &"is_task_play"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_a6hni"]
+advance_mode = 2
+advance_condition = &"is_moving"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ks8eh"]
+advance_mode = 2
+advance_condition = &"is_moving"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_st6io"]
+advance_mode = 2
+advance_condition = &"is_moving"
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_7ojjn"]
 states/Idle-loop/node = SubResource("AnimationNodeAnimation_wwq43")
 states/Idle-loop/position = Vector2(293, 182)
+states/Task_Fish-loop/node = SubResource("AnimationNodeAnimation_7m56f")
+states/Task_Fish-loop/position = Vector2(678, 146)
+states/Task_Icecream-loop/node = SubResource("AnimationNodeAnimation_mvqd5")
+states/Task_Icecream-loop/position = Vector2(635, 276)
 states/Task_Pebbles-loop/node = SubResource("AnimationNodeAnimation_rh1j3")
 states/Task_Pebbles-loop/position = Vector2(447, 78)
+states/Task_Play-loop/node = SubResource("AnimationNodeAnimation_diart")
+states/Task_Play-loop/position = Vector2(367, 305)
 states/Walk-loop/node = SubResource("AnimationNodeAnimation_b2vlc")
 states/Walk-loop/position = Vector2(447, 182)
-transitions = ["Start", "Idle-loop", SubResource("AnimationNodeStateMachineTransition_0yxea"), "Idle-loop", "Walk-loop", SubResource("AnimationNodeStateMachineTransition_rh1j3"), "Walk-loop", "Idle-loop", SubResource("AnimationNodeStateMachineTransition_jslxa"), "Walk-loop", "Task_Pebbles-loop", SubResource("AnimationNodeStateMachineTransition_re68c"), "Task_Pebbles-loop", "Walk-loop", SubResource("AnimationNodeStateMachineTransition_kq8s7")]
+transitions = ["Start", "Idle-loop", SubResource("AnimationNodeStateMachineTransition_0yxea"), "Idle-loop", "Walk-loop", SubResource("AnimationNodeStateMachineTransition_rh1j3"), "Walk-loop", "Idle-loop", SubResource("AnimationNodeStateMachineTransition_jslxa"), "Walk-loop", "Task_Pebbles-loop", SubResource("AnimationNodeStateMachineTransition_re68c"), "Task_Pebbles-loop", "Walk-loop", SubResource("AnimationNodeStateMachineTransition_kq8s7"), "Walk-loop", "Task_Fish-loop", SubResource("AnimationNodeStateMachineTransition_mw6sv"), "Walk-loop", "Task_Icecream-loop", SubResource("AnimationNodeStateMachineTransition_pnm8g"), "Walk-loop", "Task_Play-loop", SubResource("AnimationNodeStateMachineTransition_q0dne"), "Task_Play-loop", "Walk-loop", SubResource("AnimationNodeStateMachineTransition_a6hni"), "Task_Icecream-loop", "Walk-loop", SubResource("AnimationNodeStateMachineTransition_ks8eh"), "Task_Fish-loop", "Walk-loop", SubResource("AnimationNodeStateMachineTransition_st6io")]
 
 [node name="Character_Penguin" unique_id=611752080 instance=ExtResource("1_tyi0o")]
 script = ExtResource("2_6ovgj")
@@ -75,9 +117,12 @@ material_override = SubResource("StandardMaterial3D_6ovgj")
 material_override = SubResource("StandardMaterial3D_6ovgj")
 
 [node name="AnimationPlayer" parent="." index="2" unique_id=1346008215]
+libraries/ANM_Penguin_CollectFish-loop = ExtResource("4_7m56f")
+libraries/ANM_Penguin_CollectIcecream-loop = ExtResource("5_mvqd5")
 libraries/ANM_Penguin_CollectPebbles-loop = ExtResource("4_0yxea")
 libraries/ANM_Penguin_Idle = ExtResource("3_6ovgj")
 libraries/ANM_Penguin_Idle-loop = ExtResource("4_7ojjn")
+libraries/ANM_Penguin_Play-loop = ExtResource("9_diart")
 libraries/ANM_Penguin_Walk = ExtResource("3_d8x54")
 libraries/ANM_Penguin_Walk-loop = ExtResource("6_wwq43")
 
@@ -86,4 +131,7 @@ tree_root = SubResource("AnimationNodeStateMachine_7ojjn")
 anim_player = NodePath("../AnimationPlayer")
 parameters/conditions/is_idle = false
 parameters/conditions/is_moving = false
+parameters/conditions/is_task_fish = false
+parameters/conditions/is_task_icecream = false
 parameters/conditions/is_task_pebbles = false
+parameters/conditions/is_task_play = false

@@ -1,13 +1,26 @@
 extends CanvasLayer
 class_name HUDController
 
-
-func _on_task_button_pressed() -> void:
-	var focused_button : TaskButton = get_viewport().gui_get_focus_owner()
-	if !focused_button:
-		return;
+@export var penguin_selection_hud_scene: PackedScene  
+@export var penguin_manager_scene: PackedScene  
+var penguin_selection_HUD : PenguinSelectionHUD;
+var penguin_manager : PenguinManager;
 		
-	var penguins := get_tree().get_nodes_in_group("penguins");
-	var penguin : PenguinBrain = penguins.pick_random()
+func _on_penguin_selected(penguin: PenguinBrain) -> void:
+	if !penguin_manager:
+		penguin_manager = penguin_manager_scene.instantiate()
+		add_child(penguin_manager) 
+	else:
+		penguin_manager.show()
+	if penguin_selection_HUD:
+		penguin_selection_HUD.hide()
+		
+	penguin_manager.populate_penguin(penguin);
 	
-	penguin.set_task(focused_button.task)
+func _on_penguin_hud_button_pressed() -> void:
+	if !penguin_selection_HUD:
+		penguin_selection_HUD = penguin_selection_hud_scene.instantiate()
+		penguin_selection_HUD.penguin_selected.connect(_on_penguin_selected)
+		add_child(penguin_selection_HUD) 
+	else:
+		penguin_selection_HUD.show()

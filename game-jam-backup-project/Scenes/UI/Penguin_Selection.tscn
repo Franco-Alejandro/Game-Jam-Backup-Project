@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://cq3wb872eswxd"]
+
+[ext_resource type="Script" uid="uid://b4xh77sdpbp2h" path="res://Scripts/Systems/UI/Penguin_Selection.gd" id="1_dgnox"]
+
+[node name="PenguinSelection" type="Control" unique_id=1307242502]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dgnox")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1817113341]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 70
+theme_override_constants/margin_top = 70
+theme_override_constants/margin_right = 70
+theme_override_constants/margin_bottom = 70
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer" unique_id=1248161986]
+layout_mode = 2
+color = Color(0, 0, 0, 0.44705883)
+
+[node name="HBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1210109986]
+layout_mode = 2
+alignment = 1
+
+[node name="PenguinContainer" type="GridContainer" parent="MarginContainer/HBoxContainer" unique_id=1907933735]
+layout_mode = 2
+columns = 4
+
+[node name="CancelButton" type="Button" parent="MarginContainer/HBoxContainer" unique_id=416950670]
+layout_mode = 2
+text = "Cancel"

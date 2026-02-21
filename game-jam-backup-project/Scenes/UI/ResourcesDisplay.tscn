@@ -2,9 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://8vm37vxu2386" path="res://Scenes/UI/ResourceItem.tscn" id="1_63lyd"]
 [ext_resource type="Script" uid="uid://d0rojv0gsayrh" path="res://Scripts/UI/Resource_Item.gd" id="2_nubhp"]
-[ext_resource type="Resource" uid="uid://lpa7ybk24joh" path="res://Scripts/Data/Resources/Fish.tres" id="2_s8sw1"]
-[ext_resource type="Resource" uid="uid://dshqdkw73b6if" path="res://Scripts/Data/Resources/Pebble.tres" id="4_vf1mk"]
-[ext_resource type="Resource" uid="uid://ckuy31nx7nuf3" path="res://Scripts/Data/Resources/IceCream.tres" id="5_ync5s"]
+[ext_resource type="Resource" uid="uid://lpa7ybk24joh" path="res://Resources/Resources/Fish.tres" id="2_s8sw1"]
+[ext_resource type="Resource" uid="uid://dshqdkw73b6if" path="res://Resources/Resources/Pebble.tres" id="4_vf1mk"]
+[ext_resource type="Resource" uid="uid://ckuy31nx7nuf3" path="res://Resources/Resources/IceCream.tres" id="5_ync5s"]
+[ext_resource type="Resource" uid="uid://b5you5srtx0ok" path="res://Resources/Resources/LivingSpace.tres" id="6_6oqp3"]
 
 [node name="ResourcesDisplay" type="HBoxContainer" unique_id=166018451]
 theme_override_constants/separation = 20
@@ -12,14 +13,22 @@ theme_override_constants/separation = 20
 [node name="FishResourceItem" parent="." unique_id=1538387271 instance=ExtResource("1_63lyd")]
 layout_mode = 2
 script = ExtResource("2_nubhp")
-resource_type = ExtResource("2_s8sw1")
+resource_data = ExtResource("2_s8sw1")
 
 [node name="PebbleResourceItem" parent="." unique_id=225175962 instance=ExtResource("1_63lyd")]
 layout_mode = 2
 script = ExtResource("2_nubhp")
-resource_type = ExtResource("4_vf1mk")
+resource_id = 2
+resource_data = ExtResource("4_vf1mk")
 
 [node name="IceCreamResourceItem" parent="." unique_id=1588506953 instance=ExtResource("1_63lyd")]
 layout_mode = 2
 script = ExtResource("2_nubhp")
-resource_type = ExtResource("5_ync5s")
+resource_id = 1
+resource_data = ExtResource("5_ync5s")
+
+[node name="LivingSpaceResourceItem" parent="." unique_id=110478843 instance=ExtResource("1_63lyd")]
+layout_mode = 2
+script = ExtResource("2_nubhp")
+resource_id = 3
+resource_data = ExtResource("6_6oqp3")
