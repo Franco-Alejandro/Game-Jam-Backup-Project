@@ -80,9 +80,11 @@ func set_state(new_state: PenguinState):
 		PenguinState.IDLE:
 			is_moving = false
 			is_idle = true;
+			print("Is moving bool is: ", is_moving)
 		PenguinState.RUNNING_TO_TASK:
 			is_moving = true
 			is_idle = false;
+			print("Is moving bool is: ", is_moving)
 
 func is_building_accesible(building: Building) -> bool:
 	if !building.building_resource.unlocks_tasks.has(penguin_data.current_task):
@@ -133,17 +135,13 @@ func select_location(delta: float):
 	target_position(target_building.global_position);
 	
 	set_state(PenguinState.RUNNING_TO_TASK)
-	#if distance > stopping_distance:
-	#	direction = direction.normalized()
-	#else:
-	#	set_state(PenguinState.DOING_TASK)
-		
+	
 func do_task(delta: float):
 	task_duration_left -= delta
 	
 	if int(task_duration_left + delta) > int(task_duration_left):
 		print("Penguin is doing ", penguin_data.current_task.task_name)
-		print("time left", task_duration_left, " of ", penguin_data.current_task.duration)
+		print("time left ", int(task_duration_left), " of ", penguin_data.current_task.duration)
 	
 	if (task_duration_left <= 0):
 		task_duration_left = 0
