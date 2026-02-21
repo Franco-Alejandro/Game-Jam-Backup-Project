@@ -1,8 +1,8 @@
 extends Button
-class_name TaskButton
+class_name TaskContainerButton
 
 @export var task : TaskResource
 
 func _ready():
-	tooltip_text = task.description
-	
+	if task:
+		tooltip_text = task.description

@@ -1,0 +1,85 @@
+[gd_scene format=3 uid="uid://34tugmfrbuv7"]
+
+[ext_resource type="Script" uid="uid://ilcdp1oin5xs" path="res://Scripts/Systems/UI/Penguin_Manager.gd" id="1_v7qao"]
+[ext_resource type="Script" uid="uid://cxstgsne4d8ws" path="res://Scripts/Systems/UI/task_button.gd" id="2_gak1q"]
+[ext_resource type="Texture2D" uid="uid://bqjd8fi11g3wg" path="res://Assets/Icons/fish_icon.png" id="2_xnjff"]
+[ext_resource type="Resource" uid="uid://cukrkqdiucmr3" path="res://Resources/Tasks/gather_fish.tres" id="4_87bhs"]
+[ext_resource type="Texture2D" uid="uid://dpe28m87sd6x1" path="res://Assets/Icons/ice_cream_icon.png" id="5_qbb11"]
+[ext_resource type="Texture2D" uid="uid://tvfjhmrw8uqj" path="res://Assets/Icons/pebble_icon.png" id="6_87bhs"]
+[ext_resource type="Resource" uid="uid://dy3oaq7802nlc" path="res://Resources/Tasks/gather_ice_cream.tres" id="6_pgjti"]
+[ext_resource type="Resource" uid="uid://b1dooksyghxxv" path="res://Resources/Tasks/gather_pebbles.tres" id="8_k4msf"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_v7qao"]
+
+[node name="PenguinManager" type="Control" unique_id=1353943752]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_v7qao")
+metadata/_custom_type_script = "uid://ilcdp1oin5xs"
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1593832165]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 70
+theme_override_constants/margin_top = 70
+theme_override_constants/margin_right = 70
+theme_override_constants/margin_bottom = 70
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer" unique_id=757763244]
+layout_mode = 2
+color = Color(0, 0, 0, 0.44705883)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1396339894]
+layout_mode = 2
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=473272329]
+layout_mode = 2
+
+[node name="PenguinNameLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1509599509]
+layout_mode = 2
+text = "Penguin name: "
+label_settings = SubResource("LabelSettings_v7qao")
+
+[node name="PenguinName" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1356431860]
+layout_mode = 2
+text = "Penguin name: "
+label_settings = SubResource("LabelSettings_v7qao")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1188113107]
+layout_mode = 2
+
+[node name="FishButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1333993606]
+layout_mode = 2
+icon = ExtResource("2_xnjff")
+script = ExtResource("2_gak1q")
+task = ExtResource("4_87bhs")
+
+[node name="IceCreamButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=638255154]
+layout_mode = 2
+icon = ExtResource("5_qbb11")
+script = ExtResource("2_gak1q")
+task = ExtResource("6_pgjti")
+
+[node name="PebbleButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1648954436]
+layout_mode = 2
+icon = ExtResource("6_87bhs")
+script = ExtResource("2_gak1q")
+task = ExtResource("8_k4msf")
+
+[node name="CancelButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=269996917]
+layout_mode = 2
+text = "Cancel"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer2/FishButton" to="." method="_on_fish_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer2/IceCreamButton" to="." method="_on_ice_cream_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer2/PebbleButton" to="." method="_on_pebble_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/CancelButton" to="." method="_on_cancel_button_pressed"]
