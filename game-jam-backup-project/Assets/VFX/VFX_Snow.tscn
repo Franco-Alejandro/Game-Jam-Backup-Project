@@ -34,6 +34,7 @@ orbit_velocity_max = 2.0000002
 scale_min = 0.03
 scale_max = 0.06
 scale_curve = SubResource("CurveTexture_gfort")
+color = Color(0.8164007, 0.86290884, 0.91725993, 1)
 color_initial_ramp = SubResource("GradientTexture1D_bvk1a")
 alpha_curve = SubResource("CurveTexture_5u5vv")
 turbulence_enabled = true
