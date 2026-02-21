@@ -2,11 +2,15 @@ extends Node
 class_name ColonyLayer
 
 var buildings: Array[Building]
+var props: Array[Node]
 var active: bool = false
 
 func activate_layer() -> void:
 	for building in buildings:
 		building.activate()
+		
+	for prop in props:
+		prop.show()
 		
 	active = true
 

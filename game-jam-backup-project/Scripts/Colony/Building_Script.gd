@@ -7,7 +7,6 @@ var built: bool = false
 var is_being_used: bool = false
 
 @export var building_resource: BuildingResource
-@export var building_base: PackedScene
 var building_scene: Node = null
 var scaffolding_scene: Node = null
 var resource_manager: ResourceManager
@@ -51,6 +50,7 @@ func _ready() -> void:
 	resource_manager = ResourceManagerSingleton
 
 	if Engine.is_editor_hint():
+		print("building in editor ready")
 		activate()
 		build()
 	else:
