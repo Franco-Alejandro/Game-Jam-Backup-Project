@@ -15,7 +15,6 @@ void fragment() {
 	ALBEDO = output_color;
 	METALLIC = metalness;
 	ROUGHNESS = roughness;
-	ALPHA = 1.0;
 }
 
 //void light() {

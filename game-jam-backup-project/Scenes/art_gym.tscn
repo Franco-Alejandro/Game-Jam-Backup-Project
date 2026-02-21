@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://du2gy10gje6n7" path="res://Assets/SM_Lantern_Medium_Hanging_03.fbx" id="14_soyc4"]
 [ext_resource type="PackedScene" uid="uid://dpf4q7fpjhpr1" path="res://Assets/SM_Rock_02.fbx" id="15_soyc4"]
 [ext_resource type="PackedScene" uid="uid://brn118q7pgxj1" path="res://Assets/Environment/SM_Spa_02.fbx" id="16_m7wlk"]
+[ext_resource type="PackedScene" uid="uid://bkbruq0ncp2ke" path="res://Assets/Environment/SM_Building_Igloo.fbx" id="17_f14od"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_o7e4v"]
 render_priority = 0
@@ -63,11 +64,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.765797, 0.5547466, 12.8398
 transform = Transform3D(0.29987335, 0, -0.953979, 0, 1, 0, 0.953979, 0, 0.29987335, 8.531081, 0.51813936, -6.7385483)
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="." unique_id=1540040857]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.286519, 1.1893119, 0.38226664)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3220234, 0.7884593, 0.38226664)
 material = SubResource("ShaderMaterial_ffu28")
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=1068474575]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.3224745, 1.1858888, 1.8785818)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.493886, 0.9065194, 1.9837499)
 material = SubResource("ShaderMaterial_cmn64")
 
 [node name="Node3D" parent="." unique_id=1450571092 instance=ExtResource("10_73ul0")]
@@ -113,3 +114,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.523119, 0.6220665, -7.2690
 
 [node name="SM_Spa_03" parent="." unique_id=1995693906 instance=ExtResource("16_m7wlk")]
 transform = Transform3D(0.08612982, 0, -0.99628395, 0, 1, 0, 0.99628395, 0, 0.08612982, 24.662987, 0.6220665, 9.879896)
+
+[node name="SM_Building_Igloo" parent="." unique_id=479839829 instance=ExtResource("17_f14od")]
+transform = Transform3D(-0.7070328, 0, -0.7071808, 0, 1, 0, 0.7071808, 0, -0.7070328, 1.9718628, 0.642679, -10.201946)

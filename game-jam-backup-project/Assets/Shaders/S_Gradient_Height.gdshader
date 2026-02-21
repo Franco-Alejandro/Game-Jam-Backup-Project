@@ -41,7 +41,6 @@ void fragment() {
 	ALBEDO = lerp(base_color_bottom, base_color_top, worldHeight * worldHeight);
 	//METALLIC = 1.0;
 	ROUGHNESS = 0.9;
-	ALPHA = 1.0;
 }
 
 //void light() {
