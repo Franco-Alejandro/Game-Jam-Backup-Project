@@ -10,11 +10,11 @@
 script = ExtResource("1_pfbsi")
 building_name = "Fishing Pond"
 description = "A pond where penguins can fish"
-required_resources = {
-"fish": 0,
-"ice_cream": 5,
-"pebbles": 5
-}
+required_resources = Dictionary[int, int]({
+0: 0,
+1: 5,
+2: 5
+})
 unlocks_tasks = Array[ExtResource("3_1gfpa")]([ExtResource("5_1gfpa")])
 building_scene = ExtResource("1_1gfpa")
 metadata/_custom_type_script = "uid://h2ufpeq4u36f"

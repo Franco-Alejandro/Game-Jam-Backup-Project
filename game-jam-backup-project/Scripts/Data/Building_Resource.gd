@@ -3,10 +3,10 @@ class_name BuildingResource
 
 @export var building_name: String
 @export var description: String
-@export var required_resources: Dictionary = {
-	"fish": 0,
-	"pebbles": 0,
-	"ice_cream": 0
+@export var required_resources: Dictionary[ResourceType.RESOURCE_ID, int] = {
+	ResourceType.RESOURCE_ID.FISH: 0,
+	ResourceType.RESOURCE_ID.PEBBLE: 0,
+	ResourceType.RESOURCE_ID.ICE_CREAM: 0
 }
 @export var unlocks_tasks: Array[TaskResource]
 @export var unlocks_jobs: Array[JobResource]

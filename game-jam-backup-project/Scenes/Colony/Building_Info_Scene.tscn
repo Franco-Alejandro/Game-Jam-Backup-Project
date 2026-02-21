@@ -6,4 +6,6 @@
 script = ExtResource("1_x3ex1")
 
 [node name="Label" type="Label3D" parent="." unique_id=2034913704]
+transform = Transform3D(1, 0, 0, 0, 0.88467866, 0.46620136, 0, -0.46620136, 0.88467866, 0, 0, 0)
 text = "Test text from editor"
+font_size = 128

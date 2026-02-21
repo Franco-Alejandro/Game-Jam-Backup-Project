@@ -47,7 +47,4 @@ shadow_enabled = true
 omni_range = 100.0
 
 [node name="ColonyScene" parent="." unique_id=423688789 instance=ExtResource("7_0eyfg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.55, -1, -4.616)
-
-[node name="Penguin" parent="." unique_id=1380494887 instance=ExtResource("4_4283g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.036107, -5.529173)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.55, -0.4795084, -4.616)

@@ -9,11 +9,11 @@
 script = ExtResource("1_wm8gr")
 building_name = "Igloo Housing"
 description = "A cozy igloo for penguins to live in"
-required_resources = {
-"fish": 0,
-"ice_cream": 5,
-"pebbles": 5
-}
+required_resources = Dictionary[int, int]({
+0: 0,
+1: 5,
+2: 5
+})
 building_scene = ExtResource("1_cip5e")
 provided_living_space = 3
 metadata/_custom_type_script = "uid://h2ufpeq4u36f"
