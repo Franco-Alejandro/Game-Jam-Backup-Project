@@ -21,6 +21,8 @@ var velocity: Vector3 = Vector3.ZERO
 func _ready():
 	camera.position.y = target_zoom
 	ambiance_player.play()
+	if	ResourceManagerSingleton:
+		ResourceManagerSingleton.add_resource(ResourceType.RESOURCE_ID.LIVING_SPACE, 1)
 	
 	
 func _process(delta):
