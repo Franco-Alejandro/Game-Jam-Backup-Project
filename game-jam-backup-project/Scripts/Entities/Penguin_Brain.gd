@@ -1,7 +1,7 @@
-extends Node3D
+extends CharacterBody3D
 class_name PenguinBrain
 
-enum PenguinState { IDLE, RUNNING_TO_TASK, DOING_TASK }
+enum PenguinState { IDLE, SELECT_LOCATION, RUNNING_TO_TASK, DOING_TASK }
 var _current_state : PenguinState = PenguinState.IDLE;
 var is_idle : bool = true;
 var is_moving : bool = false;
@@ -11,12 +11,17 @@ static var stopping_distance: float = 0.5
 
 var behaviour : Dictionary = {
 	PenguinState.IDLE: idle,
-	PenguinState.RUNNING_TO_TASK: running_to_task,
+	PenguinState.SELECT_LOCATION: select_location,
 	PenguinState.DOING_TASK: do_task
 }
 var task_duration_left : float = 0
 var penguin_data : PenguinResource = PenguinResource.new() 
 var target_building : Building;
+
+# DEBUG STUFF
+@onready var nav = $NavigationAgent3D
+var speed = 3.5;
+var gravity = 9.8;
 
 func _ready():
 	penguin_data.penguin_name = "Juan"
@@ -27,6 +32,45 @@ func _ready():
 func _process(delta: float) -> void:
 	if behaviour.get(_current_state) != null:
 		behaviour[_current_state].call(delta)
+	
+func _physics_process(delta):
+	# Gravity
+	if not is_on_floor():
+		velocity.y -= gravity * delta
+	else:
+		velocity.y = 0
+
+	# Check if we reached the location
+	if nav.is_navigation_finished():
+		if _current_state == PenguinState.RUNNING_TO_TASK:
+			set_state(PenguinState.DOING_TASK)
+		velocity.x = 0
+		velocity.z = 0
+		move_and_slide()
+		return
+
+	# Navigation
+	var next_position = nav.get_next_path_position()
+	var current_position = global_transform.origin
+	
+	var direction = next_position - current_position
+	direction.y = 0
+	
+	if direction.length() > 0.1:
+		direction = direction.normalized()
+		var horizontal_velocity = direction * speed
+		
+		velocity.x = horizontal_velocity.x
+		velocity.z = horizontal_velocity.z
+	else:
+		velocity.x = 0
+		velocity.z = 0
+
+	# Actual movement
+	move_and_slide()
+
+func target_position(target):
+	nav.target_position = target
 
 func set_state(new_state: PenguinState):
 	print("Penguin went to ", PenguinState.keys()[new_state])
@@ -62,13 +106,13 @@ func set_task(task: TaskResource):
 	if not target_building:
 		return;
 	target_building.is_being_used = true;
-	set_state(PenguinState.RUNNING_TO_TASK)
+	set_state(PenguinState.SELECT_LOCATION)
 	task_duration_left = task.duration
 
 func idle(_delta: float):
 	pass
 	
-func running_to_task(delta: float):
+func select_location(delta: float):
 	if penguin_data.current_task == null:
 		set_state(PenguinState.IDLE)
 		return;
@@ -76,17 +120,13 @@ func running_to_task(delta: float):
 	if target_building == null:
 		return;
 	
-	var target_position = target_building.global_position
-	var direction = target_position - global_position
-	var distance = direction.length()
+	target_position(target_building.global_position);
 	
-	if distance > stopping_distance:
-		direction = direction.normalized()
-		global_position += direction * penguin_data.max_speed * delta
-		
-		look_at(target_position, Vector3.UP) # Optional: face target
-	else:
-		set_state(PenguinState.DOING_TASK)
+	set_state(PenguinState.RUNNING_TO_TASK)
+	#if distance > stopping_distance:
+	#	direction = direction.normalized()
+	#else:
+	#	set_state(PenguinState.DOING_TASK)
 		
 func do_task(delta: float):
 	task_duration_left -= delta

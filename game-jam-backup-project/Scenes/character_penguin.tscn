@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://ddtugnq86umdw"]
 
 [ext_resource type="PackedScene" uid="uid://l16uol8dvbtk" path="res://Assets/SM_P.fbx" id="1_tyi0o"]
-[ext_resource type="Script" uid="uid://2nclvtlb431i" path="res://Scripts/Entities/Penguin_Brain.gd" id="2_6ovgj"]
 [ext_resource type="Texture2D" uid="uid://jcxpg7huo3qm" path="res://Assets/T_P.png" id="2_d8x54"]
 [ext_resource type="AnimationLibrary" uid="uid://dlqjyhbbt5ius" path="res://Assets/ANM_Penguin_Idle.fbx" id="3_6ovgj"]
 [ext_resource type="AnimationLibrary" uid="uid://3ph0behuouwd" path="res://Assets/ANM_Penguin_Walk.fbx" id="3_d8x54"]
@@ -96,27 +95,33 @@ states/Walk-loop/position = Vector2(447, 182)
 transitions = ["Start", "Idle-loop", SubResource("AnimationNodeStateMachineTransition_0yxea"), "Idle-loop", "Walk-loop", SubResource("AnimationNodeStateMachineTransition_rh1j3"), "Walk-loop", "Idle-loop", SubResource("AnimationNodeStateMachineTransition_jslxa"), "Walk-loop", "Task_Pebbles-loop", SubResource("AnimationNodeStateMachineTransition_re68c"), "Task_Pebbles-loop", "Walk-loop", SubResource("AnimationNodeStateMachineTransition_kq8s7"), "Walk-loop", "Task_Fish-loop", SubResource("AnimationNodeStateMachineTransition_mw6sv"), "Walk-loop", "Task_Icecream-loop", SubResource("AnimationNodeStateMachineTransition_pnm8g"), "Walk-loop", "Task_Play-loop", SubResource("AnimationNodeStateMachineTransition_q0dne"), "Task_Play-loop", "Walk-loop", SubResource("AnimationNodeStateMachineTransition_a6hni"), "Task_Icecream-loop", "Walk-loop", SubResource("AnimationNodeStateMachineTransition_ks8eh"), "Task_Fish-loop", "Walk-loop", SubResource("AnimationNodeStateMachineTransition_st6io")]
 
 [node name="Character_Penguin" unique_id=611752080 instance=ExtResource("1_tyi0o")]
-script = ExtResource("2_6ovgj")
 
-[node name="Character1_Reference" parent="." index="0" unique_id=589992047]
+[node name="Character1_Reference" parent="." index="0" unique_id=1666729378]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
 
-[node name="Skeleton3D" parent="Character1_Reference" index="0" unique_id=741447230]
+[node name="Skeleton3D" parent="Character1_Reference" index="0" unique_id=1017156278]
 bones/2/position = Vector3(1.110223e-16, -0.4106854, 0)
 bones/3/position = Vector3(-1.110223e-16, -0.4070096, 0)
 bones/6/position = Vector3(-1.110223e-16, -0.4106854, 0)
 bones/7/position = Vector3(1.110223e-16, -0.4070096, 0)
+bones/9/rotation = Quaternion(0.007031628, 0.024859117, -0.015910074, 0.9995396)
+bones/10/rotation = Quaternion(0.0075303405, 0.034680955, -0.023566213, 0.9990922)
+bones/11/rotation = Quaternion(0, 0, 0.00224761, 0.9999975)
+bones/12/rotation = Quaternion(-0.050080717, 0.055034213, -0.48098373, 0.87356615)
+bones/17/rotation = Quaternion(0, 0, 0.061170988, 0.9981274)
+bones/18/rotation = Quaternion(0.00078381447, -0.0040189014, 0.52466416, 0.8512995)
+bones/23/rotation = Quaternion(0.027395912, 0.05667378, -0.1341745, 0.9889564)
 
-[node name="pSphere3" parent="Character1_Reference/Skeleton3D" index="0" unique_id=634928072]
+[node name="pSphere3" parent="Character1_Reference/Skeleton3D" index="0" unique_id=928824462]
 material_override = SubResource("StandardMaterial3D_6ovgj")
 
-[node name="polySurface1" parent="Character1_Reference/Skeleton3D" index="1" unique_id=1801908639]
+[node name="polySurface1" parent="Character1_Reference/Skeleton3D" index="1" unique_id=1108278172]
 material_override = SubResource("StandardMaterial3D_6ovgj")
 
-[node name="polySurface2" parent="Character1_Reference/Skeleton3D" index="2" unique_id=889531464]
+[node name="polySurface2" parent="Character1_Reference/Skeleton3D" index="2" unique_id=237589966]
 material_override = SubResource("StandardMaterial3D_6ovgj")
 
-[node name="AnimationPlayer" parent="." index="2" unique_id=1346008215]
+[node name="AnimationPlayer" parent="." index="2" unique_id=1196865178]
 libraries/ANM_Penguin_CollectFish-loop = ExtResource("4_7m56f")
 libraries/ANM_Penguin_CollectIcecream-loop = ExtResource("5_mvqd5")
 libraries/ANM_Penguin_CollectPebbles-loop = ExtResource("4_0yxea")
