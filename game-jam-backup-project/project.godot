@@ -15,10 +15,6 @@ run/main_scene="uid://2pspwfknsxpp"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
-[autoload]
-
-ResourceManagerSingleton="*uid://c034cqnt7nvve"
-
 [input]
 
 move_left={
