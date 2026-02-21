@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://rg3ye1mrs5ar" path="res://Assets/SM_Lantern_Big_02.fbx" id="12_cmn64"]
 [ext_resource type="PackedScene" uid="uid://dbdlds2jygs7k" path="res://Assets/SM_Lantern_Big_Hanging_02.fbx" id="13_o7e4v"]
 [ext_resource type="PackedScene" uid="uid://du2gy10gje6n7" path="res://Assets/SM_Lantern_Medium_Hanging_03.fbx" id="14_soyc4"]
+[ext_resource type="PackedScene" uid="uid://dpf4q7fpjhpr1" path="res://Assets/SM_Rock_02.fbx" id="15_soyc4"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_o7e4v"]
 render_priority = 0
@@ -78,3 +79,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.739442, 0.6550329, 6.609375
 
 [node name="SM_Lantern_Medium_Hanging_03" parent="." unique_id=546539396 instance=ExtResource("14_soyc4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.0539355, 0.65472186, 5.5925374)
+
+[node name="SM_Rock_02" parent="." unique_id=87720691 instance=ExtResource("15_soyc4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.648258, 0.8578396, 9.9321375)
+
+[node name="SM_Rock_04" parent="." unique_id=773373397 instance=ExtResource("15_soyc4")]
+transform = Transform3D(0.9716937, 0.11727142, 0.20508277, 1.8787933e-08, -0.86809504, 0.49639827, 0.23624468, -0.48234707, -0.8435224, 17.374605, 0.72882223, 8.690391)
+
+[node name="SM_Rock_03" parent="." unique_id=1042530131 instance=ExtResource("15_soyc4")]
+transform = Transform3D(-0.61726934, -0.7867519, 0, 0.7867519, -0.61726934, 0, 0, 0, 1, 15.926674, 0.50980973, 9.537762)
+
+[node name="SM_Rock_05" parent="." unique_id=1712696248 instance=ExtResource("15_soyc4")]
+transform = Transform3D(-0.097228125, -0.5415642, 0, 0.5415642, -0.097228125, 0, 0, 0, 0.5502228, 18.611282, 0.50980973, 8.929043)
+
+[node name="SM_Rock_06" parent="." unique_id=375331506 instance=ExtResource("15_soyc4")]
+transform = Transform3D(-0.16734771, 0.25825548, 0.4561183, 0.47905818, 0.26965836, 0.023082823, -0.21270448, 0.4041455, -0.30686852, 18.9929, 0.45222688, 10.375549)
+
+[node name="SM_Rock_07" parent="." unique_id=521686985 instance=ExtResource("15_soyc4")]
+transform = Transform3D(-0.21403028, -0.3659384, 0.5518117, 0.17994943, 0.3642356, 0.5657817, -0.7516419, 0.1914021, -0.021675669, 17.785536, 0.45222688, 11.327075)
