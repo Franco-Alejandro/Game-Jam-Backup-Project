@@ -1,46 +1,69 @@
 [gd_scene format=3 uid="uid://ddtugnq86umdw"]
 
 [ext_resource type="PackedScene" uid="uid://l16uol8dvbtk" path="res://Assets/SM_P.fbx" id="1_tyi0o"]
+[ext_resource type="Script" uid="uid://2nclvtlb431i" path="res://Scripts/Entities/Penguin_Brain.gd" id="2_6ovgj"]
 [ext_resource type="Texture2D" uid="uid://jcxpg7huo3qm" path="res://Assets/T_P.png" id="2_d8x54"]
+[ext_resource type="AnimationLibrary" uid="uid://dlqjyhbbt5ius" path="res://Assets/ANM_Penguin_Idle.fbx" id="3_6ovgj"]
 [ext_resource type="AnimationLibrary" uid="uid://3ph0behuouwd" path="res://Assets/ANM_Penguin_Walk.fbx" id="3_d8x54"]
+[ext_resource type="AnimationLibrary" uid="uid://saw7axjhybe7" path="res://Assets/ANM_Penguin_CollectPebbles-loop.fbx" id="4_0yxea"]
+[ext_resource type="AnimationLibrary" uid="uid://c3cdh2fm305ht" path="res://Assets/ANM_Penguin_Idle-loop.fbx" id="4_7ojjn"]
+[ext_resource type="AnimationLibrary" uid="uid://cflwwag37ai6x" path="res://Assets/ANM_Penguin_Walk-loop.fbx" id="6_wwq43"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6ovgj"]
 albedo_texture = ExtResource("2_d8x54")
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_6ovgj"]
-animation = &"ANM_Penguin_Walk/ANM_Penguin_Walk"
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_wwq43"]
+animation = &"ANM_Penguin_Idle-loop/ANM_Penguin_Idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_rh1j3"]
+animation = &"ANM_Penguin_CollectPebbles-loop/ANM_Penguin_CollectPebbles"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_b2vlc"]
+animation = &"ANM_Penguin_Walk-loop/ANM_Penguin_Walk"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_0yxea"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_rh1j3"]
+xfade_time = 0.2
+advance_mode = 2
+advance_condition = &"is_moving"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_jslxa"]
+xfade_time = 0.2
+advance_mode = 2
+advance_condition = &"is_idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_re68c"]
+xfade_time = 0.2
+advance_mode = 2
+advance_condition = &"is_task_pebbles"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_kq8s7"]
+xfade_time = 0.2
+advance_mode = 2
+advance_condition = &"is_moving"
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_7ojjn"]
-states/ANM_Penguin_Walk_ANM_Penguin_Walk/node = SubResource("AnimationNodeAnimation_6ovgj")
-states/ANM_Penguin_Walk_ANM_Penguin_Walk/position = Vector2(432, 100)
+states/Idle-loop/node = SubResource("AnimationNodeAnimation_wwq43")
+states/Idle-loop/position = Vector2(293, 182)
+states/Task_Pebbles-loop/node = SubResource("AnimationNodeAnimation_rh1j3")
+states/Task_Pebbles-loop/position = Vector2(447, 78)
+states/Walk-loop/node = SubResource("AnimationNodeAnimation_b2vlc")
+states/Walk-loop/position = Vector2(447, 182)
+transitions = ["Start", "Idle-loop", SubResource("AnimationNodeStateMachineTransition_0yxea"), "Idle-loop", "Walk-loop", SubResource("AnimationNodeStateMachineTransition_rh1j3"), "Walk-loop", "Idle-loop", SubResource("AnimationNodeStateMachineTransition_jslxa"), "Walk-loop", "Task_Pebbles-loop", SubResource("AnimationNodeStateMachineTransition_re68c"), "Task_Pebbles-loop", "Walk-loop", SubResource("AnimationNodeStateMachineTransition_kq8s7")]
 
 [node name="Character_Penguin" unique_id=611752080 instance=ExtResource("1_tyi0o")]
+script = ExtResource("2_6ovgj")
 
 [node name="Character1_Reference" parent="." index="0" unique_id=589992047]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
 
 [node name="Skeleton3D" parent="Character1_Reference" index="0" unique_id=741447230]
-bones/0/position = Vector3(0, 1.410778, 0)
-bones/0/rotation = Quaternion(-0.0021180545, -0.11126204, 0.055865914, 0.99221736)
-bones/1/rotation = Quaternion(-0.18166627, 0.076894216, 0.06637257, 0.9780999)
-bones/2/position = Vector3(0, -0.4106854, 0)
-bones/3/position = Vector3(0, -0.40700957, 0)
-bones/3/rotation = Quaternion(-0.008396339, 0, 0, 0.9999648)
-bones/5/rotation = Quaternion(0.0084484955, -0.15940161, -0.05224838, 0.985794)
-bones/6/position = Vector3(0, -0.5003547, 0)
-bones/7/position = Vector3(0, -0.42666826, 0)
-bones/7/rotation = Quaternion(0.12614948, -0.022919655, -0.042085037, 0.9908531)
-bones/8/rotation = Quaternion(-0.076571725, 0.0051164418, 0.03640942, 0.99638605)
-bones/9/position = Vector3(0.013161982, 0.43414077, -0.0009727673)
-bones/9/rotation = Quaternion(0.008936758, 0.06376654, -0.084965594, 0.99430126)
-bones/10/position = Vector3(-0.00587361, 0.38867435, -0.00035965594)
-bones/10/rotation = Quaternion(0.038772035, 0.0932346, -0.027888196, 0.994498)
-bones/11/rotation = Quaternion(0, 0.022078902, 0, 0.9997562)
-bones/12/rotation = Quaternion(0.046618905, 0.230763, -0.29652578, 0.9255526)
-bones/17/rotation = Quaternion(-0.013388087, 0.036281005, -0.025722789, 0.9989208)
-bones/18/rotation = Quaternion(-0.07054817, 0.2315777, 0.024797384, 0.96993804)
-bones/23/position = Vector3(-0.010084933, 0.38255212, -0.0077714543)
-bones/23/rotation = Quaternion(0.034425694, -0.001332937, -0.06624984, 0.9972081)
+bones/2/position = Vector3(1.110223e-16, -0.4106854, 0)
+bones/3/position = Vector3(-1.110223e-16, -0.4070096, 0)
+bones/6/position = Vector3(-1.110223e-16, -0.4106854, 0)
+bones/7/position = Vector3(1.110223e-16, -0.4070096, 0)
 
 [node name="pSphere3" parent="Character1_Reference/Skeleton3D" index="0" unique_id=634928072]
 material_override = SubResource("StandardMaterial3D_6ovgj")
@@ -52,8 +75,15 @@ material_override = SubResource("StandardMaterial3D_6ovgj")
 material_override = SubResource("StandardMaterial3D_6ovgj")
 
 [node name="AnimationPlayer" parent="." index="2" unique_id=1346008215]
+libraries/ANM_Penguin_CollectPebbles-loop = ExtResource("4_0yxea")
+libraries/ANM_Penguin_Idle = ExtResource("3_6ovgj")
+libraries/ANM_Penguin_Idle-loop = ExtResource("4_7ojjn")
 libraries/ANM_Penguin_Walk = ExtResource("3_d8x54")
+libraries/ANM_Penguin_Walk-loop = ExtResource("6_wwq43")
 
 [node name="AnimationTree" type="AnimationTree" parent="." index="3" unique_id=1240292993]
 tree_root = SubResource("AnimationNodeStateMachine_7ojjn")
 anim_player = NodePath("../AnimationPlayer")
+parameters/conditions/is_idle = false
+parameters/conditions/is_moving = false
+parameters/conditions/is_task_pebbles = false

@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://cnbepgxdtu4gx"]
+
+[ext_resource type="Shader" uid="uid://wc3virh1mgdx" path="res://Assets/Shaders/S_Emissive.gdshader" id="1_v246e"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_v246e")
+shader_parameter/base_color = Color(0.87, 0.3, 0.2, 1)
+shader_parameter/emissive_strength = 12.0

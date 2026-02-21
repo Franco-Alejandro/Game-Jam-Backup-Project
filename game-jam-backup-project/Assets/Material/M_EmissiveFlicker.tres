@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://c75wqtlodpxjd"]
+
+[ext_resource type="Shader" uid="uid://pu58qolotc87" path="res://Assets/Shaders/S_Emissive_Flickering.gdshader" id="1_2om6r"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_2om6r")
+shader_parameter/base_color = Color(0.87, 0.3, 0.2, 1)
+shader_parameter/emissive_strength_max = 18.0
+shader_parameter/emissive_strength_min = 5.0
+shader_parameter/flickering_speed = 10.0
