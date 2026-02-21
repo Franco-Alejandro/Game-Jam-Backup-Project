@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="BuildingResource" format=3 uid="uid://wt61dh35s5aq"]
 
-[ext_resource type="PackedScene" uid="uid://oauncgcs5uvp" path="res://Scenes/Debug/IceCream_Debug.tscn" id="1_00rbs"]
+[ext_resource type="PackedScene" uid="uid://12r6acehm5yk" path="res://Assets/Environment/SM_Resources_IceCreamTruck.fbx" id="1_130pk"]
 [ext_resource type="Script" uid="uid://h2ufpeq4u36f" path="res://Scripts/Data/Building_Resource.gd" id="1_bha1u"]
-[ext_resource type="PackedScene" path="res://Scenes/Debug/Scaffolding_Debug.tscn" id="2_130pk"]
+[ext_resource type="PackedScene" uid="uid://dk1x6lkr5emob" path="res://Scenes/Debug/Scaffolding_Debug.tscn" id="2_130pk"]
 [ext_resource type="Script" uid="uid://dwevpm6iumg5j" path="res://Scripts/Data/Job_Resource.gd" id="2_203oj"]
 [ext_resource type="Script" uid="uid://dnmarx8f1e3ss" path="res://Scripts/Data/Penguin_Task.gd" id="3_00rbs"]
 [ext_resource type="Resource" uid="uid://dy3oaq7802nlc" path="res://Resources/Tasks/gather_ice_cream.tres" id="5_00rbs"]
@@ -17,6 +17,6 @@ required_resources = Dictionary[int, int]({
 2: 5
 })
 unlocks_tasks = Array[ExtResource("3_00rbs")]([ExtResource("5_00rbs")])
-building_scene = ExtResource("1_00rbs")
+building_scene = ExtResource("1_130pk")
 scaffolding_scene = ExtResource("2_130pk")
 metadata/_custom_type_script = "uid://h2ufpeq4u36f"

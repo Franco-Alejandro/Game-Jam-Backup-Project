@@ -7,7 +7,7 @@ var resources: Dictionary = {}
 
 func _ready():
 	for id in ResourceType.RESOURCE_ID.values():
-		resources[id] = 999
+		resources[id] = 0
 
 func add_resource(id: ResourceType.RESOURCE_ID, amount: int):
 	resources[id] += amount
