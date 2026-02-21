@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://bjjpsinrs88os"]
+
+[ext_resource type="Script" uid="uid://dsq7u0fupch33" path="res://Scripts/Colony/Spawner.gd" id="1_2cj3q"]
+
+[node name="Spawner" type="Node3D" unique_id=1906046543]
+script = ExtResource("1_2cj3q")
+metadata/_custom_type_script = "uid://dsq7u0fupch33"
