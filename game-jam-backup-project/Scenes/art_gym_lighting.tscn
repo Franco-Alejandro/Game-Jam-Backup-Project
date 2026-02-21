@@ -3,7 +3,9 @@
 [node name="Node3D" type="Node3D" unique_id=1450571092]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1603120560]
-transform = Transform3D(0.08117315, 0.9966999, -3.823975e-08, 0.98462415, -0.08018966, 0.15519315, 0.15468104, -0.012597557, -0.98788416, 0, 0, 0)
+transform = Transform3D(0.081173174, 0.9966999, -3.699056e-08, 0.995469, -0.08107291, 0.049686514, 0.049522545, -0.004033249, -0.9987648, 0, 0, 0)
+light_color = Color(0.8503171, 0.43911943, 0.4606986, 1)
+shadow_enabled = true
 
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=768050541]
 transform = Transform3D(30.796017, 0, 0, 0, 1.0000001, 0, 0, 0, 18.87146, 0, -1.4137688, 0)
