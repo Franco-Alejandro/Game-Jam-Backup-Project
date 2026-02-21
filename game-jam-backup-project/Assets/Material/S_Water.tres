@@ -3,7 +3,7 @@
 [ext_resource type="Shader" uid="uid://bhlyojivai1oa" path="res://Assets/Shaders/S_Water.gdshader" id="1_77oyy"]
 
 [resource]
-render_priority = 0
+render_priority = 1
 shader = ExtResource("1_77oyy")
 shader_parameter/water_base_color = Color(0.48905325, 0.60976493, 0.5097383, 1)
 shader_parameter/roughness = 0.0

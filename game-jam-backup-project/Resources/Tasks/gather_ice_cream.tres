@@ -7,4 +7,10 @@ script = ExtResource("1_7pvkr")
 task_name = "Gather ice cream"
 description = "Gets ice cream from the ice cream man"
 duration = 5.0
+rewards = Dictionary[int, int]({
+0: 0,
+1: 5,
+2: 0,
+3: 0
+})
 metadata/_custom_type_script = "uid://dnmarx8f1e3ss"

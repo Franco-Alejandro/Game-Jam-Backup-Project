@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://deiq416sqq25i"]
+
+[ext_resource type="Shader" uid="uid://c6n4fdq57cwsg" path="res://Assets/Shaders/S_SpaBottom.gdshader" id="1_o48wx"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_o48wx")
+shader_parameter/water_base_color = Color(0.6668247, 0.74934316, 0.64840484, 1)
+shader_parameter/roughness = 0.0
+shader_parameter/metalness = 0.0
+shader_parameter/alpha = 1.0

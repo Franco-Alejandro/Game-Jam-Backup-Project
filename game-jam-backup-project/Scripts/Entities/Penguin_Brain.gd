@@ -111,7 +111,8 @@ func update_animation_state():
 		PenguinState.RUNNING_TO_TASK:
 			anim_tree["parameters/conditions/is_moving"] = true
 		PenguinState.DOING_TASK:
-			anim_tree[task_type_to_anim_flag.get(penguin_data.current_task.task_type)] = true
+			if penguin_data.current_task:
+				anim_tree[task_type_to_anim_flag.get(penguin_data.current_task.task_type)] = true
 
 func is_building_accesible(building: Building) -> bool:
 	if !building.building_resource.unlocks_tasks.has(penguin_data.current_task):
@@ -171,14 +172,28 @@ func do_task(delta: float):
 		print("time left ", int(task_duration_left), " of ", penguin_data.current_task.duration)
 	
 	if (task_duration_left <= 0):
-		task_duration_left = 0
+		finish_task()
+		
+
+func move_to(target_position : Vector3):
+	target_position(target_position);
+	set_state(PenguinState.RUNNING_TO_TASK)
+	
+
+func finish_task():
+	if penguin_data.current_task:
+		var resource_manager := ResourceManagerSingleton
+		if resource_manager:
+			for resource_id in penguin_data.current_task.rewards:
+				var amount: int = penguin_data.current_task.rewards[resource_id]
+				resource_manager.add_resource(resource_id, amount)
 		penguin_data.current_task = null
+	task_duration_left = 0
+	if target_building:
 		target_building.is_being_used = false
 		target_building = null
-		penguin_data.current_task = null
-		set_state(PenguinState.IDLE)
-		
-	pass
+	set_state(PenguinState.IDLE)
+	
 	
 func print_animation_flags():
 	print("---- Animation Flags ----")
