@@ -21,16 +21,16 @@ vec3 lerp(vec3 color1, vec3 color2, float mask) {
 void fragment() {
 	// Called for every pixel the material is visible on.
 	vec4 texture_mask = texture(noise_texture, UV * 10.0);
-	float sparkle_mask = texture(grain_texture, UV * 10.0).r;
+	float sparkle_mask = texture(grain_texture, UV * 15.0).r;
 	
-	vec3 sparkles = step(0.94, sparkle_mask) * sparkle_color;
+	vec3 sparkles = step(0.93, sparkle_mask) * sparkle_color;
 	sparkles *= sparkle_emissive;
 	vec3 snow_color = lerp(base_color, blend_color, texture_mask.r);
 	
 	vec3 output_color = snow_color + sparkles;
 	ALBEDO = output_color;
-	METALLIC = 0.0;
-	ROUGHNESS = 1.0;
+	//METALLIC = 1.0;
+	ROUGHNESS = 0.9;
 	ALPHA = 1.0;
 }
 

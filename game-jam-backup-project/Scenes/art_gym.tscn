@@ -13,10 +13,10 @@ render_priority = 0
 shader = ExtResource("1_3kqh4")
 shader_parameter/noise_texture = ExtResource("3_oc8rl")
 shader_parameter/grain_texture = ExtResource("2_4w0av")
-shader_parameter/base_color = Vector3(0.246, 0.318, 1)
-shader_parameter/blend_color = Vector3(0.166, 0.243, 1)
+shader_parameter/base_color = Vector3(0.286, 0.348, 0.47)
+shader_parameter/blend_color = Vector3(0.181, 0.293, 0.615)
 shader_parameter/sparkle_color = Vector3(0.21, 0.205, 50)
-shader_parameter/sparkle_emissive = 1.5
+shader_parameter/sparkle_emissive = 1.0
 
 [node name="Art_Gym" type="Node3D" unique_id=1874026479]
 
