@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://brn118q7pgxj1" path="res://Assets/Environment/SM_Spa_02.fbx" id="16_m7wlk"]
 [ext_resource type="PackedScene" uid="uid://bkbruq0ncp2ke" path="res://Assets/Environment/SM_Building_Igloo.fbx" id="17_f14od"]
 [ext_resource type="PackedScene" uid="uid://dwic7vtsl6843" path="res://Assets/Environment/SM_PeddleMountain_01.fbx" id="18_l3cg1"]
+[ext_resource type="PackedScene" uid="uid://ccau0aoi2clk1" path="res://Assets/Environment/SM_Bonfire_01.fbx" id="19_8wgcd"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_o7e4v"]
 render_priority = 0
@@ -46,7 +47,7 @@ shader_parameter/emissive_strength = 12.0
 [node name="Art_Gym" type="Node3D" unique_id=1874026479]
 
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1543731571]
-transform = Transform3D(575.58606, 0, 0, 0, 1, 0, 0, 0, 627.35925, -1.0595651, 0.046516895, 2.914764)
+transform = Transform3D(575.58606, 0, 0, 0, 1, 0, 0, 0, 627.35925, -0.98857164, 0.0062584877, 3.0010056)
 material_override = SubResource("ShaderMaterial_o7e4v")
 
 [node name="SM_Tree_Pine_01" parent="." unique_id=1475436749 instance=ExtResource("4_73ul0")]
@@ -110,10 +111,10 @@ transform = Transform3D(-0.26462305, 0.45684916, 0.15494713, 0.47905818, 0.26965
 [node name="SM_Rock_07" parent="." unique_id=818762266 instance=ExtResource("15_soyc4")]
 transform = Transform3D(-0.21403028, -0.3659384, 0.5518117, 0.17994943, 0.3642356, 0.5657817, -0.7516419, 0.1914021, -0.021675669, 17.785536, 0.45222688, 11.327075)
 
-[node name="SM_Spa_02" parent="." unique_id=1719954311 instance=ExtResource("16_m7wlk")]
+[node name="SM_Spa_02" parent="." unique_id=1715883278 instance=ExtResource("16_m7wlk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.523119, 0.6220665, -7.2690387)
 
-[node name="SM_Spa_03" parent="." unique_id=1995693906 instance=ExtResource("16_m7wlk")]
+[node name="SM_Spa_03" parent="." unique_id=120032234 instance=ExtResource("16_m7wlk")]
 transform = Transform3D(0.08612982, 0, -0.99628395, 0, 1, 0, 0.99628395, 0, 0.08612982, 24.662987, 0.6220665, 9.879896)
 
 [node name="SM_Building_Igloo" parent="." unique_id=479839829 instance=ExtResource("17_f14od")]
@@ -121,3 +122,6 @@ transform = Transform3D(-0.7070328, 0, -0.7071808, 0, 1, 0, 0.7071808, 0, -0.707
 
 [node name="SM_PeddleMountain_01" parent="." unique_id=859278057 instance=ExtResource("18_l3cg1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.096214, 0.6147971, 8.144367)
+
+[node name="SM_Bonfire_01" parent="." unique_id=1344670851 instance=ExtResource("19_8wgcd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.765182, 0.54110265, -7.164237)
