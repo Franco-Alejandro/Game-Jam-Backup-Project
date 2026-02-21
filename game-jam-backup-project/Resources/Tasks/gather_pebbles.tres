@@ -8,6 +8,7 @@ task_type = 1
 task_name = "Gather pebbles"
 description = "Pebbles may be gathered now"
 duration = 5.0
+cozyness_cost = 20
 rewards = Dictionary[int, int]({
 0: 0,
 1: 0,

@@ -8,6 +8,7 @@ task_type = 2
 task_name = "Hunt for fish"
 description = "Gets fish"
 duration = 5.0
+cozyness_cost = 20
 rewards = Dictionary[int, int]({
 0: 5,
 1: 0,
