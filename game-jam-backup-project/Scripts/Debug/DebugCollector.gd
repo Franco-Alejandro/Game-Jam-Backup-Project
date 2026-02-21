@@ -15,7 +15,7 @@ func _ready():
 	resource_manager = ResourceManagerSingleton
 	
 	if resource_id:
-		label.text = str(resource_id).capitalize() + " Collector"
+		label.text = ResourceType.RESOURCE_ID.keys()[resource_id].capitalize() + " Collector"
 
 func _process(delta):
 	progress += delta

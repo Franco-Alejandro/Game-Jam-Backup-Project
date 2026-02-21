@@ -18,7 +18,7 @@ script = ExtResource("1_vx365")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=307925445]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.015625, 0.0022773743, -0.011184692)
-size = Vector3(16.046875, 0.09650421, 16.10257)
+size = Vector3(16.047, 0, 16.103)
 
 [node name="UpgradeLayer1" type="Node3D" parent="." unique_id=820765740]
 
