@@ -5,6 +5,7 @@ class_name Building
 var active: bool = false
 var built: bool = false
 @export var building_resource: BuildingResource
+@export var building_base: PackedScene
 var building_scene: Node = null
 
 # Activates the building when the layer becomes active, does not build it
