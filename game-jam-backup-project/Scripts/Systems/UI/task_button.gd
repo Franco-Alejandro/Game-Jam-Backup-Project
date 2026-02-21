@@ -5,4 +5,3 @@ class_name TaskContainerButton
 
 func _ready():
 	tooltip_text = task.description
-	

@@ -6,8 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b6801scexnjbw" path="res://Scenes/UI/ResourcesDisplay.tscn" id="3_52ee3"]
 [ext_resource type="PackedScene" uid="uid://cq3wb872eswxd" path="res://Scenes/UI/Penguin_Selection_HUD.tscn" id="3_bhhdu"]
 [ext_resource type="PackedScene" uid="uid://5sees20p6bj1" path="res://Scenes/UI/Debug/ResourceSpender.tscn" id="3_dewec"]
-[ext_resource type="Script" uid="uid://chh51gxrlqhks" path="res://Scripts/Systems/UI/Task_Button.gd" id="4_dewec"]
-[ext_resource type="Resource" uid="uid://bm4sbtv416r35" path="res://Resources/Tasks/run_around.tres" id="5_5ixxa"]
+[ext_resource type="PackedScene" uid="uid://34tugmfrbuv7" path="res://Scenes/UI/Penguin_Manager.tscn" id="4_52ee3"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_vtd33"]
 specular_color = Color(0.7592268, 0.04579375, 0.076941706, 1)
@@ -21,6 +20,7 @@ transform = Transform3D(1, 0, 0, 0, 0.8308485, 0.55649865, 0, -0.55649865, 0.830
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=107537528]
 script = ExtResource("2_gntrk")
 penguin_selection_hud_scene = ExtResource("3_bhhdu")
+penguin_manager_scene = ExtResource("4_52ee3")
 metadata/_custom_type_script = "uid://bj6oyd1ese83y"
 
 [node name="Control" type="Control" parent="CanvasLayer" unique_id=74526851]
@@ -72,13 +72,11 @@ offset_left = -66.0
 grow_horizontal = 0
 grow_vertical = 2
 
-[node name="PenguinHudButton" type="Button" parent="CanvasLayer/SidePanel" unique_id=581866226]
+[node name="PenguinHudButton" type="Button" parent="CanvasLayer/SidePanel" unique_id=1214803346]
 layout_mode = 0
 offset_right = 64.0
 offset_bottom = 64.0
 icon = ExtResource("2_kyqiw")
-script = ExtResource("4_dewec")
-task = ExtResource("5_5ixxa")
 
 [node name="BottomPanel" type="Panel" parent="CanvasLayer" unique_id=281911958]
 anchors_preset = 7

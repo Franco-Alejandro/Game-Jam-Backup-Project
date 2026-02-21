@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://34tugmfrbuv7"]
+
+[ext_resource type="Script" uid="uid://ilcdp1oin5xs" path="res://Scripts/Systems/UI/Penguin_Manager.gd" id="1_v7qao"]
+[ext_resource type="Script" uid="uid://chh51gxrlqhks" path="res://Scripts/Systems/UI/Task_Button.gd" id="2_gak1q"]
+[ext_resource type="Resource" uid="uid://bm4sbtv416r35" path="res://Resources/Tasks/run_around.tres" id="3_nnkl8"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_v7qao"]
+
+[node name="PenguinManager" type="Control" unique_id=1353943752]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_v7qao")
+metadata/_custom_type_script = "uid://ilcdp1oin5xs"
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1593832165]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 70
+theme_override_constants/margin_top = 70
+theme_override_constants/margin_right = 70
+theme_override_constants/margin_bottom = 70
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer" unique_id=757763244]
+layout_mode = 2
+color = Color(0, 0, 0, 0.44705883)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1396339894]
+layout_mode = 2
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=473272329]
+layout_mode = 2
+
+[node name="PenguinNameLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1509599509]
+layout_mode = 2
+text = "Penguin name: "
+label_settings = SubResource("LabelSettings_v7qao")
+
+[node name="PenguinName" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1356431860]
+layout_mode = 2
+text = "Penguin name: "
+label_settings = SubResource("LabelSettings_v7qao")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1188113107]
+layout_mode = 2
+
+[node name="TaskContainerButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1333993606]
+layout_mode = 2
+script = ExtResource("2_gak1q")
+task = ExtResource("3_nnkl8")
+metadata/_custom_type_script = "uid://chh51gxrlqhks"
+
+[node name="TaskContainerButton2" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=638255154]
+layout_mode = 2
+script = ExtResource("2_gak1q")
+metadata/_custom_type_script = "uid://chh51gxrlqhks"
+
+[node name="TaskContainerButton3" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1648954436]
+layout_mode = 2
+script = ExtResource("2_gak1q")
+metadata/_custom_type_script = "uid://chh51gxrlqhks"
+
+[node name="CancelButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=269996917]
+layout_mode = 2
+text = "Cancel"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/CancelButton" to="." method="_on_cancel_button_pressed"]

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cq3wb872eswxd"]
 
-[ext_resource type="Script" uid="uid://dnjgquo1yw8n5" path="res://Scripts/Systems/UI/penguin_selection_hud.gd" id="1_ni2xp"]
+[ext_resource type="Script" uid="uid://dnjgquo1yw8n5" path="res://Scripts/Systems/UI/Penguin_Selection_Hud.gd" id="1_ni2xp"]
 
 [node name="PenguinSelectionHud" type="Control" unique_id=1307242502]
 layout_mode = 3

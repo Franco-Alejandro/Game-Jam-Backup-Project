@@ -1,10 +1,11 @@
 extends Control
 class_name PenguinSelectionHUD
 
-signal penguin_selected(penguin: PenguinBrain, task: String)
+signal penguin_selected(penguin: PenguinBrain)
 signal cancelled()
 
-var task_to_assign: TaskResource
+@export var penguin_manager_scene: PackedScene  
+var penguin_manager : PenguinManager;
 
 func _ready():
 	var cancelButton : Button = $MarginContainer/HBoxContainer/CancelButton;
@@ -25,9 +26,8 @@ func show_penguins():
 		container.add_child(button)
 
 func _on_penguin_button_pressed(penguin: PenguinBrain):
-	penguin_selected.emit(penguin, task_to_assign)
-	queue_free()
+	penguin_selected.emit(penguin)
 
+	
 func _on_cancel_pressed():
-	cancelled.emit()
-	queue_free()
+	penguin_manager.hide()
