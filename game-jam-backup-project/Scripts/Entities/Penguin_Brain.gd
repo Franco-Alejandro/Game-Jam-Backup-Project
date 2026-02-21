@@ -6,6 +6,8 @@ var _current_state : PenguinState = PenguinState.IDLE;
 var is_idle : bool = true;
 var is_moving : bool = false;
 
+static var colony : Colony;
+
 var behaviour : Dictionary = {
 	PenguinState.IDLE: idle,
 	PenguinState.RUNNING_TO_TASK: running_to_task,
