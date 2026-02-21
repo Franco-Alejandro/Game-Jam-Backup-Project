@@ -9,6 +9,9 @@ func get_buildable_buildings() -> Array[Building]:
 	var unbuilt_buildings: Array[Building]
 	
 	for layer in layers:
+		if not layer.active:
+			break
+		
 		for building in layer.buildings:
 			if not building.built:
 				unbuilt_buildings.append(building)
@@ -19,6 +22,9 @@ func get_built_buildings() -> Array[Building]:
 	var built_buildings: Array[Building]
 	
 	for layer in layers:
+		if not layer.active:
+			break
+			
 		for building in layer.buildings:
 			if building.built:
 				built_buildings.append(building)
