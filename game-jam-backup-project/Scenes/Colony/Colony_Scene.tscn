@@ -2,6 +2,10 @@
 
 [ext_resource type="Script" uid="uid://cp26fooektfl2" path="res://Scripts/Colony/Colony_Script.gd" id="1_vx365"]
 [ext_resource type="Script" uid="uid://cxon1h1qxnmrd" path="res://Scripts/Colony/Building_Script.gd" id="2_bqmm3"]
+[ext_resource type="Resource" uid="uid://crjlxmxx4cvee" path="res://Resources/Buildings/igloo_housing.tres" id="3_lfc4o"]
+[ext_resource type="Resource" uid="uid://c2dny2t0k5ns6" path="res://Resources/Buildings/pebble_mine.tres" id="4_sou2u"]
+[ext_resource type="Resource" uid="uid://1187hrgi6chu" path="res://Resources/Buildings/fishing_pond.tres" id="5_pmrwe"]
+[ext_resource type="Resource" uid="uid://wt61dh35s5aq" path="res://Resources/Buildings/ice_cream_factory.tres" id="6_cq4c0"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j7baj"]
 albedo_color = Color(0, 0, 1, 1)
@@ -19,29 +23,46 @@ size = Vector3(16.046875, 0.09650421, 16.10257)
 [node name="UpgradeLayer1" type="Node3D" parent="." unique_id=820765740]
 
 [node name="L1_1" type="CSGBox3D" parent="UpgradeLayer1" unique_id=759384383]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.0764365, 0, 4.630497)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.0607247, 0.031867027, 4.630497)
 material_override = SubResource("StandardMaterial3D_j7baj")
 script = ExtResource("2_bqmm3")
+building_resource = ExtResource("3_lfc4o")
 
 [node name="L1_2" type="CSGBox3D" parent="UpgradeLayer1" unique_id=1660083760]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9890685, 0, 4.630497)
 script = ExtResource("2_bqmm3")
+building_resource = ExtResource("4_sou2u")
 
 [node name="L1_3" type="CSGBox3D" parent="UpgradeLayer1" unique_id=2142388824]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.636595, 0, 6.5745296)
 script = ExtResource("2_bqmm3")
+building_resource = ExtResource("5_pmrwe")
+
+[node name="L1_4" type="CSGBox3D" parent="UpgradeLayer1" unique_id=708073038]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7447395, 0, 6.5745296)
+script = ExtResource("2_bqmm3")
+building_resource = ExtResource("6_cq4c0")
 
 [node name="UpgradeLayer2" type="Node3D" parent="." unique_id=301380892]
 
 [node name="L2_1" type="CSGBox3D" parent="UpgradeLayer2" unique_id=664395808]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.2172894, 0, -5.2586155)
 script = ExtResource("2_bqmm3")
+building_resource = ExtResource("6_cq4c0")
 
 [node name="L2_2" type="CSGBox3D" parent="UpgradeLayer2" unique_id=615413750]
 transform = Transform3D(1, 0, 0, 0, 0.9996762, 0.025444154, 0, -0.025444154, 0.9996762, 4.2738767, 0, -6.305971)
 script = ExtResource("2_bqmm3")
+building_resource = ExtResource("5_pmrwe")
 
 [node name="L2_3" type="CSGBox3D" parent="UpgradeLayer2" unique_id=638330777]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.2738767, 0, -3.3329043)
 material_override = SubResource("StandardMaterial3D_vxtm5")
 script = ExtResource("2_bqmm3")
+building_resource = ExtResource("4_sou2u")
+
+[node name="L2_4" type="CSGBox3D" parent="UpgradeLayer2" unique_id=328317906]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.7419457, 0, -3.3329043)
+material_override = SubResource("StandardMaterial3D_vxtm5")
+script = ExtResource("2_bqmm3")
+building_resource = ExtResource("3_lfc4o")

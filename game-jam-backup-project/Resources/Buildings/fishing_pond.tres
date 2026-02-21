@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="BuildingResource" format=3 uid="uid://1187hrgi6chu"]
+
+[ext_resource type="Script" uid="uid://h2ufpeq4u36f" path="res://Scripts/Data/Building_Resource.gd" id="1_pfbsi"]
+[ext_resource type="PackedScene" uid="uid://dy7xdcdxeetx7" path="res://Scenes/Penguin.tscn" id="1_ropy6"]
+[ext_resource type="Script" uid="uid://dwevpm6iumg5j" path="res://Scripts/Data/Job_Resource.gd" id="2_ropy6"]
+[ext_resource type="Script" uid="uid://dnmarx8f1e3ss" path="res://Scripts/Data/Penguin_Task.gd" id="3_1gfpa"]
+
+[resource]
+script = ExtResource("1_pfbsi")
+building_name = "Fishing Pond"
+description = "A pond where penguins can fish"
+required_resources = {
+"fish": 0,
+"ice_cream": 5,
+"pebbles": 5
+}
+building_scene = ExtResource("1_ropy6")
+metadata/_custom_type_script = "uid://h2ufpeq4u36f"

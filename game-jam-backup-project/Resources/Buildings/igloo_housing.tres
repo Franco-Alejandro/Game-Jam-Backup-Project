@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="BuildingResource" format=3 uid="uid://crjlxmxx4cvee"]
+
+[ext_resource type="PackedScene" uid="uid://d1yidmfxypdln" path="res://Assets/SM_Path_Long_03.fbx" id="1_cip5e"]
+[ext_resource type="Script" uid="uid://h2ufpeq4u36f" path="res://Scripts/Data/Building_Resource.gd" id="1_wm8gr"]
+[ext_resource type="Script" uid="uid://dwevpm6iumg5j" path="res://Scripts/Data/Job_Resource.gd" id="2_cip5e"]
+[ext_resource type="Script" uid="uid://dnmarx8f1e3ss" path="res://Scripts/Data/Penguin_Task.gd" id="3_6jdwc"]
+
+[resource]
+script = ExtResource("1_wm8gr")
+building_name = "Igloo Housing"
+description = "A cozy igloo for penguins to live in"
+required_resources = {
+"fish": 0,
+"ice_cream": 5,
+"pebbles": 5
+}
+building_scene = ExtResource("1_cip5e")
+metadata/_custom_type_script = "uid://h2ufpeq4u36f"
