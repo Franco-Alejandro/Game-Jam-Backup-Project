@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 ResourceManagerSingleton="*uid://c034cqnt7nvve"
 
+[global_group]
+
+Colony=""
+
 [input]
 
 move_left={

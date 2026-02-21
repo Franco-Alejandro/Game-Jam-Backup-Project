@@ -7,17 +7,16 @@
 [ext_resource type="PackedScene" uid="uid://cs1kwb10pi7se" path="res://Scenes/Colony/Colony_Scene.tscn" id="7_0eyfg"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_t7y5i"]
-vertices = PackedVector3Array(-24.78893, -0.19444394, -26.297668, -24.78893, -0.19444394, 42.20233, 46.461067, -0.19444394, 42.20233, 46.461067, -0.19444394, -26.297668)
+vertices = PackedVector3Array(-9.2942, -0.19444394, -17.7089, -9.2942, -0.19444394, 17.7911, 9.2058, -0.19444394, 17.7911, 9.2058, -0.19444394, -17.7089)
 polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
 
-[node name="ColonyBaseNode" type="Node3D" unique_id=1578385563]
+[node name="ColonyBaseNode" type="Node3D" unique_id=1578385563 groups=["Colony"]]
 script = ExtResource("1_t7y5i")
 metadata/_custom_type_script = "uid://cp26fooektfl2"
 
 [node name="Penguin" parent="." unique_id=1889786772 instance=ExtResource("4_4283g")]
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=1831550547]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04860449, 0.016193151, -0.016447067)
 navigation_mesh = SubResource("NavigationMesh_t7y5i")
 
 [node name="Floor" type="CSGBox3D" parent="NavigationRegion3D" unique_id=408071505]

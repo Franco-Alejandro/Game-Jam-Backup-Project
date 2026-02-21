@@ -13,7 +13,7 @@ albedo_color = Color(0, 0, 1, 1)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vxtm5"]
 albedo_color = Color(1, 0, 0, 1)
 
-[node name="ColonyScene" type="Node3D" unique_id=423688789]
+[node name="ColonyScene" type="Node3D" unique_id=423688789 groups=["Colony"]]
 script = ExtResource("1_vx365")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=307925445]

@@ -1,0 +1,122 @@
+[gd_scene format=3 uid="uid://dr5fen2cwown7"]
+
+[ext_resource type="Shader" uid="uid://dxo0niadqpfmg" path="res://Assets/Shaders/S_Snow_01.gdshader" id="1_waglr"]
+[ext_resource type="Texture2D" uid="uid://olh23y5c7v5e" path="res://Assets/Shaders/T_GrainNoise_512x512.png" id="2_rwt1y"]
+[ext_resource type="Texture2D" uid="uid://dkfkpuhem5qlx" path="res://Assets/Shaders/T_PerlinNoise_256x256.png" id="3_mvfa8"]
+[ext_resource type="PackedScene" uid="uid://ccu7xctb4aimt" path="res://Assets/SM_Tree_Pine_01.fbx" id="4_r0dna"]
+[ext_resource type="PackedScene" uid="uid://btiyra0yr0sm4" path="res://Assets/SM_Tree_Pine_03.fbx" id="5_b5aes"]
+[ext_resource type="PackedScene" uid="uid://c8oxjam3gfaj5" path="res://Assets/SM_Path_Small_01.fbx" id="7_0ao37"]
+[ext_resource type="Script" uid="uid://cp26fooektfl2" path="res://Scripts/Colony/Colony_Script.gd" id="10_73dir"]
+[ext_resource type="PackedScene" uid="uid://dwvjglu5tb3vq" path="res://Scenes/art_gym_lighting.tscn" id="10_w86vl"]
+[ext_resource type="PackedScene" uid="uid://c0gsy02twtl64" path="res://Scenes/Player.tscn" id="13_6sbj7"]
+[ext_resource type="PackedScene" uid="uid://brn118q7pgxj1" path="res://Assets/Environment/SM_Spa_02.fbx" id="16_mq4nq"]
+[ext_resource type="PackedScene" uid="uid://bkbruq0ncp2ke" path="res://Assets/Environment/SM_Building_Igloo.fbx" id="17_371b6"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_o7e4v"]
+render_priority = 0
+shader = ExtResource("1_waglr")
+shader_parameter/noise_texture = ExtResource("3_mvfa8")
+shader_parameter/grain_texture = ExtResource("2_rwt1y")
+shader_parameter/base_color = Vector3(0.286, 0.348, 0.47)
+shader_parameter/blend_color = Vector3(0.181, 0.293, 0.615)
+shader_parameter/sparkle_color = Vector3(0.21, 0.205, 50)
+shader_parameter/sparkle_emissive = 1.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qjxhu"]
+size = Vector3(3.489746, 1, 1)
+
+[node name="World" type="Node3D" unique_id=1874026479]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1543731571]
+transform = Transform3D(3936.2793, 0, 0, 0, 1, 0, 0, 0, 3627.1162, -1.057189, 0.07178736, 2.9151354)
+material_override = SubResource("ShaderMaterial_o7e4v")
+
+[node name="Light" parent="." unique_id=1450571092 instance=ExtResource("10_w86vl")]
+
+[node name="Environment" type="Node" parent="." unique_id=691297442]
+
+[node name="SM_Tree_Pine_01" parent="Environment" unique_id=1475436749 instance=ExtResource("4_r0dna")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.352476, 0.4008342, -2.5402937)
+
+[node name="SM_Tree_Pine_02" parent="Environment" unique_id=1766677823 instance=ExtResource("4_r0dna")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3705454, 0.4008342, 12.421689)
+
+[node name="SM_Tree_Pine_06" parent="Environment" unique_id=578182979 instance=ExtResource("4_r0dna")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.960079, 0.4008342, 7.8826)
+
+[node name="SM_Tree_Pine_03" parent="Environment" unique_id=1366332905 instance=ExtResource("5_b5aes")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6141958, 0.41152525, -7.629942)
+
+[node name="SM_Tree_Pine_05" parent="Environment" unique_id=1467761326 instance=ExtResource("5_b5aes")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3454227, 0.41152525, 7.4547815)
+
+[node name="SM_Tree_Pine_04" parent="Environment" unique_id=648575233 instance=ExtResource("5_b5aes")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.7827997, 0.41152525, -7.629942)
+
+[node name="SM_Path_Small_02" parent="Environment" unique_id=1753661497 instance=ExtResource("7_0ao37")]
+transform = Transform3D(0.9981316, 0, -0.0611009, 0, 1, 0, 0.0611009, 0, 0.9981316, 8.531081, 0.51813936, -9.515567)
+
+[node name="SM_Spa_02" parent="Environment" unique_id=1719954311 instance=ExtResource("16_mq4nq")]
+transform = Transform3D(0.9332234, 0, 0.35929653, 0, 1, 0, -0.35929653, 0, 0.9332234, 8.931992, 0.6220665, -14.88015)
+
+[node name="SM_Building_Igloo" parent="Environment" unique_id=479839829 instance=ExtResource("17_371b6")]
+transform = Transform3D(-0.7070328, 0, -0.7071808, 0, 1, 0, 0.7071808, 0, -0.7070328, -1.7370958, 0.642679, 0.5890446)
+
+[node name="Colony" type="Node3D" parent="." unique_id=1395962971]
+script = ExtResource("10_73dir")
+metadata/_custom_type_script = "uid://cp26fooektfl2"
+
+[node name="UpgradeLayer1" type="Node3D" parent="Colony" unique_id=838450215]
+
+[node name="Paths" type="Node" parent="Colony/UpgradeLayer1" unique_id=1889866771]
+
+[node name="SM_Path_Small_01" parent="Colony/UpgradeLayer1/Paths" unique_id=1829901596 instance=ExtResource("7_0ao37")]
+transform = Transform3D(0.9848077, 0, -0.17364818, 0, 1, 0, 0.17364818, 0, 0.9848077, -0.57969093, 0.5547466, 4.3963904)
+
+[node name="SM_Path_Small_02" parent="Colony/UpgradeLayer1/Paths" unique_id=768236531 instance=ExtResource("7_0ao37")]
+transform = Transform3D(-0.087886035, 0, -0.9961306, 0, 1, 0, 0.9961306, 0, -0.087886035, 1.6550665, 0.51813936, 3.1593447)
+
+[node name="SM_Path_Small_06" parent="Colony/UpgradeLayer1/Paths" unique_id=123772996 instance=ExtResource("7_0ao37")]
+transform = Transform3D(-0.087886035, 0, -0.9961306, 0, 1, 0, 0.9961306, 0, -0.087886035, 7.5500965, 0.51813936, -7.6500134)
+
+[node name="SM_Path_Small_07" parent="Colony/UpgradeLayer1/Paths" unique_id=664826116 instance=ExtResource("7_0ao37")]
+transform = Transform3D(-0.087886035, 0, -0.9961306, 0, 1, 0, 0.9961306, 0, -0.087886035, 7.5500965, 0.51813936, -2.337631)
+
+[node name="SM_Path_Small_09" parent="Colony/UpgradeLayer1/Paths" unique_id=1453682065 instance=ExtResource("7_0ao37")]
+transform = Transform3D(0.33221045, 0, -0.94320524, 0, 1, 0, 0.94320524, 0, 0.33221045, 7.5500965, 0.51813936, -4.427119)
+
+[node name="SM_Path_Small_08" parent="Colony/UpgradeLayer1/Paths" unique_id=193872775 instance=ExtResource("7_0ao37")]
+transform = Transform3D(-0.087886035, 0, -0.9961306, 0, 1, 0, 0.9961306, 0, -0.087886035, 7.5500965, 0.51813936, 0.4563756)
+
+[node name="SM_Path_Small_03" parent="Colony/UpgradeLayer1/Paths" unique_id=51098494 instance=ExtResource("7_0ao37")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.432627, 0.5547466, 4.3963904)
+
+[node name="SM_Path_Small_04" parent="Colony/UpgradeLayer1/Paths" unique_id=1682689296 instance=ExtResource("7_0ao37")]
+transform = Transform3D(-0.087886035, 0, -0.9961306, 0, 1, 0, 0.9961306, 0, -0.087886035, 7.36176, 0.51813936, 3.1593447)
+
+[node name="SM_Path_Small_05" parent="Colony/UpgradeLayer1/Paths" unique_id=1501374120 instance=ExtResource("7_0ao37")]
+transform = Transform3D(-0.087886035, 0, -0.9961306, 0, 1, 0, 0.9961306, 0, -0.087886035, 10.215001, 0.51813936, 3.1593447)
+
+[node name="Buildings" type="Node" parent="Colony/UpgradeLayer1" unique_id=76153528]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Colony/UpgradeLayer1/Buildings" unique_id=939362560]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.589166, -0.15294921, 5.951626)
+
+[node name="Building" type="CollisionShape3D" parent="Colony/UpgradeLayer1/Buildings/StaticBody3D" unique_id=356191379]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.244873, 1.7609371, 0)
+shape = SubResource("BoxShape3D_qjxhu")
+debug_color = Color(2.7075353, 0.16982482, 0, 1)
+
+[node name="UpgradeLayer2" type="Node3D" parent="Colony" unique_id=119963285]
+
+[node name="UpgradeLayer3" type="Node3D" parent="Colony" unique_id=1759345791]
+
+[node name="UpgradeLayer4" type="Node3D" parent="Colony" unique_id=178976029]
+
+[node name="UpgradeLayer5" type="Node3D" parent="Colony" unique_id=1698549923]
+
+[node name="Player" parent="." unique_id=196852108 instance=ExtResource("13_6sbj7")]
+limit_left = -40.0
+limit_right = 40.0
+limit_forward = -40.0
+limit_back = 40.0

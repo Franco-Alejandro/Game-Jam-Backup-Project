@@ -6,7 +6,7 @@ var _current_state : PenguinState = PenguinState.IDLE;
 var is_idle : bool = true;
 var is_moving : bool = false;
 
-static var colony : Colony;
+var colony : Colony;
 static var stopping_distance: float = 0.5
 
 var behaviour : Dictionary = {
@@ -26,8 +26,6 @@ var gravity = 9.8;
 func _ready():
 	penguin_data.penguin_name = "Juan"
 	add_to_group("penguins")
-	if !colony:
-		colony = get_tree().get_nodes_in_group("Colony").pick_random()
 	
 func _process(delta: float) -> void:
 	if behaviour.get(_current_state) != null:
@@ -96,6 +94,9 @@ func is_building_accesible(building: Building) -> bool:
 	return true
 
 func set_task(task: TaskResource):
+	var bebe = get_tree().get_nodes_in_group("Colony")
+	colony = get_tree().get_nodes_in_group("Colony").pick_random()
+	
 	if !colony:
 		return;
 	#ignore same tasks
@@ -106,7 +107,9 @@ func set_task(task: TaskResource):
 	var available_buildings : Array[Building] = colony.get_built_buildings();
 	var building_index : int = available_buildings.find_custom(is_building_accesible.bind())
 	if building_index < 0:
+		penguin_data.current_task = null
 		set_state(PenguinState.IDLE)
+		return
 		
 	target_building = available_buildings.get(building_index);
 	if not target_building:
@@ -147,6 +150,7 @@ func do_task(delta: float):
 		penguin_data.current_task = null
 		target_building.is_being_used = false
 		target_building = null
+		penguin_data.current_task = null
 		set_state(PenguinState.IDLE)
 		
 	pass
