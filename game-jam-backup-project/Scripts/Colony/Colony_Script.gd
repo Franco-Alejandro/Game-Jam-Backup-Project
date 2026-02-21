@@ -33,6 +33,15 @@ func upgrade() -> void:
 	layers[current_level].activate_layer()
 	
 func try_to_build_building(building: Building) -> void:
+	var resource : BuildingResource = building.building_resource
+	
+	for key: ResourceType.RESOURCE_ID in resource.required_resources:
+		if not ResourceManagerSingleton.can_afford(key, resource.required_resources[key]):
+			return
+			
+	for key: ResourceType.RESOURCE_ID in resource.required_resources:
+		ResourceManagerSingleton.spend_resource(key, resource.required_resources[key])
+	
 	building.build()
 	
 func cast_ray() -> Dictionary:
