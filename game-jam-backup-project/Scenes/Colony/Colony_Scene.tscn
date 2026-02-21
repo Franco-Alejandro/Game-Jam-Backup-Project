@@ -48,7 +48,6 @@ script = ExtResource("2_bqmm3")
 building_resource = ExtResource("6_cq4c0")
 
 [node name="UpgradeLayer2" type="Node3D" parent="." unique_id=490844497]
-visible = false
 
 [node name="L1_1" type="CSGBox3D" parent="UpgradeLayer2" unique_id=127173144]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.0607247, 0.031867027, 4.630497)
@@ -76,10 +75,9 @@ script = ExtResource("2_bqmm3")
 building_resource = ExtResource("6_cq4c0")
 
 [node name="UpgradeLayer3" type="Node3D" parent="." unique_id=301380892]
-visible = false
 
 [node name="L2_1" type="CSGBox3D" parent="UpgradeLayer3" unique_id=664395808]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.2172894, 0, -5.2586155)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.549196, 6.517561, -8.771414)
 use_collision = true
 script = ExtResource("2_bqmm3")
 building_resource = ExtResource("6_cq4c0")

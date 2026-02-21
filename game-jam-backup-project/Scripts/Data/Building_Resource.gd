@@ -11,6 +11,7 @@ class_name BuildingResource
 @export var unlocks_tasks: Array[TaskResource]
 @export var unlocks_jobs: Array[JobResource]
 @export var building_scene: PackedScene 
+@export var scaffolding_scene: PackedScene 
 @export var provided_living_space: int
 
 # maybe it is like an entertainment building?
