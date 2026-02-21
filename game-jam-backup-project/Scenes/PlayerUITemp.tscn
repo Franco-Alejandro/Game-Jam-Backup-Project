@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://b5i74hts0fylq"]
+
+[ext_resource type="Script" uid="uid://d3l1y3078yo7h" path="res://Scripts/Entities/Player.gd" id="1_53qy5"]
+[ext_resource type="Script" uid="uid://bj6oyd1ese83y" path="res://Scripts/Systems/HUD_Controller.gd" id="2_d1t5e"]
+[ext_resource type="PackedScene" uid="uid://cq3wb872eswxd" path="res://Scenes/UI/Penguin_Selection.tscn" id="3_yy80k"]
+[ext_resource type="PackedScene" uid="uid://34tugmfrbuv7" path="res://Scenes/UI/Penguin_Manager.tscn" id="4_s4nty"]
+[ext_resource type="PackedScene" uid="uid://b6801scexnjbw" path="res://Scenes/UI/ResourcesDisplay.tscn" id="5_qh6n1"]
+[ext_resource type="PackedScene" uid="uid://b5rjmtuvphj37" path="res://Scenes/UI/Penguins_Panel.tscn" id="5_yy80k"]
+[ext_resource type="PackedScene" uid="uid://5sees20p6bj1" path="res://Scenes/UI/Debug/ResourceSpenders.tscn" id="6_f1527"]
+[ext_resource type="Texture2D" uid="uid://c78pncp6fe522" path="res://Assets/Icons/penguin_icon.png" id="7_tmhr6"]
+[ext_resource type="PackedScene" uid="uid://20b3xtddey64" path="res://Scenes/UI/Profile_Panel.tscn" id="9_s4nty"]
+[ext_resource type="PackedScene" uid="uid://b5rjmtuvphj37" path="res://Scenes/UI/penguins_panel.tscn" id="10_qh6n1"]
+
+[node name="Player" type="Node3D" unique_id=196852108]
+script = ExtResource("1_53qy5")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=160749495]
+transform = Transform3D(1, 0, 0, 0, 0.8308485, 0.55649865, 0, -0.55649865, 0.8308485, 0, 7.1686764, 0)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=107537528]
+script = ExtResource("2_d1t5e")
+penguin_selection_hud_scene = ExtResource("3_yy80k")
+penguin_manager_scene = ExtResource("4_s4nty")
+penguin_profile_panel = ExtResource("5_yy80k")
+metadata/_custom_type_script = "uid://bj6oyd1ese83y"
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=74526851]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TopBar" type="Panel" parent="CanvasLayer" unique_id=1101949083]
+custom_minimum_size = Vector2(1000, 80)
+layout_direction = 2
+offset_bottom = 40.0
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/TopBar" unique_id=404872214]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = -5.0
+offset_right = 43.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/TopBar/MarginContainer" unique_id=207859766]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 50
+
+[node name="ResourcesDisplay" parent="CanvasLayer/TopBar/MarginContainer/HBoxContainer" unique_id=166018451 instance=ExtResource("5_qh6n1")]
+layout_mode = 2
+
+[node name="ResourceSpender" parent="CanvasLayer/TopBar/MarginContainer/HBoxContainer" unique_id=795086547 instance=ExtResource("6_f1527")]
+layout_mode = 2
+
+[node name="SidePanel" type="Panel" parent="CanvasLayer" unique_id=865329726]
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -66.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="PenguinHudButton" type="Button" parent="CanvasLayer/SidePanel" unique_id=1214803346]
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 64.0
+icon = ExtResource("7_tmhr6")
+
+[node name="ProfilePanel" parent="CanvasLayer" unique_id=601533000 instance=ExtResource("9_s4nty")]
+
+[node name="PenguinsPanel" parent="CanvasLayer" unique_id=1557825135 instance=ExtResource("10_qh6n1")]
+
+[connection signal="pressed" from="CanvasLayer/SidePanel/PenguinHudButton" to="CanvasLayer" method="_on_penguin_hud_button_pressed"]

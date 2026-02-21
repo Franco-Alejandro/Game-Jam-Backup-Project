@@ -3,6 +3,7 @@ class_name HUDController
 
 @export var penguin_selection_hud_scene: PackedScene  
 @export var penguin_manager_scene: PackedScene  
+@export var penguin_profile_panel: PackedScene  
 var penguin_selection_HUD : PenguinSelectionHUD;
 var penguin_manager : PenguinManager;
 		

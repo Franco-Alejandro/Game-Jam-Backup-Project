@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://b5rjmtuvphj37"]
+
+[ext_resource type="Texture2D" uid="uid://c78pncp6fe522" path="res://Assets/Icons/penguin_icon.png" id="1_oueyw"]
+[ext_resource type="Script" uid="uid://dc53pgaaaesqv" path="res://Scripts/UI/Penguin_Portrait_Button.gd" id="2_ah5an"]
+
+[node name="PenguinsPanel" type="Panel" unique_id=1557825135]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -220.0
+offset_right = 360.0
+grow_vertical = 0
+pivot_offset = Vector2(0, 220)
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=606974586]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VFlowContainer" type="VFlowContainer" parent="MarginContainer" unique_id=644400180]
+layout_mode = 2
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+
+[node name="PenguinButton" type="Button" parent="MarginContainer/VFlowContainer" unique_id=599264909]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+icon = ExtResource("1_oueyw")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_ah5an")
+
+[node name="TextureRect2" type="TextureRect" parent="MarginContainer/VFlowContainer" unique_id=705741819]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+texture = ExtResource("1_oueyw")
+expand_mode = 1
+
+[node name="TextureRect3" type="TextureRect" parent="MarginContainer/VFlowContainer" unique_id=1413346883]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+texture = ExtResource("1_oueyw")
+expand_mode = 1
+
+[node name="TextureRect4" type="TextureRect" parent="MarginContainer/VFlowContainer" unique_id=360555367]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+texture = ExtResource("1_oueyw")
+expand_mode = 1
+
+[node name="TextureRect5" type="TextureRect" parent="MarginContainer/VFlowContainer" unique_id=2083367022]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+texture = ExtResource("1_oueyw")
+expand_mode = 1
+
+[node name="TextureRect6" type="TextureRect" parent="MarginContainer/VFlowContainer" unique_id=1770717097]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+texture = ExtResource("1_oueyw")
+expand_mode = 1
+
+[node name="TextureRect7" type="TextureRect" parent="MarginContainer/VFlowContainer" unique_id=109802700]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+texture = ExtResource("1_oueyw")
+expand_mode = 1
+
+[node name="TextureRect8" type="TextureRect" parent="MarginContainer/VFlowContainer" unique_id=872898405]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+texture = ExtResource("1_oueyw")
+expand_mode = 1
