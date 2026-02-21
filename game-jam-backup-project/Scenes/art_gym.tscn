@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://c8oxjam3gfaj5" path="res://Assets/SM_Path_Small_01.fbx" id="7_1ioel"]
 [ext_resource type="Shader" uid="uid://pu58qolotc87" path="res://Assets/Shaders/S_Emissive_Flickering.gdshader" id="8_oc8rl"]
 [ext_resource type="Shader" uid="uid://wc3virh1mgdx" path="res://Assets/Shaders/S_Emissive.gdshader" id="9_73ul0"]
+[ext_resource type="PackedScene" uid="uid://dwvjglu5tb3vq" path="res://Scenes/art_gym_lighting.tscn" id="10_73ul0"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_o7e4v"]
 render_priority = 0
@@ -59,3 +60,5 @@ material = SubResource("ShaderMaterial_ffu28")
 [node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=1068474575]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.3224745, 1.1858888, 1.8785818)
 material = SubResource("ShaderMaterial_cmn64")
+
+[node name="Node3D" parent="." unique_id=1450571092 instance=ExtResource("10_73ul0")]
