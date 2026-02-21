@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://dk1x6lkr5emob"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yotmu"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0.3137255)
+
+[node name="FishingDebug" type="Node3D" unique_id=2102050277]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.61658704, 0)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=1669924726]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1609899, -0.27853346)
+size = Vector3(1, 1, 0.16748047)
+material = SubResource("StandardMaterial3D_yotmu")
+
+[node name="Label3D" type="Label3D" parent="." unique_id=305246591]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9541415, 0)
+text = "Scaffolding debug"
+font_size = 80
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=426165426]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.44035816, 0, 0)
+size = Vector3(0.24951172, 1, 1)
+material = SubResource("StandardMaterial3D_yotmu")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="." unique_id=1850404067]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4154408, 0, 0)
+size = Vector3(0.19140625, 1, 1)
+material = SubResource("StandardMaterial3D_yotmu")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="." unique_id=1410992223]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.985005, 0.45239258)
+size = Vector3(1, 1, 0.095214844)
+material = SubResource("StandardMaterial3D_yotmu")
