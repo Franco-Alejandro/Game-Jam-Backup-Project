@@ -7,10 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://btiyra0yr0sm4" path="res://Assets/SM_Tree_Pine_03.fbx" id="5_b5aes"]
 [ext_resource type="PackedScene" uid="uid://c8oxjam3gfaj5" path="res://Assets/SM_Path_Small_01.fbx" id="7_0ao37"]
 [ext_resource type="Script" uid="uid://cp26fooektfl2" path="res://Scripts/Colony/Colony_Script.gd" id="10_73dir"]
+[ext_resource type="PackedScene" uid="uid://cv002k0fcsopd" path="res://Scenes/Colony/Buildings/Igloo_Housing_Building_Scene.tscn" id="10_qjxhu"]
 [ext_resource type="PackedScene" uid="uid://dwvjglu5tb3vq" path="res://Scenes/art_gym_lighting.tscn" id="10_w86vl"]
-[ext_resource type="Script" uid="uid://cxon1h1qxnmrd" path="res://Scripts/Colony/Building_Script.gd" id="11_6sbj7"]
 [ext_resource type="PackedScene" uid="uid://b0ok3h6300l" path="res://Scenes/Colony/Buildings/Fishing_Pond_Building_Scene.tscn" id="11_jdbgl"]
-[ext_resource type="Resource" uid="uid://crjlxmxx4cvee" path="res://Resources/Buildings/igloo_housing.tres" id="12_n7pht"]
 [ext_resource type="PackedScene" uid="uid://c0gsy02twtl64" path="res://Scenes/Player.tscn" id="13_6sbj7"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_o7e4v"]
@@ -26,7 +25,7 @@ shader_parameter/sparkle_emissive = 1.0
 [node name="World" type="Node3D" unique_id=1874026479]
 
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1543731571]
-transform = Transform3D(3936.2793, 0, 0, 0, 1, 0, 0, 0, 3627.1162, -1.057189, 0.07178736, 2.9151354)
+transform = Transform3D(3936.2793, 0, 0, 0, 1, 0, 0, 0, 3627.1162, -1.0936055, 0.07178736, 2.9198637)
 material_override = SubResource("ShaderMaterial_o7e4v")
 
 [node name="Light" parent="." unique_id=1450571092 instance=ExtResource("10_w86vl")]
@@ -34,25 +33,22 @@ material_override = SubResource("ShaderMaterial_o7e4v")
 [node name="Environment" type="Node3D" parent="." unique_id=1323123888]
 
 [node name="SM_Tree_Pine_01" parent="Environment" unique_id=1475436749 instance=ExtResource("4_r0dna")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.352476, 0.4008342, -2.5402937)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9976218, 0.4008342, 11.623376)
 
 [node name="SM_Tree_Pine_02" parent="Environment" unique_id=1766677823 instance=ExtResource("4_r0dna")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3705454, 0.4008342, 12.421689)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.958158, 0.4008342, 11.021386)
 
 [node name="SM_Tree_Pine_06" parent="Environment" unique_id=578182979 instance=ExtResource("4_r0dna")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.960079, 0.4008342, 7.8826)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.393511, 0.4008342, 0.7143583)
 
 [node name="SM_Tree_Pine_03" parent="Environment" unique_id=1366332905 instance=ExtResource("5_b5aes")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6141958, 0.41152525, -7.629942)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.13101, 0.41152525, -7.629942)
 
 [node name="SM_Tree_Pine_05" parent="Environment" unique_id=1467761326 instance=ExtResource("5_b5aes")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3454227, 0.41152525, 7.4547815)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.294514, 0.41152525, -2.6393785)
 
 [node name="SM_Tree_Pine_04" parent="Environment" unique_id=648575233 instance=ExtResource("5_b5aes")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.7827997, 0.41152525, -7.629942)
-
-[node name="SM_Path_Small_02" parent="Environment" unique_id=1753661497 instance=ExtResource("7_0ao37")]
-transform = Transform3D(0.9981316, 0, -0.0611009, 0, 1, 0, 0.0611009, 0, 0.9981316, 8.531081, 0.51813936, -9.515567)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.20454, 0.41152525, -3.539713)
 
 [node name="Colony" type="Node3D" parent="." unique_id=1395962971]
 script = ExtResource("10_73dir")
@@ -63,25 +59,43 @@ metadata/_custom_type_script = "uid://cp26fooektfl2"
 [node name="Paths" type="Node3D" parent="Colony/UpgradeLayer0" unique_id=729001229]
 
 [node name="SM_Path_Small_01" parent="Colony/UpgradeLayer0/Paths" unique_id=1829901596 instance=ExtResource("7_0ao37")]
-transform = Transform3D(0.9848077, 0, -0.17364818, 0, 1, 0, 0.17364818, 0, 0.9848077, -0.57969093, 0.5547466, 4.3963904)
+transform = Transform3D(0.9759396, 0, 0.21804103, 0, 1, 0, -0.21804103, 0, 0.9759396, -0.27114367, 0.5547466, 5.612448)
+
+[node name="SM_Path_Small_06" parent="Colony/UpgradeLayer0/Paths" unique_id=1754211579 instance=ExtResource("7_0ao37")]
+transform = Transform3D(0.93545634, 0, 0.3534422, 0, 1, 0, -0.3534422, 0, 0.93545634, -3.0387297, 0.5547466, 6.612531)
+
+[node name="SM_Path_Small_07" parent="Colony/UpgradeLayer0/Paths" unique_id=1815323418 instance=ExtResource("7_0ao37")]
+transform = Transform3D(0.9943676, 0, 0.10598643, 0, 1, 0, -0.10598643, 0, 0.9943676, -6.4492264, 0.5547466, 7.14994)
+
+[node name="SM_Path_Small_13" parent="Colony/UpgradeLayer0/Paths" unique_id=1588407274 instance=ExtResource("7_0ao37")]
+transform = Transform3D(0.9993537, 0, -0.03594601, 0, 1, 0, 0.03594601, 0, 0.9993537, -6.4492264, 0.5547466, 10.10671)
+
+[node name="SM_Path_Small_14" parent="Colony/UpgradeLayer0/Paths" unique_id=1431936847 instance=ExtResource("7_0ao37")]
+transform = Transform3D(0.9463792, 0, -0.3230587, 0, 1, 0, 0.3230587, 0, 0.9463792, -7.25232, 0.5547466, 12.920742)
+
+[node name="SM_Path_Small_15" parent="Colony/UpgradeLayer0/Paths" unique_id=2077751890 instance=ExtResource("7_0ao37")]
+transform = Transform3D(0.87414557, 0, -0.48566425, 0, 1, 0, 0.48566425, 0, 0.87414557, -8.727043, 0.5547466, 15.492437)
+
+[node name="SM_Path_Small_08" parent="Colony/UpgradeLayer0/Paths" unique_id=1929070736 instance=ExtResource("7_0ao37")]
+transform = Transform3D(0.9996193, 0, -0.027590118, 0, 1, 0, 0.027590118, 0, 0.9996193, -9.759569, 0.5547466, 6.9688306)
+
+[node name="SM_Path_Small_09" parent="Colony/UpgradeLayer0/Paths" unique_id=644756558 instance=ExtResource("7_0ao37")]
+transform = Transform3D(0.9934289, 0, -0.11445166, 0, 1, 0, 0.11445166, 0, 0.9934289, -12.884825, 0.5547466, 6.5217814)
 
 [node name="SM_Path_Small_02" parent="Colony/UpgradeLayer0/Paths" unique_id=768236531 instance=ExtResource("7_0ao37")]
-transform = Transform3D(-0.087886035, 0, -0.9961306, 0, 1, 0, 0.9961306, 0, -0.087886035, 1.6550665, 0.51813936, 3.1593447)
-
-[node name="SM_Path_Small_06" parent="Colony/UpgradeLayer0/Paths" unique_id=123772996 instance=ExtResource("7_0ao37")]
-transform = Transform3D(-0.087886035, 0, -0.9961306, 0, 1, 0, 0.9961306, 0, -0.087886035, 7.5500965, 0.51813936, -7.6500134)
-
-[node name="SM_Path_Small_07" parent="Colony/UpgradeLayer0/Paths" unique_id=664826116 instance=ExtResource("7_0ao37")]
-transform = Transform3D(-0.087886035, 0, -0.9961306, 0, 1, 0, 0.9961306, 0, -0.087886035, 7.5500965, 0.51813936, -2.337631)
-
-[node name="SM_Path_Small_09" parent="Colony/UpgradeLayer0/Paths" unique_id=1453682065 instance=ExtResource("7_0ao37")]
-transform = Transform3D(0.33221045, 0, -0.94320524, 0, 1, 0, 0.94320524, 0, 0.33221045, 7.5500965, 0.51813936, -4.427119)
-
-[node name="SM_Path_Small_08" parent="Colony/UpgradeLayer0/Paths" unique_id=193872775 instance=ExtResource("7_0ao37")]
-transform = Transform3D(-0.087886035, 0, -0.9961306, 0, 1, 0, 0.9961306, 0, -0.087886035, 7.5500965, 0.51813936, 0.4563756)
+transform = Transform3D(0.11297771, 0, -0.9935975, 0, 1, 0, 0.9935975, 0, 0.11297771, 1.5287237, 0.51813936, 4.059497)
 
 [node name="SM_Path_Small_03" parent="Colony/UpgradeLayer0/Paths" unique_id=51098494 instance=ExtResource("7_0ao37")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.432627, 0.5547466, 4.3963904)
+
+[node name="SM_Path_Small_10" parent="Colony/UpgradeLayer0/Paths" unique_id=2085748653 instance=ExtResource("7_0ao37")]
+transform = Transform3D(0.998513, 0, 0.0545145, 0, 1, 0, -0.0545145, 0, 0.998513, 5.432627, 0.5547466, 6.9823747)
+
+[node name="SM_Path_Small_11" parent="Colony/UpgradeLayer0/Paths" unique_id=1787982467 instance=ExtResource("7_0ao37")]
+transform = Transform3D(0.98875636, 0, 0.14953536, 0, 1, 0, -0.14953536, 0, 0.98875636, 5.9164863, 0.5547466, 9.77968)
+
+[node name="SM_Path_Small_12" parent="Colony/UpgradeLayer0/Paths" unique_id=1167475130 instance=ExtResource("7_0ao37")]
+transform = Transform3D(0.922491, 0, 0.3860188, 0, 1, 0, -0.3860188, 0, 0.922491, 6.834352, 0.5547466, 12.38607)
 
 [node name="SM_Path_Small_04" parent="Colony/UpgradeLayer0/Paths" unique_id=1682689296 instance=ExtResource("7_0ao37")]
 transform = Transform3D(-0.087886035, 0, -0.9961306, 0, 1, 0, 0.9961306, 0, -0.087886035, 7.36176, 0.51813936, 3.1593447)
@@ -91,14 +105,11 @@ transform = Transform3D(-0.087886035, 0, -0.9961306, 0, 1, 0, 0.9961306, 0, -0.0
 
 [node name="Buildings" type="Node3D" parent="Colony/UpgradeLayer0" unique_id=192629947]
 
-[node name="Igloo1" type="Node3D" parent="Colony/UpgradeLayer0/Buildings" unique_id=1172518733]
-transform = Transform3D(-0.12675302, 0, 0.9919343, 0, 1, 0, -0.9919343, 0, -0.12675302, 14.584919, 0, 3.154735)
-script = ExtResource("11_6sbj7")
-building_resource = ExtResource("12_n7pht")
-metadata/_custom_type_script = "uid://cxon1h1qxnmrd"
-
 [node name="FishingPondBuildingScene" parent="Colony/UpgradeLayer0/Buildings" unique_id=605454376 instance=ExtResource("11_jdbgl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.96579, 0, -13.1322775)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.540676, 0.9024608, 5.216177)
+
+[node name="IglooBuildingScene" parent="Colony/UpgradeLayer0/Buildings" unique_id=1368820721 instance=ExtResource("10_qjxhu")]
+transform = Transform3D(0.067579925, 0, 0.99771386, 0, 1, 0, -0.99771386, 0, 0.067579925, 14.51359, 0.9280715, 4.134337)
 
 [node name="UpgradeLayer1" type="Node3D" parent="Colony" unique_id=119963285]
 
