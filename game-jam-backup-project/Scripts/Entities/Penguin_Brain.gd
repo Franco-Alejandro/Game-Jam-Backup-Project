@@ -3,6 +3,8 @@ class_name PenguinBrain
 
 enum PenguinState { IDLE, RUNNING_TO_TASK, DOING_TASK }
 var _current_state : PenguinState = PenguinState.IDLE;
+var is_idle : bool = true;
+var is_moving : bool = false;
 
 var behaviour : Dictionary = {
 	PenguinState.IDLE: idle,
@@ -23,6 +25,13 @@ func _process(delta: float) -> void:
 func set_state(new_state: PenguinState):
 	print("Penguin went to ", PenguinState.keys()[new_state])
 	_current_state = new_state
+	match _current_state:
+		PenguinState.IDLE:
+			is_moving = false
+			is_idle = true;
+		PenguinState.RUNNING_TO_TASK:
+			is_moving = true
+			is_idle = false;
 
 func set_task(task: TaskResource):
 	#ignore same tasks
