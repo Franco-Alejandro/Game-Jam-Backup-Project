@@ -39,10 +39,20 @@ materials/extract_format=0
 materials/extract_path=""
 _subresources={
 "materials": {
-"Material.001": {
+"Material.002": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Assets/Material/M_GradientTextureSample.tres",
+"use_external/path": "uid://daqop5c6ntq4x"
+},
+"Material.011": {
 "use_external/enabled": true,
 "use_external/fallback_path": "res://Assets/Material/S_Water.tres",
 "use_external/path": "uid://d2lf6ikjpi0pf"
+},
+"Material.013": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Assets/Material/M_GradientTextureWorldSample.tres",
+"use_external/path": "uid://d2f0w3bqpxvph"
 }
 }
 }
