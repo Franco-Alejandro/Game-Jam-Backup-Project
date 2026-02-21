@@ -1,11 +1,11 @@
 [gd_resource type="ShaderMaterial" format=3 uid="uid://bf1ht0v4nphco"]
 
-[ext_resource type="Shader" uid="uid://dw3q4406flfo5" path="res://Assets/Shaders/S_Gradient_Height.gdshader" id="1_aat21"]
+[ext_resource type="Shader" uid="uid://dupjq67rwgjmf" path="res://Assets/Shaders/S_Gradient_LocalHeight.gdshader" id="1_aat21"]
 
 [resource]
 render_priority = 0
 shader = ExtResource("1_aat21")
-shader_parameter/base_color_bottom = Color(0.5789509, 0.56152433, 0.5499245, 1)
-shader_parameter/base_color_top = Color(0.8117647, 0.77254903, 0.75686276, 1)
+shader_parameter/base_color_bottom = Color(0.2747, 0.30627003, 0.41, 1)
+shader_parameter/base_color_top = Color(0.8216528, 0.7676962, 0.76180845, 1)
 shader_parameter/mesh_height_scale = 1.0
-shader_parameter/mesh_height_offset = 0.0
+shader_parameter/mesh_height_offset = 0.2
