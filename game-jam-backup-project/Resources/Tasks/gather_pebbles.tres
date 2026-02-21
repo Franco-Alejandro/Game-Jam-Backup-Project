@@ -4,6 +4,7 @@
 
 [resource]
 script = ExtResource("1_vxq8q")
+task_type = 1
 task_name = "Gather pebbles"
 description = "Pebbles may be gathered now"
 duration = 5.0

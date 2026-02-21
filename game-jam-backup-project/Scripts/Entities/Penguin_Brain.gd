@@ -3,12 +3,16 @@ class_name PenguinBrain
 
 enum PenguinState { IDLE, SELECT_LOCATION, RUNNING_TO_TASK, DOING_TASK }
 var _current_state : PenguinState = PenguinState.IDLE;
-var is_idle : bool = true;
-var is_moving : bool = false;
 
 var colony : Colony;
 static var stopping_distance: float = 0.5
 
+static var task_type_to_anim_flag: Dictionary[TaskResource.TASK_TYPE, String] = {
+	TaskResource.TASK_TYPE.GATHER_ICE_CREAM: "parameters/conditions/is_task_icecream",
+	TaskResource.TASK_TYPE.GATHER_PEBBLES: "parameters/conditions/is_task_pebbles",
+	TaskResource.TASK_TYPE.GATHER_FISH: "parameters/conditions/is_task_fish",
+	TaskResource.TASK_TYPE.PLAY_AROUND: "parameters/conditions/is_task_play"
+}
 var behaviour : Dictionary = {
 	PenguinState.IDLE: idle,
 	PenguinState.SELECT_LOCATION: select_location,
@@ -23,9 +27,21 @@ var target_building : Building;
 var speed = 3.5;
 var gravity = 9.8;
 
+var anim_tree: AnimationTree
+
+func find_animation_tree(node: Node) -> AnimationTree:
+	for child in node.get_children():
+		if child is AnimationTree:
+			return child
+		var result = find_animation_tree(child)
+		if result:
+			return result
+	return null
+	
 func _ready():
 	penguin_data.penguin_name = "Juan"
 	add_to_group("penguins")
+	anim_tree = find_animation_tree(self)
 	
 func _process(delta: float) -> void:
 	if behaviour.get(_current_state) != null:
@@ -75,16 +91,27 @@ func target_position(target):
 
 func set_state(new_state: PenguinState):
 	print("Penguin went to ", PenguinState.keys()[new_state])
+	reset_animation_state()
 	_current_state = new_state
+	update_animation_state()
+	print_animation_flags()
+	
+func reset_animation_state():
+	anim_tree["parameters/conditions/is_moving"] = false
+	anim_tree["parameters/conditions/is_idle"] = false
+	# Turn all task flags off
+	for flag_path in task_type_to_anim_flag.values():
+		anim_tree[flag_path] = false
+	
+	
+func update_animation_state():
 	match _current_state:
 		PenguinState.IDLE:
-			is_moving = false
-			is_idle = true;
-			print("Is moving bool is: ", is_moving)
+			anim_tree["parameters/conditions/is_idle"] = true
 		PenguinState.RUNNING_TO_TASK:
-			is_moving = true
-			is_idle = false;
-			print("Is moving bool is: ", is_moving)
+			anim_tree["parameters/conditions/is_moving"] = true
+		PenguinState.DOING_TASK:
+			anim_tree[task_type_to_anim_flag.get(penguin_data.current_task.task_type)] = true
 
 func is_building_accesible(building: Building) -> bool:
 	if !building.building_resource.unlocks_tasks.has(penguin_data.current_task):
@@ -152,3 +179,12 @@ func do_task(delta: float):
 		set_state(PenguinState.IDLE)
 		
 	pass
+	
+func print_animation_flags():
+	print("---- Animation Flags ----")
+	print("is_moving: ", anim_tree["parameters/conditions/is_moving"])
+	print("is_idle: ", anim_tree["parameters/conditions/is_idle"])
+	for task_type in task_type_to_anim_flag:
+		var path = task_type_to_anim_flag[task_type]
+		print(path, ": ", anim_tree[path])
+	print("-------------------------")
