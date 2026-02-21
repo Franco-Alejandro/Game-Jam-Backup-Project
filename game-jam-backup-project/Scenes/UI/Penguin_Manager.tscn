@@ -49,10 +49,11 @@ layout_mode = 2
 text = "Penguin name: "
 label_settings = SubResource("LabelSettings_v7qao")
 
-[node name="PenguinName" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1356431860]
+[node name="PenguinName" type="TextEdit" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1916029359]
 layout_mode = 2
-text = "Penguin name: "
-label_settings = SubResource("LabelSettings_v7qao")
+placeholder_text = "Penguin name: "
+scroll_fit_content_height = true
+scroll_fit_content_width = true
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1188113107]
 layout_mode = 2
@@ -75,11 +76,17 @@ icon = ExtResource("6_87bhs")
 script = ExtResource("2_gak1q")
 task = ExtResource("8_k4msf")
 
+[node name="ApplyButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=156766633]
+layout_mode = 2
+text = "Apply changes"
+
 [node name="CancelButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=269996917]
 layout_mode = 2
 text = "Cancel"
 
+[connection signal="hidden" from="." to="." method="_on_hidden"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer2/FishButton" to="." method="_on_fish_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer2/IceCreamButton" to="." method="_on_ice_cream_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer2/PebbleButton" to="." method="_on_pebble_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ApplyButton" to="." method="_on_apply_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/CancelButton" to="." method="_on_cancel_button_pressed"]

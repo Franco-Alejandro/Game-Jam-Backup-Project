@@ -99,6 +99,12 @@ func _ready() -> void:
 		
 		layers.append(layer)
 		upgradeIndex += 1
+		
+	# TODO DEBUG STUFF DELET LATER HIT JOAKIM
+	upgrade()
+	for building in get_buildable_buildings():
+		building.build()
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:

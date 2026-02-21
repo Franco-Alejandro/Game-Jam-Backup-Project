@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dgb6bl37l55cw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yotmu"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0.3137255)
+
+[node name="FishingDebug" type="Node3D" unique_id=2102050277]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.61658704, 0)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=426165426]
+material = SubResource("StandardMaterial3D_yotmu")
+
+[node name="Label3D" type="Label3D" parent="." unique_id=305246591]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7934042, 0)
+text = "Fishing Spot
+"
+font_size = 80

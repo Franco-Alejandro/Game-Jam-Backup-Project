@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="BuildingResource" format=3 uid="uid://c2dny2t0k5ns6"]
 
+[ext_resource type="PackedScene" uid="uid://nv7tufhfcr3p" path="res://Scenes/Debug/Pebble_Debug.tscn" id="1_f1ajl"]
 [ext_resource type="Script" uid="uid://h2ufpeq4u36f" path="res://Scripts/Data/Building_Resource.gd" id="1_ihkjy"]
-[ext_resource type="PackedScene" uid="uid://c8oxjam3gfaj5" path="res://Assets/SM_Path_Small_01.fbx" id="1_xp8oc"]
 [ext_resource type="Script" uid="uid://dwevpm6iumg5j" path="res://Scripts/Data/Job_Resource.gd" id="2_xp8oc"]
 [ext_resource type="Script" uid="uid://dnmarx8f1e3ss" path="res://Scripts/Data/Penguin_Task.gd" id="3_f1ajl"]
 [ext_resource type="Resource" uid="uid://b1dooksyghxxv" path="res://Resources/Tasks/gather_pebbles.tres" id="5_f1ajl"]
@@ -16,5 +16,5 @@ required_resources = Dictionary[int, int]({
 2: 5
 })
 unlocks_tasks = Array[ExtResource("3_f1ajl")]([ExtResource("5_f1ajl")])
-building_scene = ExtResource("1_xp8oc")
+building_scene = ExtResource("1_f1ajl")
 metadata/_custom_type_script = "uid://h2ufpeq4u36f"

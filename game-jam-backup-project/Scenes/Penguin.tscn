@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://dy7xdcdxeetx7"]
+
+[ext_resource type="Script" uid="uid://2nclvtlb431i" path="res://Scripts/Entities/Penguin_Brain.gd" id="1_02pnu"]
+[ext_resource type="PackedScene" uid="uid://ddtugnq86umdw" path="res://Scenes/character_penguin.tscn" id="2_es5b8"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ox6xk"]
+radius = 0.4906006
+height = 0.9812012
+
+[node name="Penguin" type="CharacterBody3D" unique_id=1889786772]
+script = ExtResource("1_02pnu")
+
+[node name="Character_Penguin" parent="." unique_id=611752080 instance=ExtResource("2_es5b8")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1490065389]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.41394043, 0)
+shape = SubResource("CapsuleShape3D_ox6xk")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1882180126]
+target_desired_distance = 2.0
