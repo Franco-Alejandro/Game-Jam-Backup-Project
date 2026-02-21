@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://d4kdf80ke3vgc"]
+
+[ext_resource type="PackedScene" uid="uid://dpf4q7fpjhpr1" path="res://Assets/SM_Rock_02.fbx" id="1_ecdye"]
+
+[node name="PebbleMine" type="Node3D" unique_id=1752078488]
+
+[node name="SM_Rock_02" parent="." unique_id=1611491469 instance=ExtResource("1_ecdye")]
+transform = Transform3D(1, 0, 0, 0, 0.60221916, 0.7983308, 0, -0.7983308, 0.60221916, 0.028425813, 0.8578391, 1.0867245)
+
+[node name="SM_Rock_04" parent="." unique_id=164703307 instance=ExtResource("1_ecdye")]
+transform = Transform3D(0.9333676, -0.1781682, -0.31157827, 1.1548249e-08, -0.8680949, 0.4963982, -0.35892183, -0.46332198, -0.8102517, -0.24522722, 0.72882175, -1.2612886)
+
+[node name="SM_Rock_03" parent="." unique_id=1902035904 instance=ExtResource("1_ecdye")]
+transform = Transform3D(-0.61726934, -0.7867519, 0, 0.7867519, -0.61726934, 0, 0, 0, 1, -1.6931585, 0.50980926, -0.41391754)
+
+[node name="SM_Rock_05" parent="." unique_id=346501406 instance=ExtResource("1_ecdye")]
+transform = Transform3D(-0.097228125, -0.5415642, 0, 0.5415642, -0.097228125, 0, 0, 0, 0.5502228, 0.8007742, 0.50980926, -0.1693027)
+
+[node name="SM_Rock_06" parent="." unique_id=1153428253 instance=ExtResource("1_ecdye")]
+transform = Transform3D(-0.26462305, 0.45684916, 0.15494713, 0.47905818, 0.26965836, 0.023082837, -0.05677224, 0.14600803, -0.52745, 1.2265319, 0.4522264, 0.4703579)
