@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cv002k0fcsopd"]
+
+[ext_resource type="Script" uid="uid://cxon1h1qxnmrd" path="res://Scripts/Colony/Building_Script.gd" id="1_byhgj"]
+[ext_resource type="Resource" uid="uid://crjlxmxx4cvee" path="res://Resources/Buildings/igloo_housing.tres" id="2_d3gnv"]
+
+[node name="IglooBuildingScene" type="Node3D" unique_id=1368820721]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7092693, 1.8228259, -0.74724865)
+script = ExtResource("1_byhgj")
+building_resource = ExtResource("2_d3gnv")
+metadata/_custom_type_script = "uid://cxon1h1qxnmrd"

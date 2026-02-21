@@ -72,43 +72,60 @@ func interact_with_uinbuilt_building(building: Building) -> void:
 		building.add_child(buildingInfo)
 		buildingInfo.set_building(building)
 		buildingInfo.position.y += 2
+		buildingInfo.rotation.y = - building.rotation.y
 
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 		try_to_build_building(building)
 	
 func interact() -> void:
 	var result = cast_ray()
+	var interactable: Node = null
 	
-	if not result.is_empty() && result.collider is Building:
-		var collider = result.collider
-		
+	if not result.is_empty():
+		var iterator : Node = result.collider
+		while interactable == null && iterator != null:
+			if iterator is Building:
+				interactable = iterator
+			else:
+				iterator = iterator.get_parent()
+	
+	if interactable:
 		for layer in layers:
 			for building in layer.buildings:
-				if collider == building && building.active && not building.built:
+				if interactable == building && building.active && not building.built:
 					interact_with_uinbuilt_building(building)
 					return
 			
 	if buildingInfo != null:		
 		buildingInfo.queue_free()
+		
+func consume_layer_node(node: Node, layer: ColonyLayer) -> void:
+	if node is Building:
+		layer.buildings.append(node)
+	else:
+		layer.props.append(node)
+		node.hide()
+		
+	for child in node.get_children():
+		consume_layer_node(child, layer)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	var upgradeIndex: int = 1
+	var upgradeIndex: int = 0
 	while has_node(str("UpgradeLayer", upgradeIndex)):
 		var layerNode: Node = get_node(str("UpgradeLayer", upgradeIndex))
 		var layer: ColonyLayer = ColonyLayer.new()
 		
 		for child in layerNode.get_children():
-			if child is Building:
-				layer.buildings.append(child)
+			consume_layer_node(child, layer)
 		
 		layers.append(layer)
 		upgradeIndex += 1
 		
 	# TODO DEBUG STUFF DELET LATER HIT JOAKIM
 	upgrade()
-	for building in get_buildable_buildings():
-		building.build()
+	#for building in get_buildable_buildings():
+	#	building.build()
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

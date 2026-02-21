@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://b0ok3h6300l"]
+
+[ext_resource type="Script" uid="uid://cxon1h1qxnmrd" path="res://Scripts/Colony/Building_Script.gd" id="1_1wnfi"]
+[ext_resource type="Resource" uid="uid://1187hrgi6chu" path="res://Resources/Buildings/fishing_pond.tres" id="2_h1cye"]
+
+[node name="FishingPondBuildingScene" type="Node3D" unique_id=605454376]
+script = ExtResource("1_1wnfi")
+building_resource = ExtResource("2_h1cye")
+metadata/_custom_type_script = "uid://cxon1h1qxnmrd"
