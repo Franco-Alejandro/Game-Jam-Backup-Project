@@ -1,19 +1,43 @@
+@tool
 extends Node3D
 class_name Building
 
 var active: bool = false
+var built: bool = false
 @export var building_resource: BuildingResource
+var building_scene: Node = null
 
+# Activates the building when the layer becomes active, does not build it
 func activate() -> void:
 	active = true
-	self.show()
+	show()
+	
+	if building_resource != null and building_resource.building_scene != null:
+		building_scene = building_resource.building_scene.instantiate()
+		building_scene.hide()
+		building_scene.set_process(false)
+		add_child(building_scene)
+	else:
+		printerr("Building has no building resource or scene in the resource!")
+	
+func build() -> void:
+	if building_scene != null:
+		building_scene.show()
+		building_scene.set_process(true)
+		built = true
 	
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	self.hide()
-	pass # Replace with function body.
-
+	if Engine.is_editor_hint():
+		activate()
+		build()
+	else:
+		hide()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	pass
+	if Engine.is_editor_hint():
+		return
+	
+	if Input.is_action_just_pressed("build_cheat"):
+		build()

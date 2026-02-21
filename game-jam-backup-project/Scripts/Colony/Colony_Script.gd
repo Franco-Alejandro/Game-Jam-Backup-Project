@@ -4,8 +4,27 @@ class_name Colony
 var layers: Array[ColonyLayer]
 var current_level: int = -1
 
-func upgrade() -> void:
+func get_buildable_buildings() -> Array[Building]:
+	var unbuilt_buildings: Array[Building]
 	
+	for layer in layers:
+		for building in layer.buildings:
+			if not building.built:
+				unbuilt_buildings.append(building)
+				
+	return unbuilt_buildings
+	
+func get_built_buildings() -> Array[Building]:
+	var built_buildings: Array[Building]
+	
+	for layer in layers:
+		for building in layer.buildings:
+			if building.built:
+				built_buildings.append(building)
+				
+	return built_buildings
+
+func upgrade() -> void:
 	if current_level >= layers.size() - 1:
 		return
 	

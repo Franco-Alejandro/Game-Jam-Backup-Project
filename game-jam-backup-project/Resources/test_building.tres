@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="BuildingResource" format=3 uid="uid://ylys6s1poh6k"]
+
+[ext_resource type="PackedScene" uid="uid://dy7xdcdxeetx7" path="res://Scenes/Penguin.tscn" id="1_5mck0"]
+[ext_resource type="Script" uid="uid://h2ufpeq4u36f" path="res://Scripts/Data/Building_Resource.gd" id="1_kjb3g"]
+[ext_resource type="Script" uid="uid://dwevpm6iumg5j" path="res://Scripts/Data/Job_Resource.gd" id="2_5mck0"]
+[ext_resource type="Script" uid="uid://dnmarx8f1e3ss" path="res://Scripts/Data/Penguin_Task.gd" id="3_qpc6t"]
+
+[resource]
+script = ExtResource("1_kjb3g")
+building_name = "Test Building"
+description = "Just a test"
+building_scene = ExtResource("1_5mck0")
+metadata/_custom_type_script = "uid://h2ufpeq4u36f"
