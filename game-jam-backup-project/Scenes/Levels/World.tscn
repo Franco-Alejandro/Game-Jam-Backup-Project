@@ -13,6 +13,17 @@
 [ext_resource type="PackedScene" uid="uid://b0ok3h6300l" path="res://Scenes/Colony/Buildings/Fishing_Pond_Building_Scene.tscn" id="11_jdbgl"]
 [ext_resource type="PackedScene" uid="uid://dhae8g3pohfph" path="res://Scenes/Colony/Buildings/Ice_Cream_Factory_Building.tscn" id="12_6sbj7"]
 [ext_resource type="PackedScene" uid="uid://c0gsy02twtl64" path="res://Scenes/Player.tscn" id="13_6sbj7"]
+[ext_resource type="Script" uid="uid://dsq7u0fupch33" path="res://Scripts/Colony/Spawner.gd" id="14_fxmlw"]
+[ext_resource type="PackedScene" uid="uid://dy7xdcdxeetx7" path="res://Scenes/Penguin.tscn" id="15_h33no"]
+[ext_resource type="Script" uid="uid://dls1pt4l3wj3n" path="res://Scripts/Data/Penguin_Names.gd" id="16_r3u2c"]
+
+[sub_resource type="Resource" id="Resource_k4ffd"]
+script = ExtResource("16_r3u2c")
+metadata/_custom_type_script = "uid://dls1pt4l3wj3n"
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_fxmlw"]
+vertices = PackedVector3Array(-24.78893, -0.19444394, -26.297668, -24.78893, -0.19444394, 42.20233, 46.461067, -0.19444394, 42.20233, 46.461067, -0.19444394, -26.297668)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_o7e4v"]
 render_priority = 0
@@ -25,10 +36,6 @@ shader_parameter/sparkle_color = Vector3(0.21, 0.205, 50)
 shader_parameter/sparkle_emissive = 1.0
 
 [node name="World" type="Node3D" unique_id=1874026479]
-
-[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1543731571]
-transform = Transform3D(3936.2793, 0, 0, 0, 1, 0, 0, 0, 3627.1162, -1.0252023, 0.13955164, 2.5183268)
-material_override = SubResource("ShaderMaterial_o7e4v")
 
 [node name="Light" parent="." unique_id=1450571092 instance=ExtResource("10_w86vl")]
 
@@ -910,3 +917,19 @@ limit_left = -60.0
 limit_right = 60.0
 limit_forward = -80.0
 limit_back = 80.0
+
+[node name="Spawner" type="Node3D" parent="." unique_id=107170552]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3494997, 0)
+script = ExtResource("14_fxmlw")
+penguin_scene = ExtResource("15_h33no")
+names_database = SubResource("Resource_k4ffd")
+metadata/_custom_type_script = "uid://dsq7u0fupch33"
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=430590809]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04860449, 0.016193151, -0.016447067)
+navigation_mesh = SubResource("NavigationMesh_fxmlw")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="NavigationRegion3D" unique_id=1543731571]
+transform = Transform3D(3936.2793, 0, 0, 0, 1, 0, 0, 0, 3627.1162, -1.0738068, 0.12335849, 2.5347738)
+material_override = SubResource("ShaderMaterial_o7e4v")
+use_collision = true
