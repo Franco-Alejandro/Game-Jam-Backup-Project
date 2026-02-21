@@ -4,6 +4,8 @@ class_name Building
 
 var active: bool = false
 var built: bool = false
+var is_being_used: bool = false
+
 @export var building_resource: BuildingResource
 var building_scene: Node = null
 var resource_manager: ResourceManager

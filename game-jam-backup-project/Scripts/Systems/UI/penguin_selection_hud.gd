@@ -23,7 +23,6 @@ func show_penguins():
 
 func _on_penguin_button_pressed(penguin: PenguinBrain):
 	penguin_selected.emit(penguin)
-
 	
 func _on_cancel_pressed():
 	hide()

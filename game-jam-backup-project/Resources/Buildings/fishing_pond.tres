@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://ddtugnq86umdw" path="res://Scenes/character_penguin.tscn" id="1_ropy6"]
 [ext_resource type="Script" uid="uid://dwevpm6iumg5j" path="res://Scripts/Data/Job_Resource.gd" id="2_ropy6"]
 [ext_resource type="Script" uid="uid://dnmarx8f1e3ss" path="res://Scripts/Data/Penguin_Task.gd" id="3_1gfpa"]
+[ext_resource type="Resource" uid="uid://cukrkqdiucmr3" path="res://Resources/Tasks/gather_fish.tres" id="5_1gfpa"]
 
 [resource]
 script = ExtResource("1_pfbsi")
@@ -14,5 +15,6 @@ required_resources = {
 "ice_cream": 5,
 "pebbles": 5
 }
+unlocks_tasks = Array[ExtResource("3_1gfpa")]([ExtResource("5_1gfpa")])
 building_scene = ExtResource("1_ropy6")
 metadata/_custom_type_script = "uid://h2ufpeq4u36f"
