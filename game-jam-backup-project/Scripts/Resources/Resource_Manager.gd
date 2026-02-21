@@ -12,8 +12,6 @@ func add_resource(type: ResourceType, amount: int):
 		resources[type] = 0
 	
 	resources[type] += amount
-	
-	print("Added ", amount, " ", type.id, ". Total: ", resources[type])
 	resource_changed.emit(type, resources[type])
 
 func get_resource(type: ResourceType) -> int:
@@ -24,7 +22,7 @@ func _can_afford(type: ResourceType, amount: int) -> bool:
 
 func spend_resource(type: ResourceType, amount: int) -> bool:
 	if not _can_afford(type, amount):
-		print("Not enough " + str(type.id))
+		printerr("Not enough " + str(type.id) + " for this action.")
 		return false
 	
 	resources[type] -= amount
