@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://2pspwfknsxpp"]
 
 [ext_resource type="PackedScene" uid="uid://c0gsy02twtl64" path="res://Scenes/Player.tscn" id="1_vk84e"]
-[ext_resource type="Script" uid="uid://csh2oe45mtbk1" path="res://Scenes/colony_level_debug.gd" id="1_x5vs7"]
+[ext_resource type="Script" uid="uid://csh2oe45mtbk1" path="res://Scripts/Colony/colony_level_debug.gd" id="1_x5vs7"]
 [ext_resource type="Script" uid="uid://dsq7u0fupch33" path="res://Scripts/Colony/Spawner.gd" id="4_4283g"]
 [ext_resource type="PackedScene" uid="uid://dy7xdcdxeetx7" path="res://Scenes/Penguin.tscn" id="5_t7y5i"]
 [ext_resource type="Script" uid="uid://dls1pt4l3wj3n" path="res://Scripts/Data/Penguin_Names.gd" id="6_x5vs7"]
