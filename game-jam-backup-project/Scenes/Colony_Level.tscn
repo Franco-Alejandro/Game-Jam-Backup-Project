@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://2pspwfknsxpp"]
 
-[ext_resource type="Script" uid="uid://cp26fooektfl2" path="res://Scripts/Colony/Colony_Script.gd" id="1_t7y5i"]
 [ext_resource type="PackedScene" uid="uid://c0gsy02twtl64" path="res://Scenes/Player.tscn" id="1_vk84e"]
+[ext_resource type="Script" uid="uid://csh2oe45mtbk1" path="res://Scenes/colony_level_debug.gd" id="1_x5vs7"]
 [ext_resource type="Script" uid="uid://dsq7u0fupch33" path="res://Scripts/Colony/Spawner.gd" id="4_4283g"]
 [ext_resource type="PackedScene" uid="uid://dy7xdcdxeetx7" path="res://Scenes/Penguin.tscn" id="5_t7y5i"]
 [ext_resource type="Script" uid="uid://dls1pt4l3wj3n" path="res://Scripts/Data/Penguin_Names.gd" id="6_x5vs7"]
@@ -15,9 +15,8 @@ polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
 script = ExtResource("6_x5vs7")
 metadata/_custom_type_script = "uid://dls1pt4l3wj3n"
 
-[node name="ColonyBaseNode" type="Node3D" unique_id=1578385563]
-script = ExtResource("1_t7y5i")
-metadata/_custom_type_script = "uid://cp26fooektfl2"
+[node name="ColonyBaseNode" type="Node3D" unique_id=1452475192]
+script = ExtResource("1_x5vs7")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=1831550547]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.026783466, 0.016196966, 0.0057411194)
